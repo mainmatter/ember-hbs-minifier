@@ -1,27 +1,42 @@
-# ember-hbs-minifier
+ember-hbs-minifier
+==============================================================================
 
-This README outlines the details of collaborating on this Ember addon.
+Stripping whitespace out of your Handlebars templates
 
-## Installation
+__Disclaimer:__ This is an experiment and might change in the future. Do not
+use this for production yet unless you understand the consequences!
 
-* `git clone <repository-url>` this repository
-* `cd ember-hbs-minifier`
-* `npm install`
-* `bower install`
+Installation
+------------------------------------------------------------------------------
 
-## Running
+```
+ember install ember-hbs-minifier
+```
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Usage
+------------------------------------------------------------------------------
 
-## Running Tests
+`ember-hbs-minifier` will remove unnecessary text nodes from your templates
+and collapse whitespace into single space characters. This is all done
+automatically for you (without having to use e.g. `{{~foo~}}`) but is
+disabled for certain situations:
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+- Inside of `<pre></pre>` tags
 
-## Building
+- Inside of `{{#no-minify}}{{/no-minify}}` blocks
+  (these will be stripped from the template)
 
-* `ember build`
+Note that this does not work across component/template boundaries.
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+What happens in particular is:
+
+- Text nodes containing only whitespace are collapsed to `' '`
+  (a single space character)
+
+- Leading or trailing text nodes inside of tags or handlebars blocks
+  containing only whitespace are removed entirely
+
+
+License
+------------------------------------------------------------------------------
+ember-cli-chai is licensed under the [MIT License](LICENSE.md).
