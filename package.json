@@ -7,6 +7,10 @@
   ],
   "license": "MIT",
   "author": "",
+  "files": [
+    "hbs-minifier-plugin.js",
+    "index.js"
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
