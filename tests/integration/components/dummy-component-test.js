@@ -84,4 +84,39 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[0]).to.be.a('text');
     expect(childNodes[0]).to.have.a.property('textContent', '  \n\n   \n');
   });
+
+  it('does not strip inside of {{#no-minify}} tags', function() {
+    this.render(hbs`{{#no-minify}}        {{foo}}        {{/no-minify}}`);
+
+    let childNodes = this.$()[0].childNodes;
+    expect(childNodes.length).to.equal(3);
+    expect(childNodes[0]).to.be.a('text');
+    expect(childNodes[0]).to.have.a.property('textContent', '        ');
+    expect(childNodes[1]).to.be.a('text');
+    expect(childNodes[1]).to.have.a.property('textContent', 'foo');
+    expect(childNodes[2]).to.be.a('text');
+    expect(childNodes[2]).to.have.a.property('textContent', '        ');
+  });
+
+  it('does not strip inside of {{#no-minify}} tags in other tags', function() {
+    this.render(hbs`<div>{{#no-minify}}        {{foo}}        {{/no-minify}}</div>`);
+
+    let childNodes = this.$('div')[0].childNodes;
+    expect(childNodes.length).to.equal(3);
+    expect(childNodes[0]).to.be.a('text');
+    expect(childNodes[0]).to.have.a.property('textContent', '        ');
+    expect(childNodes[1]).to.be.a('text');
+    expect(childNodes[1]).to.have.a.property('textContent', 'foo');
+    expect(childNodes[2]).to.be.a('text');
+    expect(childNodes[2]).to.have.a.property('textContent', '        ');
+  });
+
+  it('does not collapse whitespace inside of {{#no-minify}} tags in other tags', function() {
+    this.render(hbs`<div>{{#no-minify}}  \n\n   \n{{/no-minify}}</div>`);
+
+    let childNodes = this.$('div')[0].childNodes;
+    expect(childNodes.length).to.equal(1);
+    expect(childNodes[0]).to.be.a('text');
+    expect(childNodes[0]).to.have.a.property('textContent', '  \n\n   \n');
+  });
 });

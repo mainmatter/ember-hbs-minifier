@@ -13,20 +13,40 @@ module.exports = class {
         }
       },
 
-      Program(node) {
-        if (preStack.length !== 0) {
-          return;
-        }
+      BlockStatement: {
+        enter(node) {
+          if (node.path.original === 'no-minify') {
+            preStack.push(true);
+          }
+        },
 
-        let firstChild = node.body[0];
-        if (isWhitespaceTextNode(firstChild)) {
-          node.body.shift();
-        }
+        exit(node) {
+          if (node.path.original === 'no-minify') {
+            preStack.pop();
+          }
+        },
+      },
 
-        let lastChild = node.body[node.body.length - 1];
-        if (isWhitespaceTextNode(lastChild)) {
-          node.body.pop();
-        }
+      Program: {
+        enter(node) {
+          if (preStack.length !== 0) {
+            return;
+          }
+
+          let firstChild = node.body[0];
+          if (isWhitespaceTextNode(firstChild)) {
+            node.body.shift();
+          }
+
+          let lastChild = node.body[node.body.length - 1];
+          if (isWhitespaceTextNode(lastChild)) {
+            node.body.pop();
+          }
+        },
+
+        exit(node) {
+          node.body = stripNoMinifyBlocks(node.body);
+        },
       },
 
       ElementNode: {
@@ -51,6 +71,8 @@ module.exports = class {
         },
 
         exit(node) {
+          node.children = stripNoMinifyBlocks(node.children);
+
           if (node.tag === 'pre') {
             preStack.pop();
           }
@@ -64,4 +86,13 @@ module.exports = class {
 
 function isWhitespaceTextNode(node) {
   return node && node.type === 'TextNode' && WHITESPACE.test(node.chars)
+}
+
+function stripNoMinifyBlocks(nodes) {
+  return nodes.map(node => {
+    if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
+      return node.program.body;
+    }
+    return node;
+  }).reduce((a, b) => a.concat(b), []);
 }
