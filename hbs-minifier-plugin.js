@@ -4,14 +4,20 @@ const WHITESPACE = /^\s+$/;
 
 module.exports = class {
   transform(ast) {
+    let preStack = [];
+
     this.syntax.traverse(ast, {
       TextNode(node) {
-        if (WHITESPACE.test(node.chars)) {
+        if (preStack.length === 0 && WHITESPACE.test(node.chars)) {
           node.chars = ' ';
         }
       },
 
       Program(node) {
+        if (preStack.length !== 0) {
+          return;
+        }
+
         let firstChild = node.body[0];
         if (isWhitespaceTextNode(firstChild)) {
           node.body.shift();
@@ -23,15 +29,31 @@ module.exports = class {
         }
       },
 
-      ElementNode(node) {
-        let firstChild = node.children[0];
-        if (isWhitespaceTextNode(firstChild)) {
-          node.children.shift();
-        }
+      ElementNode: {
+        enter(node) {
+          if (node.tag === 'pre') {
+            preStack.push(true);
+          }
 
-        let lastChild = node.children[node.children.length - 1];
-        if (isWhitespaceTextNode(lastChild)) {
-          node.children.pop();
+          if (preStack.length !== 0) {
+            return;
+          }
+
+          let firstChild = node.children[0];
+          if (isWhitespaceTextNode(firstChild)) {
+            node.children.shift();
+          }
+
+          let lastChild = node.children[node.children.length - 1];
+          if (isWhitespaceTextNode(lastChild)) {
+            node.children.pop();
+          }
+        },
+
+        exit(node) {
+          if (node.tag === 'pre') {
+            preStack.pop();
+          }
         }
       },
     });

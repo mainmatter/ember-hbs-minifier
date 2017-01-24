@@ -62,4 +62,26 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[2]).to.be.a('text');
     expect(childNodes[2]).to.have.a.property('textContent', '     y   ');
   });
+
+  it('does not strip inside of <pre> tags', function() {
+    this.render(hbs`<pre>        {{foo}}        </pre>`);
+
+    let childNodes = this.$('pre')[0].childNodes;
+    expect(childNodes.length).to.equal(3);
+    expect(childNodes[0]).to.be.a('text');
+    expect(childNodes[0]).to.have.a.property('textContent', '        ');
+    expect(childNodes[1]).to.be.a('text');
+    expect(childNodes[1]).to.have.a.property('textContent', 'foo');
+    expect(childNodes[2]).to.be.a('text');
+    expect(childNodes[2]).to.have.a.property('textContent', '        ');
+  });
+
+  it('does not collapse whitespace inside of <pre> tags', function() {
+    this.render(hbs`<pre>  \n\n   \n</pre>`);
+
+    let childNodes = this.$('pre')[0].childNodes;
+    expect(childNodes.length).to.equal(1);
+    expect(childNodes[0]).to.be.a('text');
+    expect(childNodes[0]).to.have.a.property('textContent', '  \n\n   \n');
+  });
 });
