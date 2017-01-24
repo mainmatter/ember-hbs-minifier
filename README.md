@@ -39,4 +39,4 @@ What happens in particular is:
 
 License
 ------------------------------------------------------------------------------
-ember-cli-chai is licensed under the [MIT License](LICENSE.md).
+ember-hbs-minifier is licensed under the [MIT License](LICENSE.md).
