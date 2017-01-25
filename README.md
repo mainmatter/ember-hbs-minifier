@@ -39,4 +39,7 @@ What happens in particular is:
 
 License
 ------------------------------------------------------------------------------
-ember-hbs-minifier is licensed under the [MIT License](LICENSE.md).
+
+ember-hbs-minifier is developed by and &copy;
+[simplabs GmbH](http://simplabs.com) and contributors. It is released under the
+[MIT License](LICENSE.md).
