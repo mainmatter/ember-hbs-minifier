@@ -85,7 +85,7 @@ module.exports = class {
 };
 
 function isWhitespaceTextNode(node) {
-  return node && node.type === 'TextNode' && WHITESPACE.test(node.chars)
+  return node && node.type === 'TextNode' && WHITESPACE.test(node.chars);
 }
 
 function stripNoMinifyBlocks(nodes) {
