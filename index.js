@@ -4,14 +4,14 @@
 module.exports = {
   name: 'ember-hbs-minifier',
 
-  setupPreprocessorRegistry: function(type, registry) {
+  setupPreprocessorRegistry(type, registry) {
     if (type === 'parent') {
-      var HbsMinifierPlugin = require('./hbs-minifier-plugin');
+      let HbsMinifierPlugin = require('./hbs-minifier-plugin');
 
       registry.add('htmlbars-ast-plugin', {
         name: 'hbs-minifier-plugin',
         plugin: HbsMinifierPlugin,
-        baseDir: function() { return __dirname; }
+        baseDir() { return __dirname; }
       });
     }
   },
