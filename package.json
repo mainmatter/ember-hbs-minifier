@@ -19,13 +19,15 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test",
+    "test": "jest",
+    "test:ember": "ember test",
     "lint": "eslint app addon blueprints config server test-support tests *.js"
   },
   "dependencies": {
     "ember-cli-babel": "^5.1.7"
   },
   "devDependencies": {
+    "@glimmer/syntax": "^0.29.1",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
     "ember-cli": "~2.11.0",
@@ -46,6 +48,7 @@
     "ember-source": "~2.11.0",
     "ember-welcome-page": "^2.0.2",
     "eslint-config-simplabs": "0.2.2",
+    "jest": "^21.2.0",
     "loader.js": "^4.1.0"
   },
   "engines": {
