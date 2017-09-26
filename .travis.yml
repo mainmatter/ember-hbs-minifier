@@ -8,22 +8,23 @@ node_js:
 sudo: false
 
 cache:
+  yarn: true
   directories:
-    - $HOME/.npm
     - $HOME/.cache # includes bowers cache
 
 before_install:
-  - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn global add bower phantomjs-prebuilt
   - bower --version
   - phantomjs --version
 
 install:
-  - npm install
+  - yarn install --no-lockfile
   - bower install
 
 script:
-  - node_modules/.bin/ember try:each
+  - yarn run ember try:each
 
 deploy:
   provider: npm
