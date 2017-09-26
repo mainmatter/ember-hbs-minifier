@@ -1,3 +1,5 @@
+'use strict';
+
 /* jshint node:true*/
 /* global require, module */
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
