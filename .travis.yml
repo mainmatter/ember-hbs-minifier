@@ -24,6 +24,7 @@ install:
   - bower install
 
 script:
+  - yarn test
   - yarn run ember try:each
 
 deploy:
