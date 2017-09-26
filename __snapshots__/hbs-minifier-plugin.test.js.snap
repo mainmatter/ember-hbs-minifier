@@ -1,0 +1,1017 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collapses whitespace into single space character 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "escaped": true,
+      "hash": Object {
+        "loc": Object {
+          "end": Object {
+            "column": 0,
+            "line": 1,
+          },
+          "source": "(synthetic)",
+          "start": Object {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "pairs": Array [],
+        "type": "Hash",
+      },
+      "loc": Object {
+        "end": Object {
+          "column": 7,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": Object {
+        "data": false,
+        "loc": SourceLocation {
+          "end": Object {
+            "column": 5,
+            "line": 1,
+          },
+          "source": undefined,
+          "start": Object {
+            "column": 2,
+            "line": 1,
+          },
+        },
+        "original": "foo",
+        "parts": Array [
+          "foo",
+        ],
+        "this": false,
+        "type": "PathExpression",
+      },
+      "type": "MustacheStatement",
+    },
+    Object {
+      "chars": " ",
+      "loc": Object {
+        "end": Object {
+          "column": 0,
+          "line": 4,
+        },
+        "source": null,
+        "start": Object {
+          "column": 7,
+          "line": 1,
+        },
+      },
+      "type": "TextNode",
+    },
+    Object {
+      "escaped": true,
+      "hash": Object {
+        "loc": Object {
+          "end": Object {
+            "column": 0,
+            "line": 1,
+          },
+          "source": "(synthetic)",
+          "start": Object {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "pairs": Array [],
+        "type": "Hash",
+      },
+      "loc": Object {
+        "end": Object {
+          "column": 7,
+          "line": 4,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 4,
+        },
+      },
+      "params": Array [],
+      "path": Object {
+        "data": false,
+        "loc": SourceLocation {
+          "end": Object {
+            "column": 5,
+            "line": 4,
+          },
+          "source": undefined,
+          "start": Object {
+            "column": 2,
+            "line": 4,
+          },
+        },
+        "original": "bar",
+        "parts": Array [
+          "bar",
+        ],
+        "this": false,
+        "type": "PathExpression",
+      },
+      "type": "MustacheStatement",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 7,
+      "line": 4,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
+
+exports[`does not collapse whitespace inside of <pre> tags 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "chars": "  
+
+   
+",
+          "loc": Object {
+            "end": Object {
+              "column": 0,
+              "line": 4,
+            },
+            "source": null,
+            "start": Object {
+              "column": 5,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 6,
+          "line": 4,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "pre",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 6,
+      "line": 4,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`does not collapse whitespace inside of <pre> tags 2`] = `
+"<pre>  
+
+   
+</pre>"
+`;
+
+exports[`does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "chars": "  
+
+   
+",
+          "loc": Object {
+            "end": Object {
+              "column": 0,
+              "line": 4,
+            },
+            "source": null,
+            "start": Object {
+              "column": 19,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 20,
+          "line": 4,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "div",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 20,
+      "line": 4,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`does not collapse whitespace inside of {{#no-minify}} tags in other tags 2`] = `
+"<div>  
+
+   
+</div>"
+`;
+
+exports[`does not strip inside of <pre> tags 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "chars": "        ",
+          "loc": Object {
+            "end": Object {
+              "column": 13,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 5,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+        Object {
+          "escaped": true,
+          "hash": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 0,
+                "line": 1,
+              },
+              "source": "(synthetic)",
+              "start": Object {
+                "column": 0,
+                "line": 1,
+              },
+            },
+            "pairs": Array [],
+            "type": "Hash",
+          },
+          "loc": Object {
+            "end": Object {
+              "column": 20,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 13,
+              "line": 1,
+            },
+          },
+          "params": Array [],
+          "path": Object {
+            "data": false,
+            "loc": SourceLocation {
+              "end": Object {
+                "column": 18,
+                "line": 1,
+              },
+              "source": undefined,
+              "start": Object {
+                "column": 15,
+                "line": 1,
+              },
+            },
+            "original": "foo",
+            "parts": Array [
+              "foo",
+            ],
+            "this": false,
+            "type": "PathExpression",
+          },
+          "type": "MustacheStatement",
+        },
+        Object {
+          "chars": "        ",
+          "loc": Object {
+            "end": Object {
+              "column": 28,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 20,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 34,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "pre",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 34,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
+
+exports[`does not strip inside of {{#no-minify}} tags 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "chars": "        ",
+      "loc": Object {
+        "end": Object {
+          "column": 22,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 14,
+          "line": 1,
+        },
+      },
+      "type": "TextNode",
+    },
+    Object {
+      "escaped": true,
+      "hash": Object {
+        "loc": Object {
+          "end": Object {
+            "column": 0,
+            "line": 1,
+          },
+          "source": "(synthetic)",
+          "start": Object {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "pairs": Array [],
+        "type": "Hash",
+      },
+      "loc": Object {
+        "end": Object {
+          "column": 29,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 22,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": Object {
+        "data": false,
+        "loc": SourceLocation {
+          "end": Object {
+            "column": 27,
+            "line": 1,
+          },
+          "source": undefined,
+          "start": Object {
+            "column": 24,
+            "line": 1,
+          },
+        },
+        "original": "foo",
+        "parts": Array [
+          "foo",
+        ],
+        "this": false,
+        "type": "PathExpression",
+      },
+      "type": "MustacheStatement",
+    },
+    Object {
+      "chars": "        ",
+      "loc": Object {
+        "end": Object {
+          "column": 37,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 29,
+          "line": 1,
+        },
+      },
+      "type": "TextNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 51,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
+
+exports[`does not strip inside of {{#no-minify}} tags in other tags 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "chars": "        ",
+          "loc": Object {
+            "end": Object {
+              "column": 27,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 19,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+        Object {
+          "escaped": true,
+          "hash": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 0,
+                "line": 1,
+              },
+              "source": "(synthetic)",
+              "start": Object {
+                "column": 0,
+                "line": 1,
+              },
+            },
+            "pairs": Array [],
+            "type": "Hash",
+          },
+          "loc": Object {
+            "end": Object {
+              "column": 34,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 27,
+              "line": 1,
+            },
+          },
+          "params": Array [],
+          "path": Object {
+            "data": false,
+            "loc": SourceLocation {
+              "end": Object {
+                "column": 32,
+                "line": 1,
+              },
+              "source": undefined,
+              "start": Object {
+                "column": 29,
+                "line": 1,
+              },
+            },
+            "original": "foo",
+            "parts": Array [
+              "foo",
+            ],
+            "this": false,
+            "type": "PathExpression",
+          },
+          "type": "MustacheStatement",
+        },
+        Object {
+          "chars": "        ",
+          "loc": Object {
+            "end": Object {
+              "column": 42,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 34,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 62,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "div",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 62,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
+
+exports[`does not strip leading/trailing text from ElementNode nodes 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "chars": "x        ",
+          "loc": Object {
+            "end": Object {
+              "column": 14,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 5,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+        Object {
+          "escaped": true,
+          "hash": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 0,
+                "line": 1,
+              },
+              "source": "(synthetic)",
+              "start": Object {
+                "column": 0,
+                "line": 1,
+              },
+            },
+            "pairs": Array [],
+            "type": "Hash",
+          },
+          "loc": Object {
+            "end": Object {
+              "column": 21,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 14,
+              "line": 1,
+            },
+          },
+          "params": Array [],
+          "path": Object {
+            "data": false,
+            "loc": SourceLocation {
+              "end": Object {
+                "column": 19,
+                "line": 1,
+              },
+              "source": undefined,
+              "start": Object {
+                "column": 16,
+                "line": 1,
+              },
+            },
+            "original": "foo",
+            "parts": Array [
+              "foo",
+            ],
+            "this": false,
+            "type": "PathExpression",
+          },
+          "type": "MustacheStatement",
+        },
+        Object {
+          "chars": "     y   ",
+          "loc": Object {
+            "end": Object {
+              "column": 30,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 21,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 36,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "div",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 36,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x        {{foo}}     y   </div>"`;
+
+exports[`does not strip leading/trailing text from Program nodes 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "chars": "x        ",
+      "loc": Object {
+        "end": Object {
+          "column": 9,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "type": "TextNode",
+    },
+    Object {
+      "escaped": true,
+      "hash": Object {
+        "loc": Object {
+          "end": Object {
+            "column": 0,
+            "line": 1,
+          },
+          "source": "(synthetic)",
+          "start": Object {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "pairs": Array [],
+        "type": "Hash",
+      },
+      "loc": Object {
+        "end": Object {
+          "column": 16,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 9,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": Object {
+        "data": false,
+        "loc": SourceLocation {
+          "end": Object {
+            "column": 14,
+            "line": 1,
+          },
+          "source": undefined,
+          "start": Object {
+            "column": 11,
+            "line": 1,
+          },
+        },
+        "original": "foo",
+        "parts": Array [
+          "foo",
+        ],
+        "this": false,
+        "type": "PathExpression",
+      },
+      "type": "MustacheStatement",
+    },
+    Object {
+      "chars": "     y   ",
+      "loc": Object {
+        "end": Object {
+          "column": 25,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 16,
+          "line": 1,
+        },
+      },
+      "type": "TextNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 25,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`does not strip leading/trailing text from Program nodes 2`] = `"x        {{foo}}     y   "`;
+
+exports[`strips leading and trailing whitespace from ElementNode nodes 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "escaped": true,
+          "hash": Object {
+            "loc": Object {
+              "end": Object {
+                "column": 0,
+                "line": 1,
+              },
+              "source": "(synthetic)",
+              "start": Object {
+                "column": 0,
+                "line": 1,
+              },
+            },
+            "pairs": Array [],
+            "type": "Hash",
+          },
+          "loc": Object {
+            "end": Object {
+              "column": 20,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 13,
+              "line": 1,
+            },
+          },
+          "params": Array [],
+          "path": Object {
+            "data": false,
+            "loc": SourceLocation {
+              "end": Object {
+                "column": 18,
+                "line": 1,
+              },
+              "source": undefined,
+              "start": Object {
+                "column": 15,
+                "line": 1,
+              },
+            },
+            "original": "foo",
+            "parts": Array [
+              "foo",
+            ],
+            "this": false,
+            "type": "PathExpression",
+          },
+          "type": "MustacheStatement",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 34,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "div",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 34,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
+
+exports[`strips leading and trailing whitespace from Program nodes 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "escaped": true,
+      "hash": Object {
+        "loc": Object {
+          "end": Object {
+            "column": 0,
+            "line": 1,
+          },
+          "source": "(synthetic)",
+          "start": Object {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "pairs": Array [],
+        "type": "Hash",
+      },
+      "loc": Object {
+        "end": Object {
+          "column": 15,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 8,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": Object {
+        "data": false,
+        "loc": SourceLocation {
+          "end": Object {
+            "column": 13,
+            "line": 1,
+          },
+          "source": undefined,
+          "start": Object {
+            "column": 10,
+            "line": 1,
+          },
+        },
+        "original": "foo",
+        "parts": Array [
+          "foo",
+        ],
+        "this": false,
+        "type": "PathExpression",
+      },
+      "type": "MustacheStatement",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 23,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`strips leading and trailing whitespace from Program nodes 2`] = `"{{foo}}"`;

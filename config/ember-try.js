@@ -1,5 +1,5 @@
 /* eslint-env node */
 module.exports = {
-  command: 'npm test',
+  command: 'yarn run ember test',
   useVersionCompatibility: true,
 };
