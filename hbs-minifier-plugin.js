@@ -4,11 +4,11 @@
 
 const WHITESPACE = /^\s+$/;
 
-module.exports = class {
-  transform(ast) {
+module.exports = class HBSMinifierPlugin {
+  static createASTPlugin() {
     let preStack = [];
 
-    this.syntax.traverse(ast, {
+    let visitor = {
       TextNode(node) {
         if (preStack.length === 0 && WHITESPACE.test(node.chars)) {
           node.chars = ' ';
@@ -80,7 +80,15 @@ module.exports = class {
           }
         }
       },
-    });
+    };
+
+    return { name: 'hbs-minifier-plugin', visitor };
+  }
+
+  transform(ast) {
+    let plugin = HBSMinifierPlugin.createASTPlugin();
+
+    this.syntax.traverse(ast, plugin.visitor);
 
     return ast;
   }
