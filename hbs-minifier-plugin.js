@@ -1,29 +1,42 @@
 'use strict';
 
 /* eslint-env node */
+const {
+  stripWhiteSpace,
+  isWhitespaceTextNode,
+  hasLeadingOrTrailingWhiteSpace,
+  stripNoMinifyBlocks,
+  canTrimBlockStatementContent,
+  canTrimElementNodeContent,
+  canTrimModule,
+  assignDefaultValues
+} = require('./utils/helpers');
 
-const WHITESPACE = /^\s+$/;
 
-module.exports = class HBSMinifierPlugin {
-  static createASTPlugin() {
-    let preStack = [];
+class BasePlugin {
+  constructor(env = {}) {
+    this.moduleName = env.moduleName;
+  }
 
+  static createASTPlugin(config) {
     let visitor = {
       TextNode(node) {
-        if (preStack.length === 0 && WHITESPACE.test(node.chars)) {
-          node.chars = ' ';
+        let chars = node.chars;
+        if (preStack.length === 0 && hasLeadingOrTrailingWhiteSpace(chars)) {
+          node.chars = stripWhiteSpace(chars);
         }
       },
 
       BlockStatement: {
         enter(node) {
-          if (node.path.original === 'no-minify') {
-            preStack.push(true);
+          let canTrim = canTrimBlockStatementContent(node, config);
+          if (!canTrim) {
+            preStack.push(node);
           }
         },
 
         exit(node) {
-          if (node.path.original === 'no-minify') {
+          if (preStack[preStack.length - 1] === node) {
             preStack.pop();
           }
         },
@@ -53,8 +66,10 @@ module.exports = class HBSMinifierPlugin {
 
       ElementNode: {
         enter(node) {
-          if (node.tag === 'pre') {
-            preStack.push(true);
+          let canTrim = canTrimElementNodeContent(node, config);
+
+          if (!canTrim) {
+            preStack.push(node);
           }
 
           if (preStack.length !== 0) {
@@ -75,7 +90,7 @@ module.exports = class HBSMinifierPlugin {
         exit(node) {
           node.children = stripNoMinifyBlocks(node.children);
 
-          if (node.tag === 'pre') {
+          if (preStack[preStack.length - 1] === node) {
             preStack.pop();
           }
         }
@@ -84,25 +99,20 @@ module.exports = class HBSMinifierPlugin {
 
     return { name: 'hbs-minifier-plugin', visitor };
   }
-
-  transform(ast) {
-    let plugin = HBSMinifierPlugin.createASTPlugin();
-
-    this.syntax.traverse(ast, plugin.visitor);
-
-    return ast;
-  }
-};
-
-function isWhitespaceTextNode(node) {
-  return node && node.type === 'TextNode' && WHITESPACE.test(node.chars);
 }
 
-function stripNoMinifyBlocks(nodes) {
-  return nodes.map(node => {
-    if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
-      return node.program.body;
+module.exports = function(config = {}) {
+  config = assignDefaultValues(config);
+
+  return class HBSMinifierPlugin extends BasePlugin {
+
+    transform(ast) {
+
+      if (canTrimModule(this.moduleName, config)) {
+        let plugin = HBSMinifierPlugin.createASTPlugin(config);
+        this.syntax.traverse(ast, plugin.visitor);
+      }
+      return ast;
     }
-    return node;
-  }).reduce((a, b) => a.concat(b), []);
-}
+  };
+};
