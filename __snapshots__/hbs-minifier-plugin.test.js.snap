@@ -1,5 +1,244 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`11. does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "chars": "1",
+          "loc": Object {
+            "end": Object {
+              "column": 7,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 6,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 14,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "span",
+      "type": "ElementNode",
+    },
+    Object {
+      "chars": "  ",
+      "loc": Object {
+        "end": Object {
+          "column": 26,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 14,
+          "line": 1,
+        },
+      },
+      "type": "TextNode",
+    },
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "chars": "2",
+          "loc": Object {
+            "end": Object {
+              "column": 33,
+              "line": 1,
+            },
+            "source": null,
+            "start": Object {
+              "column": 32,
+              "line": 1,
+            },
+          },
+          "type": "TextNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 40,
+          "line": 1,
+        },
+        "source": null,
+        "start": Object {
+          "column": 26,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "span",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 40,
+      "line": 1,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`11. does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>  <span>2</span>"`;
+
+exports[`12. does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
+Object {
+  "blockParams": Array [],
+  "body": Array [
+    Object {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        Object {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            Object {
+              "chars": "  1  ",
+              "loc": Object {
+                "end": Object {
+                  "column": 28,
+                  "line": 2,
+                },
+                "source": null,
+                "start": Object {
+                  "column": 8,
+                  "line": 2,
+                },
+              },
+              "type": "TextNode",
+            },
+          ],
+          "comments": Array [],
+          "loc": Object {
+            "end": Object {
+              "column": 35,
+              "line": 2,
+            },
+            "source": null,
+            "start": Object {
+              "column": 2,
+              "line": 2,
+            },
+          },
+          "modifiers": Array [],
+          "tag": "span",
+          "type": "ElementNode",
+        },
+        Object {
+          "chars": " ",
+          "loc": Object {
+            "end": Object {
+              "column": 2,
+              "line": 3,
+            },
+            "source": null,
+            "start": Object {
+              "column": 35,
+              "line": 2,
+            },
+          },
+          "type": "TextNode",
+        },
+        Object {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            Object {
+              "chars": " 2 ",
+              "loc": Object {
+                "end": Object {
+                  "column": 13,
+                  "line": 3,
+                },
+                "source": null,
+                "start": Object {
+                  "column": 8,
+                  "line": 3,
+                },
+              },
+              "type": "TextNode",
+            },
+          ],
+          "comments": Array [],
+          "loc": Object {
+            "end": Object {
+              "column": 20,
+              "line": 3,
+            },
+            "source": null,
+            "start": Object {
+              "column": 2,
+              "line": 3,
+            },
+          },
+          "modifiers": Array [],
+          "tag": "span",
+          "type": "ElementNode",
+        },
+      ],
+      "comments": Array [],
+      "loc": Object {
+        "end": Object {
+          "column": 6,
+          "line": 4,
+        },
+        "source": null,
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "modifiers": Array [],
+      "tag": "div",
+      "type": "ElementNode",
+    },
+  ],
+  "loc": Object {
+    "end": Object {
+      "column": 6,
+      "line": 4,
+    },
+    "source": null,
+    "start": Object {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "type": "Program",
+}
+`;
+
+exports[`12. does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span>  1  </span> <span> 2 </span></div>"`;
+
 exports[`collapses whitespace into single space character 1`] = `
 Object {
   "blockParams": Array [],
@@ -631,7 +870,7 @@ Object {
       "blockParams": Array [],
       "children": Array [
         Object {
-          "chars": "x        ",
+          "chars": "x ",
           "loc": Object {
             "end": Object {
               "column": 14,
@@ -697,7 +936,7 @@ Object {
           "type": "MustacheStatement",
         },
         Object {
-          "chars": "     y   ",
+          "chars": " y ",
           "loc": Object {
             "end": Object {
               "column": 30,
@@ -744,14 +983,14 @@ Object {
 }
 `;
 
-exports[`does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x        {{foo}}     y   </div>"`;
+exports[`does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
 exports[`does not strip leading/trailing text from Program nodes 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
     Object {
-      "chars": "x        ",
+      "chars": "x ",
       "loc": Object {
         "end": Object {
           "column": 9,
@@ -817,7 +1056,7 @@ Object {
       "type": "MustacheStatement",
     },
     Object {
-      "chars": "     y   ",
+      "chars": " y ",
       "loc": Object {
         "end": Object {
           "column": 25,
@@ -847,7 +1086,7 @@ Object {
 }
 `;
 
-exports[`does not strip leading/trailing text from Program nodes 2`] = `"x        {{foo}}     y   "`;
+exports[`does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
 exports[`strips leading and trailing whitespace from ElementNode nodes 1`] = `
 Object {

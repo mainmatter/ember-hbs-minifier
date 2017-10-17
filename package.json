@@ -9,7 +9,8 @@
   "author": "",
   "files": [
     "hbs-minifier-plugin.js",
-    "index.js"
+    "index.js",
+    "utils"
   ],
   "directories": {
     "doc": "doc",
