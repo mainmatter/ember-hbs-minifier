@@ -45,6 +45,17 @@ it('does not collapse whitespace inside of {{#no-minify}} tags in other tags', f
   assert(`<div>{{#no-minify}}  \n\n   \n{{/no-minify}}</div>`);
 });
 
+it('11. does not collapse multiple &nbsp; textNode into a single whitespace', function() {
+  assert(`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
+});
+
+it('12. does not collapse &nbsp; surrounding a text content into a single whitespace', function() {
+  assert(`<div>
+  <span>    &nbsp;1&nbsp;   </span>
+  <span> 2   </span>
+</div>`);
+});
+
 function assert(template) {
   let ast = process(template);
   expect(ast).toMatchSnapshot();
