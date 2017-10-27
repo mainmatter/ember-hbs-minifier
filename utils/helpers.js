@@ -1,43 +1,38 @@
 /* eslint-env node */
 'use strict';
 
-// below are the encoded values of ' ', '\n' and '\t' to avoid collapsing multiple &nbsp; into a single whitespace.
-const matchHorizontalTABAndNewLineBegin = /^(%20|%09|%0A)+/;
-const matchHorizontalTABAndNewLineEnd = /(%20|%09|%0A)+$/;
-const WHITESPACE = /^(%20|%09|%0A)+$/;
+const leadingWhiteSpace = /^[ \t\r\n]+/;
+const trailingWhiteSpace = /[ \t\r\n]+$/;
+const WHITESPACE = /^[ \t\r\n]+$/;
 
-const isWhitespaceTextNode = function(node) {
-  return node && node.type === 'TextNode' && WHITESPACE.test(encodeURIComponent(node.chars));
-};
+function isWhitespaceTextNode(node) {
+  return node && node.type === 'TextNode' && WHITESPACE.test(node.chars);
+}
 
-const hasLeadingOrTrailingWhiteSpace = function(chars) {
-  chars = encodeURIComponent(chars);
-  return matchHorizontalTABAndNewLineBegin.test(chars) || matchHorizontalTABAndNewLineEnd.test(chars);
-};
+function hasLeadingOrTrailingWhiteSpace(chars) {
+  return leadingWhiteSpace.test(chars) || trailingWhiteSpace.test(chars);
+}
 
-const stripWhiteSpace = function(chars) {
+function stripWhiteSpace(chars) {
   /*
-    Replacing multiple ' '(leading/trailing), '\n' and '\t' into a single whitespace.
+    Replacing multiple ' ', '\n' and '\t'(leading/trailing) into a single whitespace.
   */
-  chars = encodeURIComponent(chars || '');
-  chars = chars.replace(matchHorizontalTABAndNewLineBegin, ' ')
-   .replace(matchHorizontalTABAndNewLineEnd, ' ');
-  return decodeURIComponent(chars);
-};
+  chars = chars || '';
+  return chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
+}
 
-const stripNoMinifyBlocks = function(nodes) {
+function stripNoMinifyBlocks(nodes) {
   return nodes.map(node => {
     if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
       return node.program.body;
     }
     return node;
   }).reduce((a, b) => a.concat(b), []);
-};
+}
 
 module.exports = {
   stripWhiteSpace,
   isWhitespaceTextNode,
-  WHITESPACE,
   stripNoMinifyBlocks,
   hasLeadingOrTrailingWhiteSpace
 };
