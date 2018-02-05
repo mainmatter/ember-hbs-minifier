@@ -13,7 +13,7 @@ describe('HBS Minifier plugin', function() {
   it('collapses whitespace into single space character', function() {
     this.render(hbs`{{foo}}  \n\n   \n{{bar}}`);
 
-    let childNodes = this.$()[0].childNodes;
+    let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
     expect(childNodes[1]).to.be.a('text');
     expect(childNodes[1]).to.have.a.property('textContent', ' ');
@@ -22,7 +22,7 @@ describe('HBS Minifier plugin', function() {
   it('strips leading and trailing whitespace from Program nodes', function() {
     this.render(hbs`        {{foo}}        `);
 
-    let childNodes = this.$()[0].childNodes;
+    let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(1);
     expect(childNodes[0]).to.be.a('text');
     expect(childNodes[0]).to.have.a.property('textContent', 'foo');
@@ -31,7 +31,7 @@ describe('HBS Minifier plugin', function() {
   it('Collapse leading/trailing text from Program nodes into a single whitespace', function() {
     this.render(hbs`x        {{foo}}     y   `);
 
-    let childNodes = this.$()[0].childNodes;
+    let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
     expect(childNodes[0]).to.be.a('text');
     expect(childNodes[0]).to.have.a.property('textContent', 'x ');
@@ -90,7 +90,7 @@ describe('HBS Minifier plugin', function() {
   it('does not strip inside of {{#no-minify}} tags', function() {
     this.render(hbs`{{#no-minify}}        {{foo}}        {{/no-minify}}`);
 
-    let childNodes = this.$()[0].childNodes;
+    let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
     expect(childNodes[0]).to.be.a('text');
     expect(childNodes[0]).to.have.a.property('textContent', '        ');
@@ -124,7 +124,7 @@ describe('HBS Minifier plugin', function() {
 
   it('does not collapse multiple &nbsp; textNode into a single whitespace', function() {
     this.render(hbs`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
-    let childNodes = this.$()[0].childNodes;
+    let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
     expect(childNodes[1]).to.be.a('text');
     // checking for the length of the textNode is 2.
