@@ -1,7 +1,16 @@
 import { expect } from 'chai';
 import { describe, it, beforeEach } from 'mocha';
 import { setupComponentTest } from 'ember-mocha';
+import Ember from 'ember';
 import hbs from 'htmlbars-inline-precompile';
+
+// imported from https://github.com/emberjs/ember-test-helpers/blob/v0.7.16/addon-test-support/%40ember/test-helpers/has-ember-version.js
+function hasEmberVersion(major, minor) {
+  let numbers = Ember.VERSION.split('-')[0].split('.');
+  let actualMajor = parseInt(numbers[0], 10);
+  let actualMinor = parseInt(numbers[1], 10);
+  return actualMajor > major || (actualMajor === major && actualMinor >= minor);
+}
 
 describe('HBS Minifier plugin', function() {
   setupComponentTest('dummy-component', { integration: true });
@@ -14,18 +23,35 @@ describe('HBS Minifier plugin', function() {
     this.render(hbs`{{foo}}  \n\n   \n{{bar}}`);
 
     let childNodes = this.$()[0].childNodes;
-    expect(childNodes.length).to.equal(3);
-    expect(childNodes[1]).to.be.a('text');
-    expect(childNodes[1]).to.have.a.property('textContent', ' ');
+
+    if (hasEmberVersion(2, 10)) {
+      expect(childNodes.length).to.equal(3);
+      expect(childNodes[1]).to.be.a('text');
+      expect(childNodes[1]).to.have.a.property('textContent', ' ');
+    } else {
+      expect(childNodes.length).to.equal(5);
+      expect(childNodes[2]).to.be.a('text');
+      expect(childNodes[2]).to.have.a.property('textContent', ' ');
+    }
   });
 
   it('strips leading and trailing whitespace from Program nodes', function() {
     this.render(hbs`        {{foo}}        `);
 
     let childNodes = this.$()[0].childNodes;
-    expect(childNodes.length).to.equal(1);
-    expect(childNodes[0]).to.be.a('text');
-    expect(childNodes[0]).to.have.a.property('textContent', 'foo');
+    if (hasEmberVersion(2, 10)) {
+      expect(childNodes.length).to.equal(1);
+      expect(childNodes[0]).to.be.a('text');
+      expect(childNodes[0]).to.have.a.property('textContent', 'foo');
+    } else {
+      expect(childNodes.length).to.equal(3);
+      expect(childNodes[0]).to.be.a('text');
+      expect(childNodes[0]).to.have.a.property('textContent', '');
+      expect(childNodes[1]).to.be.a('text');
+      expect(childNodes[1]).to.have.a.property('textContent', 'foo');
+      expect(childNodes[2]).to.be.a('text');
+      expect(childNodes[2]).to.have.a.property('textContent', '');
+    }
   });
 
   it('Collapse leading/trailing text from Program nodes into a single whitespace', function() {
