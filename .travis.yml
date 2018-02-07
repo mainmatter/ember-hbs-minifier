@@ -23,10 +23,11 @@ before_install:
   - bower --version
 
 install:
-  - yarn install --no-lockfile
+  - yarn install --no-lockfile --non-interactive
   - bower install
 
 script:
+  - yarn lint:js
   - yarn test
   - yarn run ember try:each
 
