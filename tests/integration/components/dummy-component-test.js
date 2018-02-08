@@ -149,4 +149,110 @@ describe('HBS Minifier plugin', function() {
     expect(childNode.textContent.trim()).to.equal('1');
   });
 
+  it('does not minify `tagNames` specified in .hbs-minifyrc.js', function() {
+    this.render(hbs `
+<address>
+  Box 564,
+  <b>
+    Disneyland
+  </b>
+  <br>
+  <u> USA </u>
+</address>`);
+
+    let childNodes = this.$('address')[0].childNodes;
+    expect(childNodes[0].textContent).to.equal('\n  Box 564,\n  ');
+    // ensuring the textContent is surrounded by whitespaces
+    expect(childNodes[1].textContent).to.equal('\n    Disneyland\n  ');
+    expect(childNodes[2].textContent).to.equal('\n  ');
+    expect(childNodes[4].textContent).to.equal('\n  ');
+    expect(childNodes[5].textContent).to.equal(' USA ');
+  });
+
+
+  it('does not minify `classNames` specified in .hbs-minifyrc.js', function() {
+    this.render(hbs `
+<div class="description">
+  1
+  <span>
+    2
+  </span>
+</div>`);
+
+    let childNodes = this.$('div')[0].childNodes;
+    expect(childNodes[0].textContent).to.equal('\n  1\n  ');
+    expect(childNodes[1].textContent).to.equal('\n    2\n  ');
+    expect(childNodes[2].textContent).to.equal('\n');
+  });
+
+  it('does not minify `component` boundaries specified in .hbs-minifyrc.js', function() {
+    this.render(hbs `
+{{#foo-bar}}
+  <span>
+    yield content
+  </span>
+{{/foo-bar}}`);
+
+    let childNodes = this.$('div')[0].childNodes;
+    expect(childNodes[0].textContent).to.equal('1 ');
+    expect(childNodes[1].textContent).to.equal(' 2 ');
+    expect(childNodes[3].textContent).to.equal(' 3 ');
+    expect(childNodes[4].textContent).to.equal(' ');
+    expect(childNodes[5].textContent).to.equal('  ');
+    expect(childNodes[6].textContent).to.equal('\n    yield content\n  ');
+    expect(childNodes[7].textContent).to.equal('\n');
+  });
+
+  it('minify `tagNames` that are not specified in .hbs-minifyrc.js', function() {
+    this.render(hbs `
+  <ul>
+    <li>
+      1
+    </li>
+    <li>
+      2
+    </li>
+  </ul>`);
+
+    let childNodes = this.$('ul')[0].childNodes;
+    expect(childNodes.length).to.equal(3);
+    expect(childNodes[0].textContent).to.equal(' 1 ');
+    expect(childNodes[1].textContent).to.equal(' ');
+    expect(childNodes[2].textContent).to.equal(' 2 ');
+  });
+
+  it('minifies `classNames` that are not specified in .hbs-minifyrc.js', function() {
+    this.render(hbs `
+<div class="numbers">
+  1
+  <span>
+    2
+  </span>
+</div>`);
+
+    let childNodes = this.$('div')[0].childNodes;
+    expect(childNodes.length).to.equal(2);
+    expect(childNodes[0].textContent).to.equal(' 1 ');
+    expect(childNodes[1].textContent).to.equal(' 2 ');
+  });
+
+  it('minify `component` boundaries that are not specified in .hbs-minifyrc.js', function() {
+    this.render(hbs `
+{{#x-button tagName="button"}}
+  <div>
+    yield content
+  </div>
+{{/x-button}}`);
+
+    let childNodes = this.$('button')[0].childNodes;
+    // removing the textNodes with content as '' since htmlbars adds text node boundaries (at the begining and the end) of a template file.
+    expect([...childNodes].filter(node => node.textContent !== '').length).to.equal(2);
+    expect(childNodes[0].textContent).to.equal('save ');
+    expect(childNodes[1].nodeName).to.equal('DIV');
+    let yieldElementChildNodes = this.$('div')[0].childNodes;
+    expect(yieldElementChildNodes.length).to.equal(1);
+    expect(yieldElementChildNodes[0].textContent).to.equal(' yield content ');
+  });
+
+
 });

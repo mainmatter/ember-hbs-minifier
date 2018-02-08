@@ -50,6 +50,9 @@
     "jest": "^21.2.0",
     "loader.js": "^4.2.3"
   },
+  "dependencies": {
+    "object-hash": "1.2.0"
+  },
   "engines": {
     "node": ">= 4"
   },

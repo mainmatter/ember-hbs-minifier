@@ -1,9 +1,15 @@
 'use strict';
 
 /* eslint-env jest */
-
+const defaultConfig = {
+  skip: {
+    elements: ['pre', 'address'],
+    classes: ['description'],
+    components: ['foo-bar']
+  }
+};
 const glimmer = require('@glimmer/syntax');
-const HbsMinifierPlugin = require('./hbs-minifier-plugin');
+const HbsMinifierPlugin = require('./hbs-minifier-plugin')(defaultConfig);
 
 it('collapses whitespace into single space character', () => {
   assert(`{{foo}}  \n\n   \n{{bar}}`);
@@ -45,15 +51,71 @@ it('does not collapse whitespace inside of {{#no-minify}} tags in other tags', f
   assert(`<div>{{#no-minify}}  \n\n   \n{{/no-minify}}</div>`);
 });
 
-it('11. does not collapse multiple &nbsp; textNode into a single whitespace', function() {
+it('does not collapse multiple &nbsp; textNode into a single whitespace', function() {
   assert(`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
 });
 
-it('12. does not collapse &nbsp; surrounding a text content into a single whitespace', function() {
+it('does not collapse &nbsp; surrounding a text content into a single whitespace', function() {
   assert(`<div>
   <span>    &nbsp;1&nbsp;   </span>
   <span> 2   </span>
 </div>`);
+});
+
+it('does not minify `tagNames` specified in .hbs-minifyrc.js', function() {
+  assert(`<address>
+  Box 564,
+  <b>
+    Disneyland
+  </b>
+  <br>
+  <u> USA </u>
+</address>`);
+});
+
+it('does not minify `classNames` specified in .hbs-minifyrc.js', function() {
+  assert(`<div class="description">
+  1
+  <span>
+    2
+  </span>
+</div>`);
+});
+
+it('does not minify `components` specified in .hbs-minifyrc.js', function() {
+  assert(`{{#foo-bar}}
+  <span>
+    yield content
+  </span>
+{{/foo-bar}}`);
+});
+
+it('minifies `tagNames` that are not specified in .hbs-minifyrc.js', function() {
+  assert(`<section>
+  Box 564,
+  <b>
+    Disneyland
+  </b>
+  <br>
+  <u> USA </u>
+</section>`);
+});
+
+it('minifies `classNames` that are not specified in .hbs-minifyrc.js', function() {
+  assert(`<div class="contact-details">
+  John Smith
+  <i>
+    (Entrepreneur)
+  </i>
+</div>`);
+});
+
+it('minifies `components` that are not specified in .hbs-minifyrc.js', function() {
+  assert(`{{#my-component}}
+  <span>
+    yield content
+  </span>
+{{/my-component}}`);
 });
 
 function assert(template) {
@@ -65,9 +127,12 @@ function assert(template) {
 }
 
 function process(template) {
+  let plugin = () => {
+    return HbsMinifierPlugin.createASTPlugin(defaultConfig.skip);
+  };
   return glimmer.preprocess(template, {
     plugins: {
-      ast: [HbsMinifierPlugin.createASTPlugin]
+      ast: [plugin]
     }
   });
 }
