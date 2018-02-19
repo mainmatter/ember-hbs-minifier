@@ -108,36 +108,36 @@ function canTrimUnnecessaryWhiteSpace(value, config) {
 }
 
 
-const canTrimBlockStatementContent = function(node, config) {
+function canTrimBlockStatementContent(node, config) {
   // If a block or all the blocks is/are skiped (or) named as 'no-minify' then we need to preserve the whitespace.
   let componentName = node.path.original;
-  if (config.components.indexOf(componentName) !== -1 || componentName === 'no-minify' || config.components === 'all') {
-    return false;
-  }
-  return true;
-};
+  let components = config.components;
+  return !(components.indexOf(componentName) !== -1 || componentName === 'no-minify' || components === 'all');
+}
 
-const canTrimElementNodeContent = function(node, config) {
+function canTrimElementNodeContent(node, config) {
   // If a element or all the element is/are skiped then we need to preserve the whitespace.
-  if (config.elements.indexOf(node.tag) !== -1 || config.elements === 'all') {
+  let elements = config.elements;
+  let tag = node.tag;
+  if (elements.indexOf(tag) !== -1 || elements === 'all' || tag === 'pre') {
     return false;
   }
   let classAttributes = getElementAttribute(node, 'class');
   return classAttributes ? canTrimUnnecessaryWhiteSpace(classAttributes, config) : true;
-};
+}
 
-const assignDefaultValues = function(config) {
+function assignDefaultValues(config) {
   config = config || {};
-  let elements = config.elements || 'all';
-  let classes = config.classes || 'all';
-  let components = config.components || 'all';
+  let elements = config.elements || [];
+  let classes = config.classes || [];
+  let components = config.components || [];
 
   return {
     elements,
     classes,
     components
   };
-};
+}
 
 module.exports = {
   stripWhiteSpace,
