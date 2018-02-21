@@ -8,11 +8,9 @@ const hasLeadingOrTrailingWhiteSpace = Util.hasLeadingOrTrailingWhiteSpace;
 const stripNoMinifyBlocks = Util.stripNoMinifyBlocks;
 const canTrimBlockStatementContent = Util.canTrimBlockStatementContent;
 const canTrimElementNodeContent = Util.canTrimElementNodeContent;
-const assignDefaultValues = Util.assignDefaultValues;
 
 class BasePlugin {
   static createASTPlugin(config) {
-    config = config || {};
     let preStack = [];
     let visitor = {
       TextNode(node) {
@@ -56,10 +54,6 @@ class BasePlugin {
 
         exit(node) {
           node.body = stripNoMinifyBlocks(node.body);
-
-          if (preStack[preStack.length - 1] === node) {
-            preStack.pop();
-          }
         },
       },
 
@@ -101,15 +95,12 @@ class BasePlugin {
 }
 
 module.exports = function(config) {
-  config = config || {};
-  config = assignDefaultValues(config);
-
   return class HBSMinifierPlugin extends BasePlugin {
 
     transform(ast) {
       let startLoc = ast.loc ? ast.loc.start : {};
       /*
-        checking for line and column to avoid registering the plugin for ProgramNode inside a BlockStatement.
+        Checking for line and column to avoid registering the plugin for ProgramNode inside a BlockStatement since transform is called for all ProgramNodes in Ember 2.15.X. Removing this would result in minifying all the TextNodes.
       */
       if (startLoc.line !== 1 || startLoc.column !== 0) {
         return ast;

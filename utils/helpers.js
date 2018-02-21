@@ -45,7 +45,7 @@ function isClassIncluded(chars, classes) {
   });
 }
 
-function canTrimUnnecessaryWhiteSpace(value, config) {
+function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
   /*
     1. If no value is provided for class, the we can minify the content.
     2. If all classNames need to be preserved, then we must preserve the whitespace.
@@ -73,15 +73,15 @@ function canTrimUnnecessaryWhiteSpace(value, config) {
   if (!value) {
     return true;
   }
-  if (config.classes === 'all') {
+  if (configClassNames === 'all') {
     return false;
   }
   let type = value.type;
 
   if (type === 'TextNode') {
-    return !isClassIncluded(value.chars, config.classes);
+    return !isClassIncluded(value.chars, configClassNames);
   } else if (type === 'StringLiteral') {
-    return !isClassIncluded(value.value, config.classes);
+    return !isClassIncluded(value.value, configClassNames);
   } else if (type === 'PathExpression') {
     return false;
   } else if (type === 'MustacheStatement') {
@@ -90,7 +90,7 @@ function canTrimUnnecessaryWhiteSpace(value, config) {
     if (['if', 'unless'].indexOf(value.path.original) !== -1) {
       let params = value.params;
       for (let i = 1; i < params.length; i++) {
-        canTrim = canTrimUnnecessaryWhiteSpace(params[i], config);
+        canTrim = canTrimWhiteSpaceBasedOnClassNames(params[i], configClassNames);
         if (!canTrim) {
           break;
         }
@@ -101,7 +101,7 @@ function canTrimUnnecessaryWhiteSpace(value, config) {
     let parts = value.parts;
 
     return parts.every((part) => {
-      return canTrimUnnecessaryWhiteSpace(part, config);
+      return canTrimWhiteSpaceBasedOnClassNames(part, configClassNames);
     });
   }
   return true;
@@ -112,25 +112,25 @@ function canTrimBlockStatementContent(node, config) {
   // If a block or all the blocks is/are skiped (or) named as 'no-minify' then we need to preserve the whitespace.
   let componentName = node.path.original;
   let components = config.components;
-  return !(components.indexOf(componentName) !== -1 || componentName === 'no-minify' || components === 'all');
+  return !(components.indexOf(componentName) !== -1 || components === 'all');
 }
 
 function canTrimElementNodeContent(node, config) {
   // If a element or all the element is/are skiped then we need to preserve the whitespace.
   let elements = config.elements;
   let tag = node.tag;
-  if (elements.indexOf(tag) !== -1 || elements === 'all' || tag === 'pre') {
+  if (elements.indexOf(tag) !== -1 || elements === 'all') {
     return false;
   }
   let classAttributes = getElementAttribute(node, 'class');
-  return classAttributes ? canTrimUnnecessaryWhiteSpace(classAttributes, config) : true;
+  return classAttributes ? canTrimWhiteSpaceBasedOnClassNames(classAttributes, config.classes) : true;
 }
 
 function assignDefaultValues(config) {
   config = config || {};
-  let elements = config.elements || [];
+  let elements = config.elements || ['pre'];
   let classes = config.classes || [];
-  let components = config.components || [];
+  let components = config.components || ['no-minify'];
 
   return {
     elements,

@@ -1,6 +1,7 @@
 /* eslint-env node */
 'use strict';
 let objectHash = require('object-hash');
+const Util = require('./utils/helpers');
 
 module.exports = {
   name: 'ember-hbs-minifier',
@@ -10,7 +11,7 @@ module.exports = {
     let options = app.options || {};
     let config = options['ember-hbs-minifier'] || {};
 
-    let HbsMinifierPlugin = require('./hbs-minifier-plugin')(config.skip || {});
+    let HbsMinifierPlugin = require('./hbs-minifier-plugin')(Util.assignDefaultValues(config.skip));
     registry.add('htmlbars-ast-plugin', {
       name: 'hbs-minifier-plugin',
       plugin: HbsMinifierPlugin,
