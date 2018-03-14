@@ -18,28 +18,15 @@ Usage
 
 `ember-hbs-minifier` will remove unnecessary text nodes from your templates
 and collapse whitespace into single space characters. This is all done
-automatically for you (without having to use e.g. `{{~foo~}}`).
+automatically for you (without having to use e.g. `{{~foo~}}`) but is
+disabled for certain situations:
 
+- Inside of `<pre></pre>` tags
 
-Here is the default configuration.
+- Inside of `{{#no-minify}}{{/no-minify}}` blocks
+  (these will be stripped from the template)
 
-#### ember-cli-build.js
-```javascript
-
-  'ember-hbs-minifier': {
-    skip: {
-      classes: [],
-      elements: ['pre'], //Inside of `<pre></pre>` tags are skipped.
-      components: ['no-minify'] //Inside of `{{#no-minify}}{{/no-minify}}` blocks are skipped. You can provide your own config here say, contact-details, 'address-section'
-    }
-  }
-```
-
-Note:
-
-- This does not work across component/template boundaries.
-
-- `no-minify` wrappers are stripped from the template.
+Please note that this does not work across component/template boundaries.
 
 What happens in particular is:
 
@@ -48,6 +35,27 @@ What happens in particular is:
 
 - Leading or trailing text nodes inside of tags or handlebars blocks
   containing only whitespace are removed entirely
+
+
+### Configuration
+
+If you want to disable the whitespace stripping behavior for other tags,
+components, or elements with certain CSS classes you can adjust the default
+configuration in your `ember-cli-build.js` file:
+
+```javascript
+  let app = new EmberApp({
+    'ember-hbs-minifier': {
+      skip: {
+        classes: [],
+        // skip whitespace stripping in `<pre></pre>` tags
+        elements: ['pre'], 
+        // skip whitespace stripping in `{{#no-minify}}{{/no-minify}}` blocks
+        components: ['no-minify'],
+      },
+    },
+  });
+```
 
 
 License
