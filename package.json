@@ -27,7 +27,6 @@
   "devDependencies": {
     "@glimmer/syntax": "^0.29.1",
     "broccoli-asset-rev": "^2.4.5",
-    "ember-ajax": "^2.4.1",
     "ember-cli": "~2.12.3",
     "ember-cli-babel": "^6.11.0",
     "ember-cli-chai": "0.3.2",
