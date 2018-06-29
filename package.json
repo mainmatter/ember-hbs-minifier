@@ -16,7 +16,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/simplabs/ember-hbs-minifier",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
