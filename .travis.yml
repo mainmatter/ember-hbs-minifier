@@ -5,6 +5,12 @@ node_js:
   # so that your addon works for all apps
   - 6
 
+branches:
+  only:
+    - master
+    # npm version tags
+    - /^v\d+\.\d+\.\d+/
+
 addons:
   chrome: stable
 
