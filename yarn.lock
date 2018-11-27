@@ -14,11 +14,11 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@glimmer/di/-/di-0.2.0.tgz#73bfd4a6ee4148a80bf092e8a5d29bcac9d4ce7e"
 
-"@glimmer/interfaces@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.33.0.tgz#bbf58422e15d6a1f11d917516ba92a0e5185711d"
+"@glimmer/interfaces@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.36.5.tgz#b9ef4a6756745dc41927ab01d6c23cdf7ece4158"
   dependencies:
-    "@glimmer/wire-format" "^0.33.0"
+    "@glimmer/wire-format" "^0.36.5"
 
 "@glimmer/resolver@^0.4.1":
   version "0.4.3"
@@ -26,24 +26,24 @@
   dependencies:
     "@glimmer/di" "^0.2.0"
 
-"@glimmer/syntax@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.33.0.tgz#5def8048e282f2ad7d77cdfa8859b2f292cdb697"
+"@glimmer/syntax@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.36.5.tgz#603099a0bf2019dc497e3b858eb6fc84abda805a"
   dependencies:
-    "@glimmer/interfaces" "^0.33.0"
-    "@glimmer/util" "^0.33.0"
+    "@glimmer/interfaces" "^0.36.5"
+    "@glimmer/util" "^0.36.5"
     handlebars "^4.0.6"
-    simple-html-tokenizer "^0.4.1"
+    simple-html-tokenizer "^0.5.6"
 
-"@glimmer/util@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.33.0.tgz#8271fbcb59989f8475c316887d49b622b84a2dfa"
+"@glimmer/util@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.36.5.tgz#829f393ef0bf791df5b287f104f0fd76e456182c"
 
-"@glimmer/wire-format@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.33.0.tgz#e3e42ec205a5bf7fd9349b79da4632df999dbe45"
+"@glimmer/wire-format@^0.36.5":
+  version "0.36.5"
+  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.36.5.tgz#6713c95fbdc23c2e4dcc946e16452ded5cc17447"
   dependencies:
-    "@glimmer/util" "^0.33.0"
+    "@glimmer/util" "^0.36.5"
 
 abab@^1.0.3:
   version "1.0.4"
@@ -5763,9 +5763,9 @@ simple-dom@^0.3.0:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/simple-dom/-/simple-dom-0.3.2.tgz#0663d10f1556f1500551d518f56e3aba0871371d"
 
-simple-html-tokenizer@^0.4.1:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.4.3.tgz#9b00b766e30058b4bb377c0d4f97566a13ab1be1"
+simple-html-tokenizer@^0.5.6:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.5.7.tgz#8eca336ecfbe2b3c6166cbb31b2682088de79f40"
 
 slash@^1.0.0:
   version "1.0.0"
