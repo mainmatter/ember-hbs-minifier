@@ -42,7 +42,7 @@
     "ember-resolver": "^4.5.4",
     "ember-source": "~2.12.0",
     "eslint-config-simplabs": "0.2.2",
-    "jest": "^21.2.0",
+    "jest": "^23.6.0",
     "loader.js": "^4.2.3"
   },
   "dependencies": {
