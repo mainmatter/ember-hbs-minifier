@@ -25,6 +25,7 @@
     "lint": "eslint app addon blueprints config server test-support tests *.js"
   },
   "devDependencies": {
+    "@ember/optional-features": "^0.7.0",
     "@glimmer/syntax": "^0.33.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-cli": "~3.9.0",
