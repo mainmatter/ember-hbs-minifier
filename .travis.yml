@@ -1,4 +1,3 @@
----
 language: node_js
 node_js: "8"
 
@@ -8,13 +7,8 @@ branches:
     # npm version tags
     - /^v\d+\.\d+\.\d+/
 
-addons:
-  chrome: stable
-
 cache:
   yarn: true
-  directories:
-    - $HOME/.cache # includes bowers cache
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
@@ -23,15 +17,25 @@ before_install:
 install:
   - yarn install --no-lockfile
 
-script:
-  - yarn test
-  - yarn run ember try:each
+jobs:
+  include:
+    - stage: "Tests"
+      name: "Unit Tests"
+      script: yarn test
 
-deploy:
-  provider: npm
-  email: info@simplabs.com
-  api_key:
-    secure: fUQuE1+vcv9Fo4PcwSMsSQ+gigfPEvfSSiAl/UoUM/1b1PL9DzCqLRHJQfE2oZqcTgbtJ+cc/4745oiQ8+yWvxUKM9+aLeY2tIwL1+WegKL9R5sHrtJz9IImwO1mbBaVJwQUL84BT/p80Dy2RniJucq0mo7I1+yBX05eQeKbYUjLd8k2UaBqCKJzyEYH/UEqrFwxsjcHOI0lcnPEG2io8foK8MUlCN8aLlnVh8x3ArBi0N+gO7DvsSMF5YFqPqJ+rAPG+zJfFQdyJJcOsctQoLr5ym0gWu7Pw3Ya/XvuvGAoO/Xmw6rum9AwXdZSi4ZsxaU6/TLrPD97+MSAVpglr2TxpZP9y3PVk2Xc+VVDyk5j0jAVNUMTbOG8L4OMiUf7ZRsFC3aW76yq9xiIjKEAOL3FinGMSFRvwyJhmPohh+KjrH0Gsu5RDB7yHMNFFeKITAJMLOPVerqOLl1jr6q2YPA9wJZKgH/0B8ZuVNm+kPKlNG9+PP6wuG25hmJ6oGFVcFgCjFzjmudkOGUmSEf90mFMBffYizZskgpFcKfTVDJjhLwHUAYCtavMGaaBngxcWEAm5XxvVgg1t4Xw5o+eNuACta9r86tBhaJZWD58O6uO7oivf+t46D0EO5wR9+GyQWE9sD/D0Gw8jxTAxaOocKYegDqGaOs7pLFb7ghPIcg=
-  on:
-    tags: true
-    repo: simplabs/ember-hbs-minifier
+    - name: "Ember Tests"
+      addons:
+        chrome: stable
+      script: yarn ember try:each
+
+    - stage: "Publish"
+      name: "npm"
+      if: tag IS present
+      deploy:
+        provider: npm
+        email: info@simplabs.com
+        api_key:
+          secure: fUQuE1+vcv9Fo4PcwSMsSQ+gigfPEvfSSiAl/UoUM/1b1PL9DzCqLRHJQfE2oZqcTgbtJ+cc/4745oiQ8+yWvxUKM9+aLeY2tIwL1+WegKL9R5sHrtJz9IImwO1mbBaVJwQUL84BT/p80Dy2RniJucq0mo7I1+yBX05eQeKbYUjLd8k2UaBqCKJzyEYH/UEqrFwxsjcHOI0lcnPEG2io8foK8MUlCN8aLlnVh8x3ArBi0N+gO7DvsSMF5YFqPqJ+rAPG+zJfFQdyJJcOsctQoLr5ym0gWu7Pw3Ya/XvuvGAoO/Xmw6rum9AwXdZSi4ZsxaU6/TLrPD97+MSAVpglr2TxpZP9y3PVk2Xc+VVDyk5j0jAVNUMTbOG8L4OMiUf7ZRsFC3aW76yq9xiIjKEAOL3FinGMSFRvwyJhmPohh+KjrH0Gsu5RDB7yHMNFFeKITAJMLOPVerqOLl1jr6q2YPA9wJZKgH/0B8ZuVNm+kPKlNG9+PP6wuG25hmJ6oGFVcFgCjFzjmudkOGUmSEf90mFMBffYizZskgpFcKfTVDJjhLwHUAYCtavMGaaBngxcWEAm5XxvVgg1t4Xw5o+eNuACta9r86tBhaJZWD58O6uO7oivf+t46D0EO5wR9+GyQWE9sD/D0Gw8jxTAxaOocKYegDqGaOs7pLFb7ghPIcg=
+        on:
+          tags: true
+          repo: simplabs/ember-hbs-minifier
