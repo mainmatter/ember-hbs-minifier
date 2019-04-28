@@ -26,14 +26,6 @@ expect.addSnapshotSerializer({
   },
 });
 
-const defaultConfig = {
-  skip: {
-    elements: ['pre', 'address'],
-    classes: ['description'],
-    components: ['foo-bar', 'no-minify']
-  }
-};
-
 for (let version of versions) {
   let moduleName = 'HBS Minifier plugin';
   if (version !== DEFAULT) {
@@ -97,6 +89,10 @@ for (let version of versions) {
     });
 
     it('does not minify `tagNames` specified in .hbs-minifyrc.js', function() {
+      let config = {
+        skip: { elements: ['address'] },
+      };
+
       assert(`<address>
   Box 564,
   <b>
@@ -104,24 +100,32 @@ for (let version of versions) {
   </b>
   <br>
   <u> USA </u>
-</address>`);
+</address>`, config);
     });
 
     it('does not minify `classNames` specified in .hbs-minifyrc.js', function() {
+      let config = {
+        skip: { classes: ['description'] },
+      };
+
       assert(`<div class="description">
   1
   <span>
     2
   </span>
-</div>`);
+</div>`, config);
     });
 
     it('does not minify `components` specified in .hbs-minifyrc.js', function() {
+      let config = {
+        skip: { components: ['foo-bar'] },
+      };
+
       assert(`{{#foo-bar}}
   <span>
     yield content
   </span>
-{{/foo-bar}}`);
+{{/foo-bar}}`, config);
     });
 
     it('minifies `tagNames` that are not specified in .hbs-minifyrc.js', function() {
@@ -152,17 +156,17 @@ for (let version of versions) {
 {{/my-component}}`);
     });
 
-    function assert(template) {
-      let ast = process(template);
+    function assert(template, config = {}) {
+      let ast = process(template, config);
       expect(ast).toMatchSnapshot();
 
       let printed = glimmer.print(ast);
       expect(`${template}\n---\n${printed}`).toMatchSnapshot();
     }
 
-    function process(template) {
+    function process(template, config) {
       let plugin = () => {
-        return require('./hbs-minifier-plugin').createGlimmerPlugin(defaultConfig);
+        return require('./hbs-minifier-plugin').createGlimmerPlugin(config);
       };
       return glimmer.preprocess(template, {
         plugins: {
