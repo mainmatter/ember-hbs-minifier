@@ -7,13 +7,17 @@ const trailingWhiteSpace = /[ \t\r\n]+$/;
 const WHITESPACE = /^[ \t\r\n]+$/;
 
 function createGlimmerPlugin(config) {
-  let preStack = [];
+  // in this stack we track the nodes that cause us to skip the minification
+  // e.g. `{{#no-minify}} ... {{/no-minify}}` blocks or `<pre></pre>` tags
+  // depending on the configuration
+  let skipStack = [];
+
   return {
     name: 'hbs-minifier-plugin',
 
     visitor: {
       TextNode(node) {
-        if (preStack.length === 0) {
+        if (skipStack.length === 0) {
           // replace leading and trailing whitespace with a single whitespace character
           node.chars = node.chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
         }
@@ -23,20 +27,20 @@ function createGlimmerPlugin(config) {
         enter(node) {
           let canTrim = canTrimBlockStatementContent(node, config);
           if (!canTrim) {
-            preStack.push(node);
+            skipStack.push(node);
           }
         },
 
         exit(node) {
-          if (preStack[preStack.length - 1] === node) {
-            preStack.pop();
+          if (skipStack[skipStack.length - 1] === node) {
+            skipStack.pop();
           }
         },
       },
 
       Program: {
         enter(node) {
-          if (preStack.length !== 0) {
+          if (skipStack.length !== 0) {
             return;
           }
 
@@ -61,10 +65,10 @@ function createGlimmerPlugin(config) {
           let canTrim = canTrimElementNodeContent(node, config);
 
           if (!canTrim) {
-            preStack.push(node);
+            skipStack.push(node);
           }
 
-          if (preStack.length !== 0) {
+          if (skipStack.length !== 0) {
             return;
           }
 
@@ -82,8 +86,8 @@ function createGlimmerPlugin(config) {
         exit(node) {
           node.children = stripNoMinifyBlocks(node.children);
 
-          if (preStack[preStack.length - 1] === node) {
-            preStack.pop();
+          if (skipStack[skipStack.length - 1] === node) {
+            skipStack.pop();
           }
         }
       },
