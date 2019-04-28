@@ -22,7 +22,7 @@
     "start": "ember server",
     "test": "jest",
     "test:ember": "ember test",
-    "lint": "eslint app addon blueprints config server test-support tests *.js"
+    "lint": "eslint . --cache"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",
@@ -32,7 +32,6 @@
     "ember-cli-babel": "^6.11.0",
     "ember-cli-chai": "0.5.0",
     "ember-cli-dependency-checker": "^3.0.0",
-    "ember-cli-eslint": "^4.2.3",
     "ember-cli-htmlbars": "^3.0.1",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
     "ember-cli-inject-live-reload": "^2.0.1",
@@ -44,6 +43,7 @@
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.9.0",
     "ember-try": "^1.1.0",
+    "eslint": "^5.16.0",
     "eslint-config-simplabs": "0.4.0",
     "jest": "^24.1.0",
     "loader.js": "^4.2.3"

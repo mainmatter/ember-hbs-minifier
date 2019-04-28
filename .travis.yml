@@ -20,7 +20,10 @@ install:
 jobs:
   include:
     - stage: "Tests"
-      name: "Unit Tests"
+      name: "Lint"
+      script: yarn lint
+
+    - name: "Unit Tests"
       script: yarn test
 
     - name: "Ember Tests"
