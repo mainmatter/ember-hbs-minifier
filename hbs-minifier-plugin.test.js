@@ -159,7 +159,7 @@ for (let version of versions) {
       expect(ast).toMatchSnapshot();
 
       let printed = glimmer.print(ast);
-      expect(printed).toMatchSnapshot();
+      expect(`${template}\n---\n${printed}`).toMatchSnapshot();
     }
 
     function process(template) {
