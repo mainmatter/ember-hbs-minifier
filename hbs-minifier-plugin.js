@@ -12,85 +12,86 @@ const canTrimElementNodeContent = Util.canTrimElementNodeContent;
 class BasePlugin {
   static createASTPlugin(config) {
     let preStack = [];
-    let visitor = {
-      TextNode(node) {
-        let chars = node.chars;
-        if (preStack.length === 0 && hasLeadingOrTrailingWhiteSpace(chars)) {
-          node.chars = stripWhiteSpace(chars);
-        }
-      },
+    return {
+      name: 'hbs-minifier-plugin',
 
-      BlockStatement: {
-        enter(node) {
-          let canTrim = canTrimBlockStatementContent(node, config);
-          if (!canTrim) {
-            preStack.push(node);
+      visitor: {
+        TextNode(node) {
+          let chars = node.chars;
+          if (preStack.length === 0 && hasLeadingOrTrailingWhiteSpace(chars)) {
+            node.chars = stripWhiteSpace(chars);
           }
         },
 
-        exit(node) {
-          if (preStack[preStack.length - 1] === node) {
-            preStack.pop();
-          }
-        },
-      },
+        BlockStatement: {
+          enter(node) {
+            let canTrim = canTrimBlockStatementContent(node, config);
+            if (!canTrim) {
+              preStack.push(node);
+            }
+          },
 
-      Program: {
-        enter(node) {
-          if (preStack.length !== 0) {
-            return;
-          }
-
-          let firstChild = node.body[0];
-          if (isWhitespaceTextNode(firstChild)) {
-            node.body.shift();
-          }
-
-          let lastChild = node.body[node.body.length - 1];
-          if (isWhitespaceTextNode(lastChild)) {
-            node.body.pop();
-          }
+          exit(node) {
+            if (preStack[preStack.length - 1] === node) {
+              preStack.pop();
+            }
+          },
         },
 
-        exit(node) {
-          node.body = stripNoMinifyBlocks(node.body);
-        },
-      },
+        Program: {
+          enter(node) {
+            if (preStack.length !== 0) {
+              return;
+            }
 
-      ElementNode: {
-        enter(node) {
-          let canTrim = canTrimElementNodeContent(node, config);
+            let firstChild = node.body[0];
+            if (isWhitespaceTextNode(firstChild)) {
+              node.body.shift();
+            }
 
-          if (!canTrim) {
-            preStack.push(node);
-          }
+            let lastChild = node.body[node.body.length - 1];
+            if (isWhitespaceTextNode(lastChild)) {
+              node.body.pop();
+            }
+          },
 
-          if (preStack.length !== 0) {
-            return;
-          }
-
-          let firstChild = node.children[0];
-          if (isWhitespaceTextNode(firstChild)) {
-            node.children.shift();
-          }
-
-          let lastChild = node.children[node.children.length - 1];
-          if (isWhitespaceTextNode(lastChild)) {
-            node.children.pop();
-          }
+          exit(node) {
+            node.body = stripNoMinifyBlocks(node.body);
+          },
         },
 
-        exit(node) {
-          node.children = stripNoMinifyBlocks(node.children);
+        ElementNode: {
+          enter(node) {
+            let canTrim = canTrimElementNodeContent(node, config);
 
-          if (preStack[preStack.length - 1] === node) {
-            preStack.pop();
+            if (!canTrim) {
+              preStack.push(node);
+            }
+
+            if (preStack.length !== 0) {
+              return;
+            }
+
+            let firstChild = node.children[0];
+            if (isWhitespaceTextNode(firstChild)) {
+              node.children.shift();
+            }
+
+            let lastChild = node.children[node.children.length - 1];
+            if (isWhitespaceTextNode(lastChild)) {
+              node.children.pop();
+            }
+          },
+
+          exit(node) {
+            node.children = stripNoMinifyBlocks(node.children);
+
+            if (preStack[preStack.length - 1] === node) {
+              preStack.pop();
+            }
           }
-        }
-      },
-    };
-
-    return { name: 'hbs-minifier-plugin', visitor };
+        },
+      } };
   }
 }
 
