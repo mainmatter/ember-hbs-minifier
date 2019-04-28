@@ -10,7 +10,7 @@ module.exports = {
     let options = app.options || {};
     let config = options['ember-hbs-minifier'] || {};
 
-    let HbsMinifierPlugin = require('./hbs-minifier-plugin')(assignDefaultValues(config.skip));
+    let HbsMinifierPlugin = require('./hbs-minifier-plugin').createRegistryPlugin(assignDefaultValues(config.skip));
     registry.add('htmlbars-ast-plugin', {
       name: 'hbs-minifier-plugin',
       plugin: HbsMinifierPlugin,

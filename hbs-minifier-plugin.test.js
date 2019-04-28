@@ -34,8 +34,6 @@ const defaultConfig = {
   }
 };
 
-const HbsMinifierPlugin = require('./hbs-minifier-plugin')(defaultConfig);
-
 for (let version of versions) {
   let moduleName = 'HBS Minifier plugin';
   if (version !== DEFAULT) {
@@ -164,7 +162,7 @@ for (let version of versions) {
 
     function process(template) {
       let plugin = () => {
-        return HbsMinifierPlugin.createASTPlugin(defaultConfig.skip);
+        return require('./hbs-minifier-plugin').createGlimmerPlugin(defaultConfig.skip);
       };
       return glimmer.preprocess(template, {
         plugins: {
