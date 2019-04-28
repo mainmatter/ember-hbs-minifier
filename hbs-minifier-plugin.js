@@ -1,54 +1,50 @@
 'use strict';
 
 /* eslint-env node */
-const Util = require('./utils/helpers');
-const stripWhiteSpace = Util.stripWhiteSpace;
-const isWhitespaceTextNode = Util.isWhitespaceTextNode;
-const hasLeadingOrTrailingWhiteSpace = Util.hasLeadingOrTrailingWhiteSpace;
-const stripNoMinifyBlocks = Util.stripNoMinifyBlocks;
-const canTrimBlockStatementContent = Util.canTrimBlockStatementContent;
-const canTrimElementNodeContent = Util.canTrimElementNodeContent;
 
-class BasePlugin {
-  static createASTPlugin(config) {
-    let preStack = [];
-    let visitor = {
+const leadingWhiteSpace = /^[ \t\r\n]+/;
+const trailingWhiteSpace = /[ \t\r\n]+$/;
+const WHITESPACE = /^[ \t\r\n]+$/;
+
+function createGlimmerPlugin(config) {
+  // in this stack we track the nodes that cause us to skip the minification
+  // e.g. `{{#no-minify}} ... {{/no-minify}}` blocks or `<pre></pre>` tags
+  // depending on the configuration
+  let skipStack = [];
+
+  function insideSkipBlock() {
+    return skipStack.length !== 0;
+  }
+
+  return {
+    name: 'hbs-minifier-plugin',
+
+    visitor: {
       TextNode(node) {
-        let chars = node.chars;
-        if (preStack.length === 0 && hasLeadingOrTrailingWhiteSpace(chars)) {
-          node.chars = stripWhiteSpace(chars);
+        if (!insideSkipBlock()) {
+          // replace leading and trailing whitespace with a single whitespace character
+          node.chars = node.chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
         }
       },
 
       BlockStatement: {
         enter(node) {
-          let canTrim = canTrimBlockStatementContent(node, config);
-          if (!canTrim) {
-            preStack.push(node);
+          if (shouldSkipBlockStatement(node, config)) {
+            skipStack.push(node);
           }
         },
 
         exit(node) {
-          if (preStack[preStack.length - 1] === node) {
-            preStack.pop();
+          if (skipStack[skipStack.length - 1] === node) {
+            skipStack.pop();
           }
         },
       },
 
       Program: {
         enter(node) {
-          if (preStack.length !== 0) {
-            return;
-          }
-
-          let firstChild = node.body[0];
-          if (isWhitespaceTextNode(firstChild)) {
-            node.body.shift();
-          }
-
-          let lastChild = node.body[node.body.length - 1];
-          if (isWhitespaceTextNode(lastChild)) {
-            node.body.pop();
+          if (!insideSkipBlock()) {
+            removeSurroundingWhitespaceNodes(node.body);
           }
         },
 
@@ -59,44 +55,29 @@ class BasePlugin {
 
       ElementNode: {
         enter(node) {
-          let canTrim = canTrimElementNodeContent(node, config);
-
-          if (!canTrim) {
-            preStack.push(node);
+          if (shouldSkipElementNode(node, config) || shouldSkipClass(node, config)) {
+            skipStack.push(node);
           }
 
-          if (preStack.length !== 0) {
-            return;
-          }
-
-          let firstChild = node.children[0];
-          if (isWhitespaceTextNode(firstChild)) {
-            node.children.shift();
-          }
-
-          let lastChild = node.children[node.children.length - 1];
-          if (isWhitespaceTextNode(lastChild)) {
-            node.children.pop();
+          if (!insideSkipBlock()) {
+            removeSurroundingWhitespaceNodes(node.children);
           }
         },
 
         exit(node) {
           node.children = stripNoMinifyBlocks(node.children);
 
-          if (preStack[preStack.length - 1] === node) {
-            preStack.pop();
+          if (skipStack[skipStack.length - 1] === node) {
+            skipStack.pop();
           }
         }
       },
-    };
-
-    return { name: 'hbs-minifier-plugin', visitor };
-  }
+    }
+  };
 }
 
-module.exports = function(config) {
-  return class HBSMinifierPlugin extends BasePlugin {
-
+function createRegistryPlugin(config) {
+  return class HBSMinifierPlugin {
     transform(ast) {
       let startLoc = ast.loc ? ast.loc.start : {};
       /*
@@ -106,9 +87,141 @@ module.exports = function(config) {
         return ast;
       }
 
-      let plugin = HBSMinifierPlugin.createASTPlugin(config);
+      let plugin = createGlimmerPlugin(config);
       this.syntax.traverse(ast, plugin.visitor);
       return ast;
     }
   };
+}
+
+function isWhitespaceTextNode(node) {
+  return node && node.type === 'TextNode' && WHITESPACE.test(node.chars);
+}
+
+function stripNoMinifyBlocks(nodes) {
+  return nodes.map(node => {
+    if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
+      return node.program.body;
+    }
+    return node;
+  }).reduce((a, b) => a.concat(b), []);
+}
+
+function removeSurroundingWhitespaceNodes(nodes) {
+  // remove leading text node if it contains only whitespace
+  if (isWhitespaceTextNode(nodes[0])) {
+    nodes.shift();
+  }
+
+  // remove trailing text node if it contains only whitespace
+  if (isWhitespaceTextNode(nodes[nodes.length - 1])) {
+    nodes.pop();
+  }
+}
+
+function isClassIncluded(chars, classes) {
+  chars = (chars || '').trim().split(' ');
+
+  return chars.some((char) => {
+    return classes.indexOf(char) !== -1;
+  });
+}
+
+function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
+  /*
+    1. If no value is provided for class, the we can minify the content.
+    2. If all classNames need to be preserved, then we must preserve the whitespace.
+    3. If a string specified(class) contains a class which needs to be skipped then we must preserve the whitespace.
+        For instance:
+          <div class="foo bar">
+            baz
+          </div>
+    4. If a PathExpression is provided as mentioned below, we should preserve the whitespace since the value is known only at runtime.
+        For instance:
+          <div class={{foo}}>
+            bar
+          <div>
+    5. If a MustacheStatement is provided as mentioned below. Incase if its a helper if/unless, we need to preserve if any class that needs to be skipped is specified which can be found by following steps 1 to 4.
+        For instance:
+          <div class={{if foo 'bar' 'baz'}}>
+            qux
+          <div>
+    6. If a ConcatStatement is provided, for instance,
+        <div class="foo {{bar}} qux">
+          bar
+        <div>
+       we need to preserve the whitespace if any class that needs to be skipped is specified which can be found by following steps 1 to 4.
+  */
+  if (!value) {
+    return true;
+  }
+  if (configClassNames === 'all') {
+    return false;
+  }
+  let type = value.type;
+
+  if (type === 'TextNode') {
+    return !isClassIncluded(value.chars, configClassNames);
+  } else if (type === 'StringLiteral') {
+    return !isClassIncluded(value.value, configClassNames);
+  } else if (type === 'PathExpression') {
+    return false;
+  } else if (type === 'MustacheStatement') {
+    let canTrim = true;
+
+    if (['if', 'unless'].indexOf(value.path.original) !== -1) {
+      let params = value.params;
+      for (let i = 1; i < params.length; i++) {
+        canTrim = canTrimWhiteSpaceBasedOnClassNames(params[i], configClassNames);
+        if (!canTrim) {
+          break;
+        }
+      }
+    }
+    return canTrim;
+  } else if (type === 'ConcatStatement') {
+    let parts = value.parts;
+
+    return parts.every((part) => {
+      return canTrimWhiteSpaceBasedOnClassNames(part, configClassNames);
+    });
+  }
+  return true;
+}
+
+
+function shouldSkipBlockStatement(node, config) {
+  let components = config.components;
+  if (components === 'all') {
+    return true;
+  }
+
+  // If a block or all the blocks is/are skiped (or) named as 'no-minify' then we need to preserve the whitespace.
+  let componentName = node.path.original;
+  return components.indexOf(componentName) !== -1;
+}
+
+function shouldSkipElementNode(node, config) {
+  let elements = config.elements;
+  if (elements === 'all') {
+    return true;
+  }
+
+  // If a element or all the element is/are skiped then we need to preserve the whitespace.
+  let tag = node.tag;
+  return elements.indexOf(tag) !== -1;
+}
+
+function shouldSkipClass(node, config) {
+  let classAttrNode = node.attributes.find(attr => attr.name === 'class');
+  if (!classAttrNode) {
+    return false;
+  }
+
+  return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.classes);
+}
+
+module.exports = {
+  createGlimmerPlugin,
+  createRegistryPlugin,
 };
