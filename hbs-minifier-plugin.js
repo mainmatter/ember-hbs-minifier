@@ -13,10 +13,9 @@ function createGlimmerPlugin(config) {
 
     visitor: {
       TextNode(node) {
-        let chars = node.chars;
         if (preStack.length === 0) {
           // replace leading and trailing whitespace with a single whitespace character
-          node.chars = chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
+          node.chars = node.chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
         }
       },
 
