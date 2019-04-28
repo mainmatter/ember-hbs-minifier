@@ -12,12 +12,16 @@ function createGlimmerPlugin(config) {
   // depending on the configuration
   let skipStack = [];
 
+  function insideSkipBlock() {
+    return skipStack.length !== 0;
+  }
+
   return {
     name: 'hbs-minifier-plugin',
 
     visitor: {
       TextNode(node) {
-        if (skipStack.length === 0) {
+        if (!insideSkipBlock()) {
           // replace leading and trailing whitespace with a single whitespace character
           node.chars = node.chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
         }
@@ -40,7 +44,7 @@ function createGlimmerPlugin(config) {
 
       Program: {
         enter(node) {
-          if (skipStack.length !== 0) {
+          if (insideSkipBlock()) {
             return;
           }
 
@@ -68,7 +72,7 @@ function createGlimmerPlugin(config) {
             skipStack.push(node);
           }
 
-          if (skipStack.length !== 0) {
+          if (insideSkipBlock()) {
             return;
           }
 
