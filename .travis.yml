@@ -27,7 +27,7 @@ jobs:
       install:
         - yarn install --no-lockfile
         - yarn multidep multidep.json
-      script: yarn test
+      script: yarn test --coverage
 
     - name: "Ember Tests"
       addons:
