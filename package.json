@@ -5,6 +5,7 @@
   "keywords": [
     "ember-addon"
   ],
+  "repository": "https://github.com/simplabs/ember-hbs-minifier",
   "license": "MIT",
   "author": "",
   "files": [
@@ -16,13 +17,20 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/simplabs/ember-hbs-minifier",
   "scripts": {
     "build": "ember build",
+    "lint": "eslint . --cache",
     "start": "ember server",
     "test": "jest",
-    "test:ember": "ember test",
-    "lint": "eslint . --cache"
+    "test:ember": "ember test"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/multidep_modules"
+    ]
+  },
+  "dependencies": {
+    "object-hash": "1.3.1"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",
@@ -47,9 +55,6 @@
     "loader.js": "^4.2.3",
     "multidep": "github:Turbo87/node-multidep#mkdirp"
   },
-  "dependencies": {
-    "object-hash": "1.3.1"
-  },
   "engines": {
     "node": "8.* || >= 10.*"
   },
@@ -58,10 +63,5 @@
     "versionCompatibility": {
       "ember": ">=3.4.0"
     }
-  },
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "<rootDir>/multidep_modules"
-    ]
   }
 }
