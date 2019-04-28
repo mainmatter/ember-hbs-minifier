@@ -6822,7 +6822,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -6955,7 +6955,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7066,7 +7066,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7128,7 +7128,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7195,7 +7195,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7347,7 +7347,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7498,7 +7498,7 @@ Object {
             "line": 1,
           },
         },
-        "type": "Program",
+        "type": "Block",
       },
       "type": "BlockStatement",
     },
@@ -7514,7 +7514,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7725,7 +7725,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7859,7 +7859,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -7962,7 +7962,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8087,7 +8087,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8212,7 +8212,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8315,7 +8315,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8442,7 +8442,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8553,7 +8553,7 @@ Object {
             "line": 1,
           },
         },
-        "type": "Program",
+        "type": "Block",
       },
       "type": "BlockStatement",
     },
@@ -8569,7 +8569,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8753,7 +8753,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8848,7 +8848,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
@@ -8921,7 +8921,7 @@ Object {
       "line": 1,
     },
   },
-  "type": "Program",
+  "type": "Template",
 }
 `;
 
