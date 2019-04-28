@@ -22,7 +22,7 @@
     "start": "ember server",
     "test": "jest",
     "test:ember": "ember test",
-    "lint": "eslint app addon blueprints config server test-support tests *.js"
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",
