@@ -126,19 +126,6 @@ function canTrimElementNodeContent(node, config) {
   return classAttributes ? canTrimWhiteSpaceBasedOnClassNames(classAttributes, config.classes) : true;
 }
 
-function assignDefaultValues(config) {
-  config = config || {};
-  let elements = config.elements || ['pre'];
-  let classes = config.classes || [];
-  let components = config.components || ['no-minify'];
-
-  return {
-    elements,
-    classes,
-    components
-  };
-}
-
 module.exports = {
   stripWhiteSpace,
   isWhitespaceTextNode,
@@ -146,5 +133,4 @@ module.exports = {
   hasLeadingOrTrailingWhiteSpace,
   canTrimBlockStatementContent,
   canTrimElementNodeContent,
-  assignDefaultValues
 };
