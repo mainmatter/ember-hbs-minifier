@@ -65,7 +65,7 @@ function createGlimmerPlugin(config) {
 
       ElementNode: {
         enter(node) {
-          if (!canTrimElementNodeContent(node, config)) {
+          if (shouldSkipElementNode(node, config)) {
             skipStack.push(node);
           }
 
@@ -212,15 +212,15 @@ function canTrimBlockStatementContent(node, config) {
   return components.indexOf(componentName) === -1 && components !== 'all';
 }
 
-function canTrimElementNodeContent(node, config) {
+function shouldSkipElementNode(node, config) {
   // If a element or all the element is/are skiped then we need to preserve the whitespace.
   let elements = config.elements;
   let tag = node.tag;
   if (elements.indexOf(tag) !== -1 || elements === 'all') {
-    return false;
+    return true;
   }
   let classAttributes = getElementAttribute(node, 'class');
-  return classAttributes ? canTrimWhiteSpaceBasedOnClassNames(classAttributes, config.classes) : true;
+  return classAttributes ? !canTrimWhiteSpaceBasedOnClassNames(classAttributes, config.classes) : false;
 }
 
 module.exports = {
