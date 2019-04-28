@@ -121,7 +121,6 @@ function stripWhiteSpace(chars) {
   /*
     Replacing multiple ' ', '\n' and '\t'(leading/trailing) into a single whitespace.
   */
-  chars = chars || '';
   return chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
 }
 
