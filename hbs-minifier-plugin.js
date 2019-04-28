@@ -193,7 +193,7 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
 
 
 function shouldSkipBlockStatement(node, config) {
-  let components = config.components;
+  let components = config.skip.components;
   if (components === 'all') {
     return true;
   }
@@ -204,7 +204,7 @@ function shouldSkipBlockStatement(node, config) {
 }
 
 function shouldSkipElementNode(node, config) {
-  let elements = config.elements;
+  let elements = config.skip.elements;
   if (elements === 'all') {
     return true;
   }
@@ -220,13 +220,14 @@ function shouldSkipClass(node, config) {
     return false;
   }
 
-  return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.classes);
+  return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.skip.classes);
 }
 
 function normalizeConfig(config = {}) {
-  config.elements = config.elements || ['pre'];
-  config.classes = config.classes || [];
-  config.components = config.components || ['no-minify'];
+  config.skip = config.skip || {};
+  config.skip.elements = config.skip.elements || ['pre'];
+  config.skip.classes = config.skip.classes || [];
+  config.skip.components = config.skip.components || ['no-minify'];
 }
 
 module.exports = {
