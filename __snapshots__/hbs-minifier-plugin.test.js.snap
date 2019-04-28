@@ -1,181 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace into single space character 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "bar",
         "parts": Array [
           "bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "  1  ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " 2 ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span> &nbsp;1&nbsp; </span> <span> 2 </span></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "1",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
-    Object {
+    TextNode {
       "chars": "  ",
-      "type": "TextNode",
     },
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "2",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>&nbsp;&nbsp;<span>2</span>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse whitespace inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -187,29 +163,26 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse w
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -221,59 +194,51 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse w
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "description",
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   1
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     2
   ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -287,61 +252,52 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`c
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo-bar",
         "parts": Array [
           "foo-bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          TextNode {
             "chars": "  ",
-            "type": "TextNode",
           },
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": "
     yield content
   ",
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
-          Object {
+          TextNode {
             "chars": "
 ",
-            "type": "TextNode",
           },
         ],
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -353,42 +309,38 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`c
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   Box 564,
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     Disneyland
   ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
@@ -396,42 +348,35 @@ Object {
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "address",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -447,355 +392,304 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`t
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "        ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": "        ",
-      "type": "TextNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "x ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": " y ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "x ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " y ",
-      "type": "TextNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "contact-details",
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " John Smith ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " (Entrepreneur) ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "i",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "my-component",
         "parts": Array [
           "my-component",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": " yield content ",
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
         ],
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " Box 564, ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " Disneyland ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
@@ -803,286 +697,247 @@ Object {
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "section",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from Program nodes 2`] = `"{{foo}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace into single space character 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "bar",
         "parts": Array [
           "bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "  1  ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " 2 ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span> &nbsp;1&nbsp; </span> <span> 2 </span></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "1",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
-    Object {
+    TextNode {
       "chars": "  ",
-      "type": "TextNode",
     },
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "2",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>&nbsp;&nbsp;<span>2</span>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse whitespace inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -1094,29 +949,26 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse wh
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -1128,59 +980,51 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse wh
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "description",
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   1
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     2
   ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -1194,61 +1038,52 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`cl
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo-bar",
         "parts": Array [
           "foo-bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          TextNode {
             "chars": "  ",
-            "type": "TextNode",
           },
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": "
     yield content
   ",
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
-          Object {
+          TextNode {
             "chars": "
 ",
-            "type": "TextNode",
           },
         ],
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -1260,42 +1095,38 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`co
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   Box 564,
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     Disneyland
   ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
@@ -1303,42 +1134,35 @@ Object {
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "address",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
@@ -1354,355 +1178,304 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`ta
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "        ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": "        ",
-      "type": "TextNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "x ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": " y ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "x ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " y ",
-      "type": "TextNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "contact-details",
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " John Smith ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " (Entrepreneur) ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "i",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "my-component",
         "parts": Array [
           "my-component",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": " yield content ",
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
         ],
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " Box 564, ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " Disneyland ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
@@ -1710,286 +1483,247 @@ Object {
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "section",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from Program nodes 2`] = `"{{foo}}"`;
 
 exports[`HBS Minifier plugin collapses whitespace into single space character 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "bar",
         "parts": Array [
           "bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
 
 exports[`HBS Minifier plugin does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "  1  ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " 2 ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span> &nbsp;1&nbsp; </span> <span> 2 </span></div>"`;
 
 exports[`HBS Minifier plugin does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "1",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
-    Object {
+    TextNode {
       "chars": "  ",
-      "type": "TextNode",
     },
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "2",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>&nbsp;&nbsp;<span>2</span>"`;
 
 exports[`HBS Minifier plugin does not collapse whitespace inside of <pre> tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
@@ -2001,29 +1735,26 @@ exports[`HBS Minifier plugin does not collapse whitespace inside of <pre> tags 2
 `;
 
 exports[`HBS Minifier plugin does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
@@ -2035,59 +1766,51 @@ exports[`HBS Minifier plugin does not collapse whitespace inside of {{#no-minify
 `;
 
 exports[`HBS Minifier plugin does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "description",
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   1
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     2
   ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
@@ -2101,61 +1824,52 @@ exports[`HBS Minifier plugin does not minify \`classNames\` specified in .hbs-mi
 `;
 
 exports[`HBS Minifier plugin does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo-bar",
         "parts": Array [
           "foo-bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Block {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          TextNode {
             "chars": "  ",
-            "type": "TextNode",
           },
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": "
     yield content
   ",
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
-          Object {
+          TextNode {
             "chars": "
 ",
-            "type": "TextNode",
           },
         ],
-        "type": "Block",
       },
-      "type": "BlockStatement",
     },
   ],
-  "type": "Template",
 }
 `;
 
@@ -2167,42 +1881,38 @@ exports[`HBS Minifier plugin does not minify \`components\` specified in .hbs-mi
 `;
 
 exports[`HBS Minifier plugin does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   Box 564,
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     Disneyland
   ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
@@ -2210,42 +1920,35 @@ Object {
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "address",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
@@ -2261,355 +1964,304 @@ exports[`HBS Minifier plugin does not minify \`tagNames\` specified in .hbs-mini
 `;
 
 exports[`HBS Minifier plugin does not strip inside of <pre> tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "        ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": "        ",
-      "type": "TextNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from ElementNode nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "x ",
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": " y ",
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from Program nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "x ",
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " y ",
-      "type": "TextNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
 exports[`HBS Minifier plugin minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "contact-details",
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " John Smith ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " (Entrepreneur) ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "i",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
 
 exports[`HBS Minifier plugin minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "my-component",
         "parts": Array [
           "my-component",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Block {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": " yield content ",
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
         ],
-        "type": "Block",
       },
-      "type": "BlockStatement",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
 
 exports[`HBS Minifier plugin minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " Box 564, ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " Disneyland ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
@@ -2617,105 +2269,90 @@ Object {
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "section",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"`;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
       ],
       "comments": Array [],
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from Program nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "type": "Template",
 }
 `;
 

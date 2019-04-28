@@ -11,16 +11,18 @@ multidepRequire.forEachVersion('@glimmer/syntax', function(version) {
   versions.push(version);
 });
 
-// Remove the unnecessary `loc` properties from the AST snapshots
+// Remove the unnecessary `loc` properties from the AST snapshots and replace
+// the `Object` prefix with the node `type`
 expect.addSnapshotSerializer({
   test(val) {
-    return val && val.hasOwnProperty('loc');
+    return val && val.hasOwnProperty('type') && val.hasOwnProperty('loc');
   },
 
   print(val, serialize) {
     let clone = Object.assign({}, val);
     delete clone.loc;
-    return serialize(clone);
+    delete clone.type;
+    return serialize(clone).replace(/^Object {/, `${val.type} {`);
   },
 });
 
