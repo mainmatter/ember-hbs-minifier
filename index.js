@@ -1,6 +1,7 @@
 /* eslint-env node */
 'use strict';
-let objectHash = require('object-hash');
+
+const hashObj = require('hash-obj');
 
 module.exports = {
   name: 'ember-hbs-minifier',
@@ -15,7 +16,7 @@ module.exports = {
       name: 'hbs-minifier-plugin',
       plugin: HbsMinifierPlugin,
       baseDir() { return __dirname; },
-      cacheKey() { return `ember-hbs-minifier-${objectHash.MD5(config)}`; }
+      cacheKey() { return cacheKeyForConfig(config); }
     });
   },
 
@@ -28,3 +29,12 @@ module.exports = {
     this._setupPreprocessorRegistry(app);
   }
 };
+
+function cacheKeyForConfig(config) {
+  let configHash = hashObj(config, {
+    encoding: 'base64',
+    algorithm: 'md5',
+  });
+
+  return `ember-hbs-minifier-${configHash}`;
+}
