@@ -722,11 +722,10 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@glimmer/di/-/di-0.2.0.tgz#73bfd4a6ee4148a80bf092e8a5d29bcac9d4ce7e"
 
-"@glimmer/interfaces@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.33.0.tgz#bbf58422e15d6a1f11d917516ba92a0e5185711d"
-  dependencies:
-    "@glimmer/wire-format" "^0.33.0"
+"@glimmer/interfaces@^0.40.1":
+  version "0.40.1"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.40.1.tgz#eb767718c47872243db50c993700a385940c2cb2"
+  integrity sha512-gk+3Ij3hrJHPBJpCQE1wF54sh4M/NRx/JOJOhCzsyrf488IDnw2v93ZDEwBd7O3EcQDaRZMOQq6M3FNh/0YZpw==
 
 "@glimmer/resolver@^0.4.1":
   version "0.4.3"
@@ -734,24 +733,20 @@
   dependencies:
     "@glimmer/di" "^0.2.0"
 
-"@glimmer/syntax@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.33.0.tgz#5def8048e282f2ad7d77cdfa8859b2f292cdb697"
+"@glimmer/syntax@^0.40.1":
+  version "0.40.1"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.40.1.tgz#6c387ca8d3080350c039092586adba37ba2bf351"
+  integrity sha512-lZ0xv9wNBVt1tteWszQy+PZbVi8v1vmlYjCTU9s/q2H1khrnVe6VYvicVapGATqlMQ84reRqJkQKdgfpy+ig6A==
   dependencies:
-    "@glimmer/interfaces" "^0.33.0"
-    "@glimmer/util" "^0.33.0"
-    handlebars "^4.0.6"
-    simple-html-tokenizer "^0.4.1"
+    "@glimmer/interfaces" "^0.40.1"
+    "@glimmer/util" "^0.40.1"
+    handlebars "^4.0.13"
+    simple-html-tokenizer "^0.5.7"
 
-"@glimmer/util@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.33.0.tgz#8271fbcb59989f8475c316887d49b622b84a2dfa"
-
-"@glimmer/wire-format@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/wire-format/-/wire-format-0.33.0.tgz#e3e42ec205a5bf7fd9349b79da4632df999dbe45"
-  dependencies:
-    "@glimmer/util" "^0.33.0"
+"@glimmer/util@^0.40.1":
+  version "0.40.1"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.40.1.tgz#e4bd667d36422261248df039dd46bfe963655bd3"
+  integrity sha512-YuV7hhjrPi/2YYc+GCyOBzrG1xSolQ4Fg/dkQdpDkTA03UkC9BiCQRxbOK4SjlV9IuBSEIv/Is6BOfkQ8hhX2g==
 
 "@jest/console@^24.7.1":
   version "24.7.1"
@@ -4617,9 +4612,10 @@ growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
 
-handlebars@^4.0.11:
+handlebars@^4.0.11, handlebars@^4.0.13:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
+  integrity sha512-nvfrjqvt9xQ8Z/w0ijewdD/vvWDTOweBUm96NTr66Wfvo1mJenBLwcYmPs3TIBP5ruzYGD7Hx/DaM9RmhroGPw==
   dependencies:
     neo-async "^2.6.0"
     optimist "^0.6.1"
@@ -4627,7 +4623,7 @@ handlebars@^4.0.11:
   optionalDependencies:
     uglify-js "^3.1.4"
 
-handlebars@^4.0.4, handlebars@^4.0.6, handlebars@^4.1.0:
+handlebars@^4.0.4, handlebars@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.0.tgz#0d6a6f34ff1f63cecec8423aa4169827bf787c3a"
   dependencies:
@@ -6576,6 +6572,15 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
+"multidep@github:Turbo87/node-multidep#mkdirp":
+  version "2.0.2"
+  resolved "https://codeload.github.com/Turbo87/node-multidep/tar.gz/566a5f8aa3380cb6e6d2743e3fb83aa5ba6b7de1"
+  dependencies:
+    mkdirp "^0.5.1"
+    rimraf "^2.4.3"
+    rsvp "^3.1.0"
+    spawn-cmd "0.0.2"
+
 mustache@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-3.0.1.tgz#873855f23aa8a95b150fb96d9836edbc5a1d248a"
@@ -7698,7 +7703,7 @@ rollup@^0.41.4:
   dependencies:
     source-map-support "^0.4.0"
 
-rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6:
+rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
 
@@ -7870,9 +7875,10 @@ silent-error@^1.0.0, silent-error@^1.0.1, silent-error@^1.1.0, silent-error@^1.1
   dependencies:
     debug "^2.2.0"
 
-simple-html-tokenizer@^0.4.1:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.4.3.tgz#9b00b766e30058b4bb377c0d4f97566a13ab1be1"
+simple-html-tokenizer@^0.5.7:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.5.7.tgz#8eca336ecfbe2b3c6166cbb31b2682088de79f40"
+  integrity sha512-APW9iYbkJ5cijjX4Ljhf3VG8SwYPUJT5gZrwci/wieMabQxWFiV5VwsrP5c6GMRvXKEQMGkAB1d9dvW66dTqpg==
 
 sisteransi@^1.0.0:
   version "1.0.0"
@@ -8044,6 +8050,11 @@ sourcemap-validator@^1.1.0:
 spawn-args@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/spawn-args/-/spawn-args-0.2.0.tgz#fb7d0bd1d70fd4316bd9e3dec389e65f9d6361bb"
+
+spawn-cmd@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/spawn-cmd/-/spawn-cmd-0.0.2.tgz#6d5e251fad0eab00b0f193d245669a7a228ec0de"
+  integrity sha1-bV4lH60OqwCw8ZPSRWaaeiKOwN4=
 
 spdx-correct@~1.0.0:
   version "1.0.2"

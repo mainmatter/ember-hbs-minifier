@@ -1,0 +1,9 @@
+{
+  "path": "multidep_modules",
+  "versions": {
+    "@glimmer/syntax": [
+      "0.37.1",
+      "0.35.11"
+    ]
+  }
+}

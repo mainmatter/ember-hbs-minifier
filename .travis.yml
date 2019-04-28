@@ -24,6 +24,9 @@ jobs:
       script: yarn lint
 
     - name: "Unit Tests"
+      install:
+        - yarn install --no-lockfile
+        - yarn multidep multidep.json
       script: yarn test
 
     - name: "Ember Tests"
