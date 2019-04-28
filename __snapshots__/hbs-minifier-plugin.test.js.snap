@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`collapses whitespace into single space character 1`] = `
+exports[`HBS Minifier plugin collapses whitespace into single space character 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -137,9 +137,9 @@ Object {
 }
 `;
 
-exports[`collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
+exports[`HBS Minifier plugin collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
 
-exports[`does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
+exports[`HBS Minifier plugin does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -267,9 +267,9 @@ Object {
 }
 `;
 
-exports[`does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span>  1  </span> <span> 2 </span></div>"`;
+exports[`HBS Minifier plugin does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span>  1  </span> <span> 2 </span></div>"`;
 
-exports[`does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
+exports[`HBS Minifier plugin does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -376,9 +376,9 @@ Object {
 }
 `;
 
-exports[`does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>  <span>2</span>"`;
+exports[`HBS Minifier plugin does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>  <span>2</span>"`;
 
-exports[`does not collapse whitespace inside of <pre> tags 1`] = `
+exports[`HBS Minifier plugin does not collapse whitespace inside of <pre> tags 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -437,14 +437,14 @@ Object {
 }
 `;
 
-exports[`does not collapse whitespace inside of <pre> tags 2`] = `
+exports[`HBS Minifier plugin does not collapse whitespace inside of <pre> tags 2`] = `
 "<pre>  
 
    
 </pre>"
 `;
 
-exports[`does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
+exports[`HBS Minifier plugin does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -503,14 +503,14 @@ Object {
 }
 `;
 
-exports[`does not collapse whitespace inside of {{#no-minify}} tags in other tags 2`] = `
+exports[`HBS Minifier plugin does not collapse whitespace inside of {{#no-minify}} tags in other tags 2`] = `
 "<div>  
 
    
 </div>"
 `;
 
-exports[`does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
+exports[`HBS Minifier plugin does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -653,7 +653,7 @@ Object {
 }
 `;
 
-exports[`does not minify \`classNames\` specified in .hbs-minifyrc.js 2`] = `
+exports[`HBS Minifier plugin does not minify \`classNames\` specified in .hbs-minifyrc.js 2`] = `
 "<div class=\\"description\\">
   1
   <span>
@@ -662,7 +662,7 @@ exports[`does not minify \`classNames\` specified in .hbs-minifyrc.js 2`] = `
 </div>"
 `;
 
-exports[`does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
+exports[`HBS Minifier plugin does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -819,14 +819,14 @@ Object {
 }
 `;
 
-exports[`does not minify \`components\` specified in .hbs-minifyrc.js 2`] = `
+exports[`HBS Minifier plugin does not minify \`components\` specified in .hbs-minifyrc.js 2`] = `
 "{{#foo-bar}}  <span>
     yield content
   </span>
 {{/foo-bar}}"
 `;
 
-exports[`does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
+exports[`HBS Minifier plugin does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1026,7 +1026,7 @@ Object {
 }
 `;
 
-exports[`does not minify \`tagNames\` specified in .hbs-minifyrc.js 2`] = `
+exports[`HBS Minifier plugin does not minify \`tagNames\` specified in .hbs-minifyrc.js 2`] = `
 "<address>
   Box 564,
   <b>
@@ -1037,7 +1037,7 @@ exports[`does not minify \`tagNames\` specified in .hbs-minifyrc.js 2`] = `
 </address>"
 `;
 
-exports[`does not strip inside of <pre> tags 1`] = `
+exports[`HBS Minifier plugin does not strip inside of <pre> tags 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1159,9 +1159,9 @@ Object {
 }
 `;
 
-exports[`does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
+exports[`HBS Minifier plugin does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
 
-exports[`does not strip inside of {{#no-minify}} tags 1`] = `
+exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1262,9 +1262,9 @@ Object {
 }
 `;
 
-exports[`does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
+exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
 
-exports[`does not strip inside of {{#no-minify}} tags in other tags 1`] = `
+exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags in other tags 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1386,9 +1386,9 @@ Object {
 }
 `;
 
-exports[`does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
+exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
 
-exports[`does not strip leading/trailing text from ElementNode nodes 1`] = `
+exports[`HBS Minifier plugin does not strip leading/trailing text from ElementNode nodes 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1510,9 +1510,9 @@ Object {
 }
 `;
 
-exports[`does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
+exports[`HBS Minifier plugin does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
-exports[`does not strip leading/trailing text from Program nodes 1`] = `
+exports[`HBS Minifier plugin does not strip leading/trailing text from Program nodes 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1613,9 +1613,9 @@ Object {
 }
 `;
 
-exports[`does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
+exports[`HBS Minifier plugin does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
-exports[`minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
+exports[`HBS Minifier plugin minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1738,9 +1738,9 @@ Object {
 }
 `;
 
-exports[`minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
+exports[`HBS Minifier plugin minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
 
-exports[`minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
+exports[`HBS Minifier plugin minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -1864,9 +1864,9 @@ Object {
 }
 `;
 
-exports[`minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
+exports[`HBS Minifier plugin minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
 
-exports[`minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
+exports[`HBS Minifier plugin minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -2044,9 +2044,9 @@ Object {
 }
 `;
 
-exports[`minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br></br> <u> USA </u></section>"`;
+exports[`HBS Minifier plugin minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br></br> <u> USA </u></section>"`;
 
-exports[`strips leading and trailing whitespace from ElementNode nodes 1`] = `
+exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -2138,9 +2138,9 @@ Object {
 }
 `;
 
-exports[`strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
+exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
 
-exports[`strips leading and trailing whitespace from Program nodes 1`] = `
+exports[`HBS Minifier plugin strips leading and trailing whitespace from Program nodes 1`] = `
 Object {
   "blockParams": Array [],
   "body": Array [
@@ -2211,4 +2211,4 @@ Object {
 }
 `;
 
-exports[`strips leading and trailing whitespace from Program nodes 2`] = `"{{foo}}"`;
+exports[`HBS Minifier plugin strips leading and trailing whitespace from Program nodes 2`] = `"{{foo}}"`;
