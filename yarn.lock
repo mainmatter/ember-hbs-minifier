@@ -6576,6 +6576,15 @@ ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
+"multidep@github:Turbo87/node-multidep#mkdirp":
+  version "2.0.2"
+  resolved "https://codeload.github.com/Turbo87/node-multidep/tar.gz/566a5f8aa3380cb6e6d2743e3fb83aa5ba6b7de1"
+  dependencies:
+    mkdirp "^0.5.1"
+    rimraf "^2.4.3"
+    rsvp "^3.1.0"
+    spawn-cmd "0.0.2"
+
 mustache@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-3.0.1.tgz#873855f23aa8a95b150fb96d9836edbc5a1d248a"
@@ -7698,7 +7707,7 @@ rollup@^0.41.4:
   dependencies:
     source-map-support "^0.4.0"
 
-rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6:
+rsvp@^3.0.14, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
 
@@ -8044,6 +8053,11 @@ sourcemap-validator@^1.1.0:
 spawn-args@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/spawn-args/-/spawn-args-0.2.0.tgz#fb7d0bd1d70fd4316bd9e3dec389e65f9d6361bb"
+
+spawn-cmd@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/spawn-cmd/-/spawn-cmd-0.0.2.tgz#6d5e251fad0eab00b0f193d245669a7a228ec0de"
+  integrity sha1-bV4lH60OqwCw8ZPSRWaaeiKOwN4=
 
 spdx-correct@~1.0.0:
   version "1.0.2"
