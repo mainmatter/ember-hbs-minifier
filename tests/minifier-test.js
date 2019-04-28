@@ -1,17 +1,18 @@
 import { expect } from 'chai';
 import { describe, it, beforeEach } from 'mocha';
-import { setupComponentTest } from 'ember-mocha';
+import { setupRenderingTest } from 'ember-mocha';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 describe('HBS Minifier plugin', function() {
-  setupComponentTest('dummy-component', { integration: true });
+  setupRenderingTest();
 
   beforeEach(function() {
     this.setProperties({ foo: 'foo', bar: 'bar', baz: 'baz' });
   });
 
-  it('collapses whitespace into single space character', function() {
-    this.render(hbs`{{foo}}  \n\n   \n{{bar}}`);
+  it('collapses whitespace into single space character', async function() {
+    await render(hbs`{{foo}}  \n\n   \n{{bar}}`);
 
     let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
@@ -19,8 +20,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[1]).to.have.a.property('textContent', ' ');
   });
 
-  it('strips leading and trailing whitespace from Program nodes', function() {
-    this.render(hbs`        {{foo}}        `);
+  it('strips leading and trailing whitespace from Program nodes', async function() {
+    await render(hbs`        {{foo}}        `);
 
     let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(1);
@@ -28,8 +29,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[0]).to.have.a.property('textContent', 'foo');
   });
 
-  it('Collapse leading/trailing text from Program nodes into a single whitespace', function() {
-    this.render(hbs`x        {{foo}}     y   `);
+  it('Collapse leading/trailing text from Program nodes into a single whitespace', async function() {
+    await render(hbs`x        {{foo}}     y   `);
 
     let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
@@ -41,8 +42,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[2]).to.have.a.property('textContent', ' y ');
   });
 
-  it('strips leading and trailing whitespace from ElementNode nodes', function() {
-    this.render(hbs`<div>        {{foo}}        </div>`);
+  it('strips leading and trailing whitespace from ElementNode nodes', async function() {
+    await render(hbs`<div>        {{foo}}        </div>`);
 
     let childNodes = this.$('div')[0].childNodes;
     expect(childNodes.length).to.equal(1);
@@ -50,8 +51,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[0]).to.have.a.property('textContent', 'foo');
   });
 
-  it('Collapse leading/trailing text from ElementNode nodes', function() {
-    this.render(hbs`<div>x        {{foo}}     y   {{bar}}    z</div>`);
+  it('Collapse leading/trailing text from ElementNode nodes', async function() {
+    await render(hbs`<div>x        {{foo}}     y   {{bar}}    z</div>`);
 
     let childNodes = this.$('div')[0].childNodes;
     expect(childNodes.length).to.equal(5);
@@ -65,8 +66,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[4]).to.have.a.property('textContent', ' z');
   });
 
-  it('does not strip inside of <pre> tags', function() {
-    this.render(hbs`<pre>        {{foo}}        </pre>`);
+  it('does not strip inside of <pre> tags', async function() {
+    await render(hbs`<pre>        {{foo}}        </pre>`);
 
     let childNodes = this.$('pre')[0].childNodes;
     expect(childNodes.length).to.equal(3);
@@ -78,8 +79,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[2]).to.have.a.property('textContent', '        ');
   });
 
-  it('does not collapse whitespace inside of <pre> tags', function() {
-    this.render(hbs`<pre>  \n\n   \n</pre>`);
+  it('does not collapse whitespace inside of <pre> tags', async function() {
+    await render(hbs`<pre>  \n\n   \n</pre>`);
 
     let childNodes = this.$('pre')[0].childNodes;
     expect(childNodes.length).to.equal(1);
@@ -87,8 +88,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[0]).to.have.a.property('textContent', '  \n\n   \n');
   });
 
-  it('does not strip inside of {{#no-minify}} tags', function() {
-    this.render(hbs`{{#no-minify}}        {{foo}}        {{/no-minify}}`);
+  it('does not strip inside of {{#no-minify}} tags', async function() {
+    await render(hbs`{{#no-minify}}        {{foo}}        {{/no-minify}}`);
 
     let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
@@ -100,8 +101,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[2]).to.have.a.property('textContent', '        ');
   });
 
-  it('does not strip inside of {{#no-minify}} tags in other tags', function() {
-    this.render(hbs`<div>{{#no-minify}}        {{foo}}        {{/no-minify}}</div>`);
+  it('does not strip inside of {{#no-minify}} tags in other tags', async function() {
+    await render(hbs`<div>{{#no-minify}}        {{foo}}        {{/no-minify}}</div>`);
 
     let childNodes = this.$('div')[0].childNodes;
     expect(childNodes.length).to.equal(3);
@@ -113,8 +114,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[2]).to.have.a.property('textContent', '        ');
   });
 
-  it('does not collapse whitespace inside of {{#no-minify}} tags in other tags', function() {
-    this.render(hbs`<div>{{#no-minify}}  \n\n   \n{{/no-minify}}</div>`);
+  it('does not collapse whitespace inside of {{#no-minify}} tags in other tags', async function() {
+    await render(hbs`<div>{{#no-minify}}  \n\n   \n{{/no-minify}}</div>`);
 
     let childNodes = this.$('div')[0].childNodes;
     expect(childNodes.length).to.equal(1);
@@ -122,8 +123,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[0]).to.have.a.property('textContent', '  \n\n   \n');
   });
 
-  it('does not collapse multiple &nbsp; textNode into a single whitespace', function() {
-    this.render(hbs`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
+  it('does not collapse multiple &nbsp; textNode into a single whitespace', async function() {
+    await render(hbs`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
     let childNodes = [...this.$()[0].childNodes].filter(it => it.textContent !== '');
     expect(childNodes.length).to.equal(3);
     expect(childNodes[1]).to.be.a('text');
@@ -136,8 +137,8 @@ describe('HBS Minifier plugin', function() {
     The following test is so much similar to the above one. But we need to make sure that the textNode in following templates results in
     '  1  ' and not ' 1 '.
   */
-  it('does not collapse &nbsp; surrounding a text content into a single whitespace', function() {
-    this.render(hbs `
+  it('does not collapse &nbsp; surrounding a text content into a single whitespace', async function() {
+    await render(hbs `
 <div>
   <span>    &nbsp;1&nbsp;   </span>
   <span> 2   </span>
@@ -149,8 +150,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNode.textContent.trim()).to.equal('1');
   });
 
-  it('does not minify `tagNames` specified in .hbs-minifyrc.js', function() {
-    this.render(hbs `
+  it('does not minify `tagNames` specified in .hbs-minifyrc.js', async function() {
+    await render(hbs `
 <address>
   Box 564,
   <b>
@@ -170,8 +171,8 @@ describe('HBS Minifier plugin', function() {
   });
 
 
-  it('does not minify `classNames` specified in .hbs-minifyrc.js', function() {
-    this.render(hbs `
+  it('does not minify `classNames` specified in .hbs-minifyrc.js', async function() {
+    await render(hbs `
 <div class="description">
   1
   <span>
@@ -185,8 +186,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[2].textContent).to.equal('\n');
   });
 
-  it('does not minify `component` boundaries specified in .hbs-minifyrc.js', function() {
-    this.render(hbs `
+  it('does not minify `component` boundaries specified in .hbs-minifyrc.js', async function() {
+    await render(hbs `
 {{#foo-bar}}
   <span>
     yield content
@@ -203,8 +204,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[7].textContent).to.equal('\n');
   });
 
-  it('minify `tagNames` that are not specified in .hbs-minifyrc.js', function() {
-    this.render(hbs `
+  it('minify `tagNames` that are not specified in .hbs-minifyrc.js', async function() {
+    await render(hbs `
   <ul>
     <li>
       1
@@ -221,8 +222,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[2].textContent).to.equal(' 2 ');
   });
 
-  it('minifies `classNames` that are not specified in .hbs-minifyrc.js', function() {
-    this.render(hbs `
+  it('minifies `classNames` that are not specified in .hbs-minifyrc.js', async function() {
+    await render(hbs `
 <div class="numbers">
   1
   <span>
@@ -236,8 +237,8 @@ describe('HBS Minifier plugin', function() {
     expect(childNodes[1].textContent).to.equal(' 2 ');
   });
 
-  it('minify `component` boundaries that are not specified in .hbs-minifyrc.js', function() {
-    this.render(hbs `
+  it('minify `component` boundaries that are not specified in .hbs-minifyrc.js', async function() {
+    await render(hbs `
 {{#x-button tagName="button"}}
   <div>
     yield content
