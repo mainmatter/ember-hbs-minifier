@@ -3130,7 +3130,7 @@ ember-cli-babel-plugin-helpers@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel-plugin-helpers/-/ember-cli-babel-plugin-helpers-1.1.0.tgz#de3baedd093163b6c2461f95964888c1676325ac"
 
-ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.11.0, ember-cli-babel@^6.12.0, ember-cli-babel@^6.16.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.8.1:
+ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.12.0, ember-cli-babel@^6.16.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.8.1:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.18.0.tgz#3f6435fd275172edeff2b634ee7b29ce74318957"
   dependencies:
@@ -3148,9 +3148,10 @@ ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.11.0, ember-cli-babel@^6.12.0,
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
 
-ember-cli-babel@^7.0.0, ember-cli-babel@^7.4.2:
+ember-cli-babel@^7.0.0, ember-cli-babel@^7.4.2, ember-cli-babel@^7.7.3:
   version "7.7.3"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.7.3.tgz#f94709f6727583d18685ca6773a995877b87b8a0"
+  integrity sha512-/LWwyKIoSlZQ7k52P+6agC7AhcOBqPJ5C2u27qXHVVxKvCtg6ahNuRk/KmfZmV4zkuw4EjTZxfJE1PzpFyHkXg==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.3.4"
