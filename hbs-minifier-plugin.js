@@ -29,8 +29,7 @@ function createGlimmerPlugin(config) {
 
       BlockStatement: {
         enter(node) {
-          let canTrim = canTrimBlockStatementContent(node, config);
-          if (!canTrim) {
+          if (!canTrimBlockStatementContent(node, config)) {
             skipStack.push(node);
           }
         },
@@ -66,9 +65,7 @@ function createGlimmerPlugin(config) {
 
       ElementNode: {
         enter(node) {
-          let canTrim = canTrimElementNodeContent(node, config);
-
-          if (!canTrim) {
+          if (!canTrimElementNodeContent(node, config)) {
             skipStack.push(node);
           }
 
