@@ -60,5 +60,10 @@
     "versionCompatibility": {
       "ember": ">=3.4.0"
     }
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/multidep_modules"
+    ]
   }
 }
