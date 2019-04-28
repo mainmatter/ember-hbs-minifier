@@ -22,7 +22,7 @@
     "start": "ember server",
     "test": "jest",
     "test:ember": "ember test",
-    "lint": "eslint ."
+    "lint": "eslint . --cache"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",
