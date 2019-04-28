@@ -127,11 +127,6 @@ function stripNoMinifyBlocks(nodes) {
   }).reduce((a, b) => a.concat(b), []);
 }
 
-function getElementAttribute(node, attrName) {
-  let attribute = node.attributes.find(attr => attr.name === attrName);
-  return (attribute || {}).value;
-}
-
 function isClassIncluded(chars, classes) {
   chars = (chars || '').trim().split(' ');
 
@@ -217,8 +212,13 @@ function shouldSkipElementNode(node, config) {
   if (elements.indexOf(tag) !== -1 || elements === 'all') {
     return true;
   }
-  let classAttributes = getElementAttribute(node, 'class');
-  return classAttributes ? !canTrimWhiteSpaceBasedOnClassNames(classAttributes, config.classes) : false;
+
+  let classAttrNode = node.attributes.find(attr => attr.name === 'class');
+  if (classAttrNode) {
+    return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.classes);
+  }
+
+  return false;
 }
 
 module.exports = {
