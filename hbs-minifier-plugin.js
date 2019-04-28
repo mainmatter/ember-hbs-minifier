@@ -199,17 +199,25 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
 
 
 function shouldSkipBlockStatement(node, config) {
+  let components = config.components;
+  if (components === 'all') {
+    return true;
+  }
+
   // If a block or all the blocks is/are skiped (or) named as 'no-minify' then we need to preserve the whitespace.
   let componentName = node.path.original;
-  let components = config.components;
-  return components.indexOf(componentName) !== -1 || components === 'all';
+  return components.indexOf(componentName) !== -1;
 }
 
 function shouldSkipElementNode(node, config) {
-  // If a element or all the element is/are skiped then we need to preserve the whitespace.
   let elements = config.elements;
+  if (elements === 'all') {
+    return true;
+  }
+
+  // If a element or all the element is/are skiped then we need to preserve the whitespace.
   let tag = node.tag;
-  if (elements.indexOf(tag) !== -1 || elements === 'all') {
+  if (elements.indexOf(tag) !== -1) {
     return true;
   }
 
