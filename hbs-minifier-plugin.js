@@ -1,13 +1,15 @@
 'use strict';
 
 /* eslint-env node */
-const Util = require('./utils/helpers');
-const stripWhiteSpace = Util.stripWhiteSpace;
-const isWhitespaceTextNode = Util.isWhitespaceTextNode;
-const hasLeadingOrTrailingWhiteSpace = Util.hasLeadingOrTrailingWhiteSpace;
-const stripNoMinifyBlocks = Util.stripNoMinifyBlocks;
-const canTrimBlockStatementContent = Util.canTrimBlockStatementContent;
-const canTrimElementNodeContent = Util.canTrimElementNodeContent;
+
+const {
+  stripWhiteSpace,
+  isWhitespaceTextNode,
+  hasLeadingOrTrailingWhiteSpace,
+  stripNoMinifyBlocks,
+  canTrimBlockStatementContent,
+  canTrimElementNodeContent,
+} = require('./utils/helpers');
 
 function createGlimmerPlugin(config) {
   let preStack = [];
