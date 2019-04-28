@@ -11,6 +11,19 @@ multidepRequire.forEachVersion('@glimmer/syntax', function(version) {
   versions.push(version);
 });
 
+// Remove the unnecessary `loc` properties from the AST snapshots
+expect.addSnapshotSerializer({
+  test(val) {
+    return val && val.hasOwnProperty('loc');
+  },
+
+  print(val, serialize) {
+    let clone = Object.assign({}, val);
+    delete clone.loc;
+    return serialize(clone);
+  },
+});
+
 const defaultConfig = {
   skip: {
     elements: ['pre', 'address'],
