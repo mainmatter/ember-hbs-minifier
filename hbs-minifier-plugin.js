@@ -128,9 +128,7 @@ function stripNoMinifyBlocks(nodes) {
 }
 
 function getElementAttribute(node, attrName) {
-  let attribute = node.attributes.find((attr) => {
-    return attr.name === attrName;
-  });
+  let attribute = node.attributes.find(attr => attr.name === attrName);
   return (attribute || {}).value;
 }
 
