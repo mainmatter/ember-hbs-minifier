@@ -6,6 +6,14 @@ Stripping whitespace out of your Handlebars templates
 __Disclaimer:__ This is an experiment and might change in the future. Do not
 use this for production yet unless you understand the consequences!
 
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v3.4 or above
+* Ember CLI v3.4 or above
+* Node.js 8 or above
+
+
 Installation
 ------------------------------------------------------------------------------
 
