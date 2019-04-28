@@ -7,6 +7,8 @@ const trailingWhiteSpace = /[ \t\r\n]+$/;
 const WHITESPACE = /^[ \t\r\n]+$/;
 
 function createGlimmerPlugin(config) {
+  normalizeConfig(config);
+
   // in this stack we track the nodes that cause us to skip the minification
   // e.g. `{{#no-minify}} ... {{/no-minify}}` blocks or `<pre></pre>` tags
   // depending on the configuration
@@ -191,7 +193,7 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
 
 
 function shouldSkipBlockStatement(node, config) {
-  let components = config.components;
+  let components = config.skip.components;
   if (components === 'all') {
     return true;
   }
@@ -202,7 +204,7 @@ function shouldSkipBlockStatement(node, config) {
 }
 
 function shouldSkipElementNode(node, config) {
-  let elements = config.elements;
+  let elements = config.skip.elements;
   if (elements === 'all') {
     return true;
   }
@@ -218,7 +220,14 @@ function shouldSkipClass(node, config) {
     return false;
   }
 
-  return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.classes);
+  return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.skip.classes);
+}
+
+function normalizeConfig(config = {}) {
+  config.skip = config.skip || {};
+  config.skip.elements = config.skip.elements || ['pre'];
+  config.skip.classes = config.skip.classes || [];
+  config.skip.components = config.skip.components || ['no-minify'];
 }
 
 module.exports = {
