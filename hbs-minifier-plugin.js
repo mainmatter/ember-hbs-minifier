@@ -15,7 +15,8 @@ function createGlimmerPlugin(config) {
       TextNode(node) {
         let chars = node.chars;
         if (preStack.length === 0 && hasLeadingOrTrailingWhiteSpace(chars)) {
-          node.chars = stripWhiteSpace(chars);
+          // replace leading and trailing whitespace with a single whitespace character
+          node.chars = chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
         }
       },
 
@@ -115,13 +116,6 @@ function isWhitespaceTextNode(node) {
 
 function hasLeadingOrTrailingWhiteSpace(chars) {
   return leadingWhiteSpace.test(chars) || trailingWhiteSpace.test(chars);
-}
-
-function stripWhiteSpace(chars) {
-  /*
-    Replacing multiple ' ', '\n' and '\t'(leading/trailing) into a single whitespace.
-  */
-  return chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
 }
 
 function stripNoMinifyBlocks(nodes) {
