@@ -1,445 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace into single space character 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 7,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 5,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 2,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " ",
-      "loc": Object {
-        "end": Object {
-          "column": 0,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 7,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 7,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 4,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 5,
-            "line": 4,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 2,
-            "line": 4,
-          },
-        },
         "original": "bar",
         "parts": Array [
           "bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 7,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "  1  ",
-              "loc": Object {
-                "end": Object {
-                  "column": 28,
-                  "line": 2,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 2,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 35,
-              "line": 2,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 2,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 35,
-              "line": 2,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " 2 ",
-              "loc": Object {
-                "end": Object {
-                  "column": 13,
-                  "line": 3,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span> &nbsp;1&nbsp; </span> <span> 2 </span></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "1",
-          "loc": Object {
-            "end": Object {
-              "column": 7,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 14,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
-    Object {
+    TextNode {
       "chars": "  ",
-      "loc": Object {
-        "end": Object {
-          "column": 26,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 14,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "2",
-          "loc": Object {
-            "end": Object {
-              "column": 33,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 32,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 40,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 26,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 40,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>&nbsp;&nbsp;<span>2</span>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse whitespace inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 4,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -451,62 +163,26 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse w
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 4,
-            },
-            "source": null,
-            "start": Object {
-              "column": 19,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 20,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 20,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -518,147 +194,51 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not collapse w
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
-          "loc": Object {
-            "end": Object {
-              "column": 24,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "description",
-            "loc": Object {
-              "end": Object {
-                "column": 24,
-                "line": 1,
-              },
-              "source": null,
-              "start": Object {
-                "column": 11,
-                "line": 1,
-              },
-            },
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   1
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 25,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     2
   ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 9,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 6,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 6,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -672,160 +252,52 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`c
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
-      "loc": Object {
-        "end": Object {
-          "column": 12,
-          "line": 5,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 10,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 3,
-            "line": 1,
-          },
-        },
         "original": "foo-bar",
         "parts": Array [
           "foo-bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          TextNode {
             "chars": "  ",
-            "loc": Object {
-              "end": Object {
-                "column": 2,
-                "line": 2,
-              },
-              "source": null,
-              "start": Object {
-                "column": 0,
-                "line": 2,
-              },
-            },
-            "type": "TextNode",
           },
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": "
     yield content
   ",
-                "loc": Object {
-                  "end": Object {
-                    "column": 2,
-                    "line": 4,
-                  },
-                  "source": null,
-                  "start": Object {
-                    "column": 8,
-                    "line": 2,
-                  },
-                },
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
-            "loc": Object {
-              "end": Object {
-                "column": 9,
-                "line": 4,
-              },
-              "source": null,
-              "start": Object {
-                "column": 2,
-                "line": 2,
-              },
-            },
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
-          Object {
+          TextNode {
             "chars": "
 ",
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 5,
-              },
-              "source": null,
-              "start": Object {
-                "column": 9,
-                "line": 4,
-              },
-            },
-            "type": "TextNode",
           },
         ],
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 5,
-          },
-          "source": null,
-          "start": Object {
-            "column": 12,
-            "line": 1,
-          },
-        },
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 12,
-      "line": 5,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -837,206 +309,74 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`c
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   Box 564,
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     Disneyland
   ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 6,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 6,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "loc": Object {
-                "end": Object {
-                  "column": 10,
-                  "line": 7,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 7,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 7,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 8,
-            },
-            "source": null,
-            "start": Object {
-              "column": 14,
-              "line": 7,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 10,
-          "line": 8,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "address",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 10,
-      "line": 8,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -1052,1632 +392,552 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not minify \`t
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 13,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 13,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 18,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 15,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 28,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 20,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 34,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 34,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "        ",
-      "loc": Object {
-        "end": Object {
-          "column": 22,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 14,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 29,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 22,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 27,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 24,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": "        ",
-      "loc": Object {
-        "end": Object {
-          "column": 37,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 29,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 51,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 27,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 19,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 34,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 27,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 32,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 29,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 42,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 34,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 62,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 62,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "x ",
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 21,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 14,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 19,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 16,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": " y ",
-          "loc": Object {
-            "end": Object {
-              "column": 30,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 21,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 36,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 36,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "x ",
-      "loc": Object {
-        "end": Object {
-          "column": 9,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 16,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 9,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 14,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 11,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " y ",
-      "loc": Object {
-        "end": Object {
-          "column": 25,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 16,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 25,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
-          "loc": Object {
-            "end": Object {
-              "column": 28,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "contact-details",
-            "loc": Object {
-              "end": Object {
-                "column": 28,
-                "line": 1,
-              },
-              "source": null,
-              "start": Object {
-                "column": 11,
-                "line": 1,
-              },
-            },
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " John Smith ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 29,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " (Entrepreneur) ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "i",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 6,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 6,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
-      "loc": Object {
-        "end": Object {
-          "column": 17,
-          "line": 5,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 15,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 3,
-            "line": 1,
-          },
-        },
         "original": "my-component",
         "parts": Array [
           "my-component",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": " yield content ",
-                "loc": Object {
-                  "end": Object {
-                    "column": 2,
-                    "line": 4,
-                  },
-                  "source": null,
-                  "start": Object {
-                    "column": 8,
-                    "line": 2,
-                  },
-                },
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
-            "loc": Object {
-              "end": Object {
-                "column": 9,
-                "line": 4,
-              },
-              "source": null,
-              "start": Object {
-                "column": 2,
-                "line": 2,
-              },
-            },
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
         ],
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 5,
-          },
-          "source": null,
-          "start": Object {
-            "column": 17,
-            "line": 1,
-          },
-        },
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 17,
-      "line": 5,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " Box 564, ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " Disneyland ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 6,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 6,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "loc": Object {
-                "end": Object {
-                  "column": 10,
-                  "line": 7,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 7,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 7,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 10,
-          "line": 8,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "section",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 10,
-      "line": 8,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 13,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 18,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 15,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 34,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 34,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 15,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 8,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 13,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 10,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 23,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from Program nodes 2`] = `"{{foo}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace into single space character 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 7,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 5,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 2,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " ",
-      "loc": Object {
-        "end": Object {
-          "column": 0,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 7,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 7,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 4,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 5,
-            "line": 4,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 2,
-            "line": 4,
-          },
-        },
         "original": "bar",
         "parts": Array [
           "bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 7,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "  1  ",
-              "loc": Object {
-                "end": Object {
-                  "column": 28,
-                  "line": 2,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 2,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 35,
-              "line": 2,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 2,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 35,
-              "line": 2,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " 2 ",
-              "loc": Object {
-                "end": Object {
-                  "column": 13,
-                  "line": 3,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span> &nbsp;1&nbsp; </span> <span> 2 </span></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "1",
-          "loc": Object {
-            "end": Object {
-              "column": 7,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 14,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
-    Object {
+    TextNode {
       "chars": "  ",
-      "loc": Object {
-        "end": Object {
-          "column": 26,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 14,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "2",
-          "loc": Object {
-            "end": Object {
-              "column": 33,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 32,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 40,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 26,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 40,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>&nbsp;&nbsp;<span>2</span>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse whitespace inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 4,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -2689,62 +949,26 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse wh
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 4,
-            },
-            "source": null,
-            "start": Object {
-              "column": 19,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 20,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 20,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -2756,147 +980,51 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not collapse wh
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
-          "loc": Object {
-            "end": Object {
-              "column": 24,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "description",
-            "loc": Object {
-              "end": Object {
-                "column": 24,
-                "line": 1,
-              },
-              "source": null,
-              "start": Object {
-                "column": 11,
-                "line": 1,
-              },
-            },
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   1
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 25,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     2
   ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 9,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 6,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 6,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -2910,160 +1038,52 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`cl
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
-      "loc": Object {
-        "end": Object {
-          "column": 12,
-          "line": 5,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 10,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 3,
-            "line": 1,
-          },
-        },
         "original": "foo-bar",
         "parts": Array [
           "foo-bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          TextNode {
             "chars": "  ",
-            "loc": Object {
-              "end": Object {
-                "column": 2,
-                "line": 2,
-              },
-              "source": null,
-              "start": Object {
-                "column": 0,
-                "line": 2,
-              },
-            },
-            "type": "TextNode",
           },
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": "
     yield content
   ",
-                "loc": Object {
-                  "end": Object {
-                    "column": 2,
-                    "line": 4,
-                  },
-                  "source": null,
-                  "start": Object {
-                    "column": 8,
-                    "line": 2,
-                  },
-                },
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
-            "loc": Object {
-              "end": Object {
-                "column": 9,
-                "line": 4,
-              },
-              "source": null,
-              "start": Object {
-                "column": 2,
-                "line": 2,
-              },
-            },
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
-          Object {
+          TextNode {
             "chars": "
 ",
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 5,
-              },
-              "source": null,
-              "start": Object {
-                "column": 9,
-                "line": 4,
-              },
-            },
-            "type": "TextNode",
           },
         ],
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 5,
-          },
-          "source": null,
-          "start": Object {
-            "column": 12,
-            "line": 1,
-          },
-        },
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 12,
-      "line": 5,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -3075,206 +1095,74 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`co
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   Box 564,
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     Disneyland
   ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 6,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 6,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "loc": Object {
-                "end": Object {
-                  "column": 10,
-                  "line": 7,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 7,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 7,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 8,
-            },
-            "source": null,
-            "start": Object {
-              "column": 14,
-              "line": 7,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 10,
-          "line": 8,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "address",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 10,
-      "line": 8,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
@@ -3290,1632 +1178,552 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not minify \`ta
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of <pre> tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 13,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 13,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 18,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 15,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 28,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 20,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 34,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 34,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "        ",
-      "loc": Object {
-        "end": Object {
-          "column": 22,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 14,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 29,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 22,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 27,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 24,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": "        ",
-      "loc": Object {
-        "end": Object {
-          "column": 37,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 29,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 51,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 27,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 19,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 34,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 27,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 32,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 29,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 42,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 34,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 62,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 62,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "x ",
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 21,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 14,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 19,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 16,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": " y ",
-          "loc": Object {
-            "end": Object {
-              "column": 30,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 21,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 36,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 36,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "x ",
-      "loc": Object {
-        "end": Object {
-          "column": 9,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 16,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 9,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 14,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 11,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " y ",
-      "loc": Object {
-        "end": Object {
-          "column": 25,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 16,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 25,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
-          "loc": Object {
-            "end": Object {
-              "column": 28,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "contact-details",
-            "loc": Object {
-              "end": Object {
-                "column": 28,
-                "line": 1,
-              },
-              "source": null,
-              "start": Object {
-                "column": 11,
-                "line": 1,
-              },
-            },
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " John Smith ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 29,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " (Entrepreneur) ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "i",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 6,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 6,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
-      "loc": Object {
-        "end": Object {
-          "column": 17,
-          "line": 5,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 15,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 3,
-            "line": 1,
-          },
-        },
         "original": "my-component",
         "parts": Array [
           "my-component",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Program {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": " yield content ",
-                "loc": Object {
-                  "end": Object {
-                    "column": 2,
-                    "line": 4,
-                  },
-                  "source": null,
-                  "start": Object {
-                    "column": 8,
-                    "line": 2,
-                  },
-                },
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
-            "loc": Object {
-              "end": Object {
-                "column": 9,
-                "line": 4,
-              },
-              "source": null,
-              "start": Object {
-                "column": 2,
-                "line": 2,
-              },
-            },
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
         ],
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 5,
-          },
-          "source": null,
-          "start": Object {
-            "column": 17,
-            "line": 1,
-          },
-        },
-        "type": "Program",
       },
-      "type": "BlockStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 17,
-      "line": 5,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " Box 564, ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " Disneyland ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 6,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 6,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "loc": Object {
-                "end": Object {
-                  "column": 10,
-                  "line": 7,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 7,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 7,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 10,
-          "line": 8,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "section",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 10,
-      "line": 8,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from ElementNode nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 13,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 18,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 15,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 34,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 34,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from Program nodes 1`] = `
-Object {
+Program {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 15,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 8,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 13,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 10,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 23,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Program",
 }
 `;
 
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from Program nodes 2`] = `"{{foo}}"`;
 
 exports[`HBS Minifier plugin collapses whitespace into single space character 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 7,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 5,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 2,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " ",
-      "loc": Object {
-        "end": Object {
-          "column": 0,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 7,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 7,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 4,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 5,
-            "line": 4,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 2,
-            "line": 4,
-          },
-        },
         "original": "bar",
         "parts": Array [
           "bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 7,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin collapses whitespace into single space character 2`] = `"{{foo}} {{bar}}"`;
 
 exports[`HBS Minifier plugin does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "  1  ",
-              "loc": Object {
-                "end": Object {
-                  "column": 28,
-                  "line": 2,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 2,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 35,
-              "line": 2,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 2,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 35,
-              "line": 2,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " 2 ",
-              "loc": Object {
-                "end": Object {
-                  "column": 13,
-                  "line": 3,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `"<div><span> &nbsp;1&nbsp; </span> <span> 2 </span></div>"`;
 
 exports[`HBS Minifier plugin does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "1",
-          "loc": Object {
-            "end": Object {
-              "column": 7,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 14,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
-    Object {
+    TextNode {
       "chars": "  ",
-      "loc": Object {
-        "end": Object {
-          "column": 26,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 14,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "2",
-          "loc": Object {
-            "end": Object {
-              "column": 33,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 32,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 40,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 26,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "span",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 40,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `"<span>1</span>&nbsp;&nbsp;<span>2</span>"`;
 
 exports[`HBS Minifier plugin does not collapse whitespace inside of <pre> tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 4,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
@@ -4927,62 +1735,26 @@ exports[`HBS Minifier plugin does not collapse whitespace inside of <pre> tags 2
 `;
 
 exports[`HBS Minifier plugin does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "  
 
    
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 4,
-            },
-            "source": null,
-            "start": Object {
-              "column": 19,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 20,
-          "line": 4,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 20,
-      "line": 4,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
@@ -4994,147 +1766,51 @@ exports[`HBS Minifier plugin does not collapse whitespace inside of {{#no-minify
 `;
 
 exports[`HBS Minifier plugin does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
-          "loc": Object {
-            "end": Object {
-              "column": 24,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "description",
-            "loc": Object {
-              "end": Object {
-                "column": 24,
-                "line": 1,
-              },
-              "source": null,
-              "start": Object {
-                "column": 11,
-                "line": 1,
-              },
-            },
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   1
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 25,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     2
   ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 9,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "span",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 6,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 6,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
@@ -5148,160 +1824,52 @@ exports[`HBS Minifier plugin does not minify \`classNames\` specified in .hbs-mi
 `;
 
 exports[`HBS Minifier plugin does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
-      "loc": Object {
-        "end": Object {
-          "column": 12,
-          "line": 5,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 10,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 3,
-            "line": 1,
-          },
-        },
         "original": "foo-bar",
         "parts": Array [
           "foo-bar",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Block {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          TextNode {
             "chars": "  ",
-            "loc": Object {
-              "end": Object {
-                "column": 2,
-                "line": 2,
-              },
-              "source": null,
-              "start": Object {
-                "column": 0,
-                "line": 2,
-              },
-            },
-            "type": "TextNode",
           },
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": "
     yield content
   ",
-                "loc": Object {
-                  "end": Object {
-                    "column": 2,
-                    "line": 4,
-                  },
-                  "source": null,
-                  "start": Object {
-                    "column": 8,
-                    "line": 2,
-                  },
-                },
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
-            "loc": Object {
-              "end": Object {
-                "column": 9,
-                "line": 4,
-              },
-              "source": null,
-              "start": Object {
-                "column": 2,
-                "line": 2,
-              },
-            },
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
-          Object {
+          TextNode {
             "chars": "
 ",
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 5,
-              },
-              "source": null,
-              "start": Object {
-                "column": 9,
-                "line": 4,
-              },
-            },
-            "type": "TextNode",
           },
         ],
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 5,
-          },
-          "source": null,
-          "start": Object {
-            "column": 12,
-            "line": 1,
-          },
-        },
-        "type": "Block",
       },
-      "type": "BlockStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 12,
-      "line": 5,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
@@ -5313,206 +1881,74 @@ exports[`HBS Minifier plugin does not minify \`components\` specified in .hbs-mi
 `;
 
 exports[`HBS Minifier plugin does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "
   Box 564,
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": "
     Disneyland
   ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 6,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
   ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 6,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "loc": Object {
-                "end": Object {
-                  "column": 10,
-                  "line": 7,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 7,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 7,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": "
 ",
-          "loc": Object {
-            "end": Object {
-              "column": 0,
-              "line": 8,
-            },
-            "source": null,
-            "start": Object {
-              "column": 14,
-              "line": 7,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 10,
-          "line": 8,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "address",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 10,
-      "line": 8,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
@@ -5528,1187 +1964,395 @@ exports[`HBS Minifier plugin does not minify \`tagNames\` specified in .hbs-mini
 `;
 
 exports[`HBS Minifier plugin does not strip inside of <pre> tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 13,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 13,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 18,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 15,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 28,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 20,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 34,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "pre",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 34,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip inside of <pre> tags 2`] = `"<pre>        {{foo}}        </pre>"`;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "        ",
-      "loc": Object {
-        "end": Object {
-          "column": 22,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 14,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 29,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 22,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 27,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 24,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": "        ",
-      "loc": Object {
-        "end": Object {
-          "column": 37,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 29,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 51,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags 2`] = `"        {{foo}}        "`;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags in other tags 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 27,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 19,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 34,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 27,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 32,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 29,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": "        ",
-          "loc": Object {
-            "end": Object {
-              "column": 42,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 34,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 62,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 62,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip inside of {{#no-minify}} tags in other tags 2`] = `"<div>        {{foo}}        </div>"`;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from ElementNode nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": "x ",
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 21,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 14,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 19,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 16,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
-        Object {
+        TextNode {
           "chars": " y ",
-          "loc": Object {
-            "end": Object {
-              "column": 30,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 21,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 36,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 36,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from ElementNode nodes 2`] = `"<div>x {{foo}} y </div>"`;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from Program nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    TextNode {
       "chars": "x ",
-      "loc": Object {
-        "end": Object {
-          "column": 9,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 16,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 9,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 14,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 11,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
-    Object {
+    TextNode {
       "chars": " y ",
-      "loc": Object {
-        "end": Object {
-          "column": 25,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 16,
-          "line": 1,
-        },
-      },
-      "type": "TextNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 25,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin does not strip leading/trailing text from Program nodes 2`] = `"x {{foo}} y "`;
 
 exports[`HBS Minifier plugin minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [
-        Object {
-          "loc": Object {
-            "end": Object {
-              "column": 28,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 5,
-              "line": 1,
-            },
-          },
+        AttrNode {
           "name": "class",
-          "type": "AttrNode",
-          "value": Object {
+          "value": TextNode {
             "chars": "contact-details",
-            "loc": Object {
-              "end": Object {
-                "column": 28,
-                "line": 1,
-              },
-              "source": null,
-              "start": Object {
-                "column": 11,
-                "line": 1,
-              },
-            },
-            "type": "TextNode",
           },
         },
       ],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " John Smith ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 29,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " (Entrepreneur) ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "i",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 6,
-          "line": 6,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 6,
-      "line": 6,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"`;
 
 exports[`HBS Minifier plugin minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+    BlockStatement {
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
       },
       "inverse": null,
-      "loc": Object {
-        "end": Object {
-          "column": 17,
-          "line": 5,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 15,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 3,
-            "line": 1,
-          },
-        },
         "original": "my-component",
         "parts": Array [
           "my-component",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "program": Object {
+      "program": Block {
         "blockParams": Array [],
         "body": Array [
-          Object {
+          ElementNode {
             "attributes": Array [],
             "blockParams": Array [],
             "children": Array [
-              Object {
+              TextNode {
                 "chars": " yield content ",
-                "loc": Object {
-                  "end": Object {
-                    "column": 2,
-                    "line": 4,
-                  },
-                  "source": null,
-                  "start": Object {
-                    "column": 8,
-                    "line": 2,
-                  },
-                },
-                "type": "TextNode",
               },
             ],
             "comments": Array [],
-            "loc": Object {
-              "end": Object {
-                "column": 9,
-                "line": 4,
-              },
-              "source": null,
-              "start": Object {
-                "column": 2,
-                "line": 2,
-              },
-            },
             "modifiers": Array [],
             "selfClosing": false,
             "tag": "span",
-            "type": "ElementNode",
           },
         ],
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 5,
-          },
-          "source": null,
-          "start": Object {
-            "column": 17,
-            "line": 1,
-          },
-        },
-        "type": "Block",
       },
-      "type": "BlockStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 17,
-      "line": 5,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `"{{#my-component}}<span> yield content </span>{{/my-component}}"`;
 
 exports[`HBS Minifier plugin minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        TextNode {
           "chars": " Box 564, ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 3,
-            },
-            "source": null,
-            "start": Object {
-              "column": 9,
-              "line": 1,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " Disneyland ",
-              "loc": Object {
-                "end": Object {
-                  "column": 2,
-                  "line": 5,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 3,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 5,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 3,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "b",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 5,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 6,
-              "line": 6,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 6,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "br",
-          "type": "ElementNode",
         },
-        Object {
+        TextNode {
           "chars": " ",
-          "loc": Object {
-            "end": Object {
-              "column": 2,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 6,
-              "line": 6,
-            },
-          },
-          "type": "TextNode",
         },
-        Object {
+        ElementNode {
           "attributes": Array [],
           "blockParams": Array [],
           "children": Array [
-            Object {
+            TextNode {
               "chars": " USA ",
-              "loc": Object {
-                "end": Object {
-                  "column": 10,
-                  "line": 7,
-                },
-                "source": null,
-                "start": Object {
-                  "column": 5,
-                  "line": 7,
-                },
-              },
-              "type": "TextNode",
             },
           ],
           "comments": Array [],
-          "loc": Object {
-            "end": Object {
-              "column": 14,
-              "line": 7,
-            },
-            "source": null,
-            "start": Object {
-              "column": 2,
-              "line": 7,
-            },
-          },
           "modifiers": Array [],
           "selfClosing": false,
           "tag": "u",
-          "type": "ElementNode",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 10,
-          "line": 8,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "section",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 10,
-      "line": 8,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `"<section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"`;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    ElementNode {
       "attributes": Array [],
       "blockParams": Array [],
       "children": Array [
-        Object {
+        MustacheStatement {
           "escaped": true,
-          "hash": Object {
-            "loc": Object {
-              "end": Object {
-                "column": 0,
-                "line": 1,
-              },
-              "source": "(synthetic)",
-              "start": Object {
-                "column": 0,
-                "line": 1,
-              },
-            },
+          "hash": Hash {
             "pairs": Array [],
-            "type": "Hash",
-          },
-          "loc": Object {
-            "end": Object {
-              "column": 20,
-              "line": 1,
-            },
-            "source": null,
-            "start": Object {
-              "column": 13,
-              "line": 1,
-            },
           },
           "params": Array [],
-          "path": Object {
+          "path": PathExpression {
             "data": false,
-            "loc": SourceLocation {
-              "end": Object {
-                "column": 18,
-                "line": 1,
-              },
-              "source": undefined,
-              "start": Object {
-                "column": 15,
-                "line": 1,
-              },
-            },
             "original": "foo",
             "parts": Array [
               "foo",
             ],
             "this": false,
-            "type": "PathExpression",
           },
-          "type": "MustacheStatement",
         },
       ],
       "comments": Array [],
-      "loc": Object {
-        "end": Object {
-          "column": 34,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 0,
-          "line": 1,
-        },
-      },
       "modifiers": Array [],
       "selfClosing": false,
       "tag": "div",
-      "type": "ElementNode",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 34,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 2`] = `"<div>{{foo}}</div>"`;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from Program nodes 1`] = `
-Object {
+Template {
   "blockParams": Array [],
   "body": Array [
-    Object {
+    MustacheStatement {
       "escaped": true,
-      "hash": Object {
-        "loc": Object {
-          "end": Object {
-            "column": 0,
-            "line": 1,
-          },
-          "source": "(synthetic)",
-          "start": Object {
-            "column": 0,
-            "line": 1,
-          },
-        },
+      "hash": Hash {
         "pairs": Array [],
-        "type": "Hash",
-      },
-      "loc": Object {
-        "end": Object {
-          "column": 15,
-          "line": 1,
-        },
-        "source": null,
-        "start": Object {
-          "column": 8,
-          "line": 1,
-        },
       },
       "params": Array [],
-      "path": Object {
+      "path": PathExpression {
         "data": false,
-        "loc": SourceLocation {
-          "end": Object {
-            "column": 13,
-            "line": 1,
-          },
-          "source": undefined,
-          "start": Object {
-            "column": 10,
-            "line": 1,
-          },
-        },
         "original": "foo",
         "parts": Array [
           "foo",
         ],
         "this": false,
-        "type": "PathExpression",
       },
-      "type": "MustacheStatement",
     },
   ],
-  "loc": Object {
-    "end": Object {
-      "column": 23,
-      "line": 1,
-    },
-    "source": null,
-    "start": Object {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "type": "Template",
 }
 `;
 
