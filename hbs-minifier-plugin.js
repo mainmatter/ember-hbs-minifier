@@ -65,7 +65,7 @@ function createGlimmerPlugin(config) {
 
       ElementNode: {
         enter(node) {
-          if (shouldSkipElementNode(node, config)) {
+          if (shouldSkipElementNode(node, config) || shouldSkipClass(node, config)) {
             skipStack.push(node);
           }
 
@@ -217,16 +217,16 @@ function shouldSkipElementNode(node, config) {
 
   // If a element or all the element is/are skiped then we need to preserve the whitespace.
   let tag = node.tag;
-  if (elements.indexOf(tag) !== -1) {
-    return true;
-  }
+  return elements.indexOf(tag) !== -1;
+}
 
+function shouldSkipClass(node, config) {
   let classAttrNode = node.attributes.find(attr => attr.name === 'class');
-  if (classAttrNode) {
-    return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.classes);
+  if (!classAttrNode) {
+    return false;
   }
 
-  return false;
+  return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.classes);
 }
 
 module.exports = {
