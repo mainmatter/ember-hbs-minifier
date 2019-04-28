@@ -43,18 +43,8 @@ function createGlimmerPlugin(config) {
 
       Program: {
         enter(node) {
-          if (insideSkipBlock()) {
-            return;
-          }
-
-          let firstChild = node.body[0];
-          if (isWhitespaceTextNode(firstChild)) {
-            node.body.shift();
-          }
-
-          let lastChild = node.body[node.body.length - 1];
-          if (isWhitespaceTextNode(lastChild)) {
-            node.body.pop();
+          if (!insideSkipBlock()) {
+            removeSurroundingWhitespaceNodes(node.body);
           }
         },
 
@@ -69,18 +59,8 @@ function createGlimmerPlugin(config) {
             skipStack.push(node);
           }
 
-          if (insideSkipBlock()) {
-            return;
-          }
-
-          let firstChild = node.children[0];
-          if (isWhitespaceTextNode(firstChild)) {
-            node.children.shift();
-          }
-
-          let lastChild = node.children[node.children.length - 1];
-          if (isWhitespaceTextNode(lastChild)) {
-            node.children.pop();
+          if (!insideSkipBlock()) {
+            removeSurroundingWhitespaceNodes(node.children);
           }
         },
 
@@ -125,6 +105,18 @@ function stripNoMinifyBlocks(nodes) {
     }
     return node;
   }).reduce((a, b) => a.concat(b), []);
+}
+
+function removeSurroundingWhitespaceNodes(nodes) {
+  // remove leading text node if it contains only whitespace
+  if (isWhitespaceTextNode(nodes[0])) {
+    nodes.shift();
+  }
+
+  // remove trailing text node if it contains only whitespace
+  if (isWhitespaceTextNode(nodes[nodes.length - 1])) {
+    nodes.pop();
+  }
 }
 
 function isClassIncluded(chars, classes) {
