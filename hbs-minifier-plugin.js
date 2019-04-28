@@ -29,7 +29,7 @@ function createGlimmerPlugin(config) {
 
       BlockStatement: {
         enter(node) {
-          if (!canTrimBlockStatementContent(node, config)) {
+          if (shouldSkipBlockStatement(node, config)) {
             skipStack.push(node);
           }
         },
@@ -198,11 +198,11 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
 }
 
 
-function canTrimBlockStatementContent(node, config) {
+function shouldSkipBlockStatement(node, config) {
   // If a block or all the blocks is/are skiped (or) named as 'no-minify' then we need to preserve the whitespace.
   let componentName = node.path.original;
   let components = config.components;
-  return components.indexOf(componentName) === -1 && components !== 'all';
+  return components.indexOf(componentName) !== -1 || components === 'all';
 }
 
 function shouldSkipElementNode(node, config) {
