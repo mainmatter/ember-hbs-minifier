@@ -5,6 +5,7 @@
   "keywords": [
     "ember-addon"
   ],
+  "homepage": "https://github.com/simplabs/ember-hbs-minifier",
   "repository": "https://github.com/simplabs/ember-hbs-minifier",
   "license": "MIT",
   "author": "",
