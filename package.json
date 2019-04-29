@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "ember build",
+    "changelog": "lerna-changelog",
     "lint": "eslint . --cache",
     "start": "ember server",
     "test": "jest",
@@ -53,6 +54,7 @@
     "eslint": "^5.16.0",
     "eslint-config-simplabs": "0.4.0",
     "jest": "^24.1.0",
+    "lerna-changelog": "^0.8.2",
     "loader.js": "^4.2.3",
     "multidep": "github:Turbo87/node-multidep#mkdirp"
   },
@@ -64,5 +66,8 @@
     "versionCompatibility": {
       "ember": ">=3.4.0"
     }
+  },
+  "changelog": {
+    "repo": "simplabs/ember-hbs-minifier"
   }
 }
