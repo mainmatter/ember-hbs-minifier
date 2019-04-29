@@ -37,6 +37,9 @@ jobs:
     - stage: "Publish"
       name: "npm"
       if: tag IS present
+      before_install: skip
+      install: skip
+      script: skip
       deploy:
         provider: npm
         email: info@simplabs.com
