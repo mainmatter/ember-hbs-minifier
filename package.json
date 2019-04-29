@@ -1,7 +1,7 @@
 {
   "name": "ember-hbs-minifier",
   "version": "0.3.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Stripping whitespace out of your Handlebars templates",
   "keywords": [
     "ember-addon"
   ],
