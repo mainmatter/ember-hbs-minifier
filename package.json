@@ -47,7 +47,7 @@
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-load-initializers": "^2.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-mocha": "^0.14.0",
+    "ember-mocha": "^0.15.1",
     "ember-resolver": "^5.0.1",
     "ember-source": "~3.9.0",
     "ember-try": "^1.1.0",
