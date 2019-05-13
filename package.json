@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "hash-obj": "^1.0.0"
+    "hash-obj": "^2.0.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",
