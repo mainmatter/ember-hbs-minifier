@@ -773,10 +773,10 @@
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@glimmer/di/-/di-0.2.0.tgz#73bfd4a6ee4148a80bf092e8a5d29bcac9d4ce7e"
 
-"@glimmer/interfaces@^0.40.1":
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.40.1.tgz#eb767718c47872243db50c993700a385940c2cb2"
-  integrity sha512-gk+3Ij3hrJHPBJpCQE1wF54sh4M/NRx/JOJOhCzsyrf488IDnw2v93ZDEwBd7O3EcQDaRZMOQq6M3FNh/0YZpw==
+"@glimmer/interfaces@^0.41.4":
+  version "0.41.4"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.41.4.tgz#3f3e26abea8a4e1463130e9a75e94372781d154b"
+  integrity sha512-MzXwMyod3MlwSZezHSaVBsCEIW/giYYfTDYARR46QnYsaFVatMVbydjsI7jkAuBCbnLCyNOIc1TrYIj71i/rpg==
 
 "@glimmer/resolver@^0.4.1":
   version "0.4.3"
@@ -784,20 +784,20 @@
   dependencies:
     "@glimmer/di" "^0.2.0"
 
-"@glimmer/syntax@^0.40.1":
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.40.1.tgz#6c387ca8d3080350c039092586adba37ba2bf351"
-  integrity sha512-lZ0xv9wNBVt1tteWszQy+PZbVi8v1vmlYjCTU9s/q2H1khrnVe6VYvicVapGATqlMQ84reRqJkQKdgfpy+ig6A==
+"@glimmer/syntax@^0.41.4":
+  version "0.41.4"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.41.4.tgz#9c0c763aab44069c828ce782947c84d31ff75879"
+  integrity sha512-NLPNirZDbNmpZ8T/ccle22zt2rhUq5il7ST6IJk62T58QZeJsdr3m3RS4kaGSBsQhXoKELrgX048yYEX5sC+fw==
   dependencies:
-    "@glimmer/interfaces" "^0.40.1"
-    "@glimmer/util" "^0.40.1"
+    "@glimmer/interfaces" "^0.41.4"
+    "@glimmer/util" "^0.41.4"
     handlebars "^4.0.13"
     simple-html-tokenizer "^0.5.7"
 
-"@glimmer/util@^0.40.1":
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.40.1.tgz#e4bd667d36422261248df039dd46bfe963655bd3"
-  integrity sha512-YuV7hhjrPi/2YYc+GCyOBzrG1xSolQ4Fg/dkQdpDkTA03UkC9BiCQRxbOK4SjlV9IuBSEIv/Is6BOfkQ8hhX2g==
+"@glimmer/util@^0.41.4":
+  version "0.41.4"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.41.4.tgz#508fd82ca40305416e130f0da7b537295ded7989"
+  integrity sha512-DwS94K+M0vtG+cymxH0rslJr09qpdjyOLdCjmpKcG/nNiZQfMA1ybAaFEmwk9UaVlUG9STENFeQwyrLevJB+7g==
 
 "@jest/console@^24.7.1":
   version "24.7.1"
@@ -1308,12 +1308,6 @@ async@^2.4.1:
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.0.tgz#61a29abb6fcc026fea77e56d1c6ec53a795951f4"
   dependencies:
     lodash "^4.14.0"
-
-async@^2.5.0:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.6.1.tgz#b245a23ca71930044ec53fa46aa00a3e87c6a610"
-  dependencies:
-    lodash "^4.17.10"
 
 async@~0.2.9:
   version "0.2.10"
@@ -4724,22 +4718,12 @@ growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
 
-handlebars@^4.0.11, handlebars@^4.0.13:
+handlebars@^4.0.11, handlebars@^4.0.13, handlebars@^4.0.4, handlebars@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
   integrity sha512-nvfrjqvt9xQ8Z/w0ijewdD/vvWDTOweBUm96NTr66Wfvo1mJenBLwcYmPs3TIBP5ruzYGD7Hx/DaM9RmhroGPw==
   dependencies:
     neo-async "^2.6.0"
-    optimist "^0.6.1"
-    source-map "^0.6.1"
-  optionalDependencies:
-    uglify-js "^3.1.4"
-
-handlebars@^4.0.4, handlebars@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.0.tgz#0d6a6f34ff1f63cecec8423aa4169827bf787c3a"
-  dependencies:
-    async "^2.5.0"
     optimist "^0.6.1"
     source-map "^0.6.1"
   optionalDependencies:
