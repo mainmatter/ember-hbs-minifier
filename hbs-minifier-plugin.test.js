@@ -156,6 +156,14 @@ for (let version of versions) {
 {{/my-component}}`);
     });
 
+    it('skips whitespace in regular attributes', function() {
+      assert(`<div title="    foo    " />`);
+    });
+
+    it('skips whitespace in concatenated attributes', function() {
+      assert(`<div title="    foo  {{if this.bar "BAR"}}  " />`);
+    });
+
     function assert(template, config = {}) {
       let ast = process(template, config);
       expect(ast).toMatchSnapshot();

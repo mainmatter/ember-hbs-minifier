@@ -824,6 +824,101 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) minifies \`tagNames
 <section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"
 `;
 
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) skips whitespace in concatenated attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "    foo  ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": false,
+                    "original": "this.bar",
+                    "parts": Array [
+                      "bar",
+                    ],
+                    "this": true,
+                  },
+                  StringLiteral {
+                    "original": "BAR",
+                    "value": "BAR",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": "  ",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) skips whitespace in concatenated attributes 2`] = `
+"<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\" />
+---
+<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\"></div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) skips whitespace in regular attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": TextNode {
+            "chars": "    foo    ",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) skips whitespace in regular attributes 2`] = `
+"<div title=\\"    foo    \\" />
+---
+<div title=\\"    foo    \\"></div>"
+`;
+
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and trailing whitespace from ElementNode nodes 1`] = `
 Program {
   "blockParams": Array [],
@@ -1716,6 +1811,101 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) minifies \`tagNames\
 <section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"
 `;
 
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) skips whitespace in concatenated attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "    foo  ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": false,
+                    "original": "this.bar",
+                    "parts": Array [
+                      "bar",
+                    ],
+                    "this": true,
+                  },
+                  StringLiteral {
+                    "original": "BAR",
+                    "value": "BAR",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": "  ",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) skips whitespace in concatenated attributes 2`] = `
+"<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\" />
+---
+<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\"></div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) skips whitespace in regular attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": TextNode {
+            "chars": "    foo    ",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) skips whitespace in regular attributes 2`] = `
+"<div title=\\"    foo    \\" />
+---
+<div title=\\"    foo    \\"></div>"
+`;
+
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and trailing whitespace from ElementNode nodes 1`] = `
 Program {
   "blockParams": Array [],
@@ -2606,6 +2796,101 @@ exports[`HBS Minifier plugin minifies \`tagNames\` that are not specified in .hb
 </section>
 ---
 <section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"
+`;
+
+exports[`HBS Minifier plugin skips whitespace in concatenated attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "    foo  ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": false,
+                    "original": "this.bar",
+                    "parts": Array [
+                      "bar",
+                    ],
+                    "this": true,
+                  },
+                  StringLiteral {
+                    "original": "BAR",
+                    "value": "BAR",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": "  ",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin skips whitespace in concatenated attributes 2`] = `
+"<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\" />
+---
+<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\"></div>"
+`;
+
+exports[`HBS Minifier plugin skips whitespace in regular attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": TextNode {
+            "chars": "    foo    ",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin skips whitespace in regular attributes 2`] = `
+"<div title=\\"    foo    \\" />
+---
+<div title=\\"    foo    \\"></div>"
 `;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 1`] = `
