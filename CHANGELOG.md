@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.4.1 (2019-11-23)
+
+#### :rocket: Enhancement
+* [#180](https://github.com/simplabs/ember-hbs-minifier/pull/180) Collapse whitespace in `class` attributes ([@Turbo87](https://github.com/Turbo87))
+
+#### :bug: Bug Fix
+* [#177](https://github.com/simplabs/ember-hbs-minifier/pull/177) Fix unintended attribute minification ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#178](https://github.com/simplabs/ember-hbs-minifier/pull/178) Update `ember-mocha` to v0.16.2 ([@Turbo87](https://github.com/Turbo87))
+* [#181](https://github.com/simplabs/ember-hbs-minifier/pull/181) ESLint: Fix tests config ([@Turbo87](https://github.com/Turbo87))
+* [#179](https://github.com/simplabs/ember-hbs-minifier/pull/179) Replace TravisCI with GitHub Actions ([@Turbo87](https://github.com/Turbo87))
+* [#110](https://github.com/simplabs/ember-hbs-minifier/pull/110) CI: Skip unnecessary steps for `npm publish` job ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.4.0 (2019-04-29)
 
 #### :boom: Breaking Change
