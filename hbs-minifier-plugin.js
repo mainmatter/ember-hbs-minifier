@@ -32,6 +32,32 @@ function createGlimmerPlugin(config) {
       AttrNode: {
         enter(node) {
           skipStack.push(node);
+
+          if (node.name === 'class') {
+            if (node.value.type === 'TextNode') {
+              node.value.chars = node.value.chars
+                .replace(leadingWhiteSpace, '')
+                .replace(trailingWhiteSpace, '')
+                .replace(/[ \t\r\n]+/g, ' ');
+            } else if (node.value.type === 'ConcatStatement') {
+              let { parts } = node.value;
+
+              parts.forEach((part, i) => {
+                if (part.type === 'TextNode') {
+                  let isFirst = i === 0;
+                  let isLast = i === parts.length - 1;
+
+                  part.chars = part.chars
+                    .replace(leadingWhiteSpace, isFirst ? '' : ' ')
+                    .replace(trailingWhiteSpace, isLast ? '' : ' ')
+                    .replace(/[ \t\r\n]+/g, ' ');
+                }
+              });
+
+              node.value.parts = node.value.parts
+                .filter(part => part.type !== 'TextNode' || part.chars !== '');
+            }
+          }
         },
 
         exit(node) {
