@@ -1,5 +1,306 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "btn ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": false,
+                    "original": "this.isPrimary",
+                    "parts": Array [
+                      "isPrimary",
+                    ],
+                    "this": true,
+                  },
+                  StringLiteral {
+                    "original": "btn--primary",
+                    "value": "btn--primary",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": true,
+                    "original": "@stretch",
+                    "parts": Array [
+                      "stretch",
+                    ],
+                    "this": false,
+                  },
+                  StringLiteral {
+                    "original": "btn--stretch",
+                    "value": "btn--stretch",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            {{if this.isPrimary \\"btn--primary\\"}}
+            {{if @stretch \\"btn--stretch\\"}}
+          \\"
+        />
+      
+---
+<button class=\\"btn {{if this.isPrimary \\"btn--primary\\"}} {{if @stretch \\"btn--stretch\\"}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 3`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "foo ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@bar",
+                  "parts": Array [
+                    "bar",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " baz",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 4`] = `
+"<button class=\\"   foo   {{@bar}}  baz  \\"/>
+---
+<button class=\\"foo {{@bar}} baz\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 5`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@foo",
+                  "parts": Array [
+                    "foo",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " bar ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@baz",
+                  "parts": Array [
+                    "baz",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 6`] = `
+"<button class=\\"{{@foo}}   bar   {{@baz}}\\"/>
+---
+<button class=\\"{{@foo}} bar {{@baz}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 7`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@foo",
+                  "parts": Array [
+                    "foo",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in concatenated \`class\` attributes 8`] = `
+"<button class=\\"   {{@foo}}   \\"/>
+---
+<button class=\\"{{@foo}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in regular \`class\` attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": TextNode {
+            "chars": "btn btn--primary btn--blue",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace in regular \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            btn--primary
+            btn--blue
+          \\"
+        />
+      
+---
+<button class=\\"btn btn--primary btn--blue\\"></button>"
+`;
+
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) collapses whitespace into single space character 1`] = `
 Program {
   "blockParams": Array [],
@@ -987,6 +1288,307 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.35.11) strips leading and 
 {{foo}}"
 `;
 
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "btn ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": false,
+                    "original": "this.isPrimary",
+                    "parts": Array [
+                      "isPrimary",
+                    ],
+                    "this": true,
+                  },
+                  StringLiteral {
+                    "original": "btn--primary",
+                    "value": "btn--primary",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": true,
+                    "original": "@stretch",
+                    "parts": Array [
+                      "stretch",
+                    ],
+                    "this": false,
+                  },
+                  StringLiteral {
+                    "original": "btn--stretch",
+                    "value": "btn--stretch",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            {{if this.isPrimary \\"btn--primary\\"}}
+            {{if @stretch \\"btn--stretch\\"}}
+          \\"
+        />
+      
+---
+<button class=\\"btn {{if this.isPrimary \\"btn--primary\\"}} {{if @stretch \\"btn--stretch\\"}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 3`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "foo ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@bar",
+                  "parts": Array [
+                    "bar",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " baz",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 4`] = `
+"<button class=\\"   foo   {{@bar}}  baz  \\"/>
+---
+<button class=\\"foo {{@bar}} baz\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 5`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@foo",
+                  "parts": Array [
+                    "foo",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " bar ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@baz",
+                  "parts": Array [
+                    "baz",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 6`] = `
+"<button class=\\"{{@foo}}   bar   {{@baz}}\\"/>
+---
+<button class=\\"{{@foo}} bar {{@baz}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 7`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@foo",
+                  "parts": Array [
+                    "foo",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in concatenated \`class\` attributes 8`] = `
+"<button class=\\"   {{@foo}}   \\"/>
+---
+<button class=\\"{{@foo}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in regular \`class\` attributes 1`] = `
+Program {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": TextNode {
+            "chars": "btn btn--primary btn--blue",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace in regular \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            btn--primary
+            btn--blue
+          \\"
+        />
+      
+---
+<button class=\\"btn btn--primary btn--blue\\"></button>"
+`;
+
 exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) collapses whitespace into single space character 1`] = `
 Program {
   "blockParams": Array [],
@@ -1972,6 +2574,307 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.37.1) strips leading and t
 "        {{foo}}        
 ---
 {{foo}}"
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "btn ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": false,
+                    "original": "this.isPrimary",
+                    "parts": Array [
+                      "isPrimary",
+                    ],
+                    "this": true,
+                  },
+                  StringLiteral {
+                    "original": "btn--primary",
+                    "value": "btn--primary",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "data": true,
+                    "original": "@stretch",
+                    "parts": Array [
+                      "stretch",
+                    ],
+                    "this": false,
+                  },
+                  StringLiteral {
+                    "original": "btn--stretch",
+                    "value": "btn--stretch",
+                  },
+                ],
+                "path": PathExpression {
+                  "data": false,
+                  "original": "if",
+                  "parts": Array [
+                    "if",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            {{if this.isPrimary \\"btn--primary\\"}}
+            {{if @stretch \\"btn--stretch\\"}}
+          \\"
+        />
+      
+---
+<button class=\\"btn {{if this.isPrimary \\"btn--primary\\"}} {{if @stretch \\"btn--stretch\\"}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 3`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "foo ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@bar",
+                  "parts": Array [
+                    "bar",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " baz",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 4`] = `
+"<button class=\\"   foo   {{@bar}}  baz  \\"/>
+---
+<button class=\\"foo {{@bar}} baz\\"></button>"
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 5`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@foo",
+                  "parts": Array [
+                    "foo",
+                  ],
+                  "this": false,
+                },
+              },
+              TextNode {
+                "chars": " bar ",
+              },
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@baz",
+                  "parts": Array [
+                    "baz",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 6`] = `
+"<button class=\\"{{@foo}}   bar   {{@baz}}\\"/>
+---
+<button class=\\"{{@foo}} bar {{@baz}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 7`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "escaped": true,
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "data": true,
+                  "original": "@foo",
+                  "parts": Array [
+                    "foo",
+                  ],
+                  "this": false,
+                },
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 8`] = `
+"<button class=\\"   {{@foo}}   \\"/>
+---
+<button class=\\"{{@foo}}\\"></button>"
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in regular \`class\` attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": TextNode {
+            "chars": "btn btn--primary btn--blue",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "comments": Array [],
+      "modifiers": Array [],
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin collapses whitespace in regular \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            btn--primary
+            btn--blue
+          \\"
+        />
+      
+---
+<button class=\\"btn btn--primary btn--blue\\"></button>"
 `;
 
 exports[`HBS Minifier plugin collapses whitespace into single space character 1`] = `

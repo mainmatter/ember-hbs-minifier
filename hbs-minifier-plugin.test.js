@@ -164,6 +164,36 @@ for (let version of versions) {
       assert(`<div title="    foo  {{if this.bar "BAR"}}  " />`);
     });
 
+    it('collapses whitespace in regular `class` attributes', function() {
+      assert(`
+        <button
+          class="
+            btn
+            btn--primary
+            btn--blue
+          "
+        />
+      `);
+    });
+
+    it('collapses whitespace in concatenated `class` attributes', function() {
+      assert(`
+        <button
+          class="
+            btn
+            {{if this.isPrimary "btn--primary"}}
+            {{if @stretch "btn--stretch"}}
+          "
+        />
+      `);
+
+      assert(`<button class="   foo   {{@bar}}  baz  "/>`);
+
+      assert(`<button class="{{@foo}}   bar   {{@baz}}"/>`);
+
+      assert(`<button class="   {{@foo}}   "/>`);
+    });
+
     function assert(template, config = {}) {
       let ast = process(template, config);
       expect(ast).toMatchSnapshot();
