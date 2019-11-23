@@ -29,6 +29,18 @@ function createGlimmerPlugin(config) {
         }
       },
 
+      AttrNode: {
+        enter(node) {
+          skipStack.push(node);
+        },
+
+        exit(node) {
+          if (skipStack[skipStack.length - 1] === node) {
+            skipStack.pop();
+          }
+        },
+      },
+
       BlockStatement: {
         enter(node) {
           if (shouldSkipBlockStatement(node, config)) {
