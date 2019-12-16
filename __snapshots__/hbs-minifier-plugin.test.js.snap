@@ -3904,6 +3904,10 @@ Template {
                   ],
                   "this": false,
                 },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
               },
               TextNode {
                 "chars": " ",
@@ -3935,6 +3939,10 @@ Template {
                   ],
                   "this": false,
                 },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
               },
             ],
           },
@@ -3962,7 +3970,7 @@ exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attr
         />
       
 ---
-<button class=\\"btn {{if this.isPrimary \\"btn--primary\\"}} {{if @stretch \\"btn--stretch\\"}}\\"></button>"
+<button class=\\"btn {{if this.isPrimary \\"btn--primary\\"}} {{if @stretch \\"btn--stretch\\"}}\\" />"
 `;
 
 exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 3`] = `
@@ -3992,6 +4000,10 @@ Template {
                   ],
                   "this": false,
                 },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
               },
               TextNode {
                 "chars": " baz",
@@ -4014,7 +4026,7 @@ Template {
 exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 4`] = `
 "<button class=\\"   foo   {{@bar}}  baz  \\"/>
 ---
-<button class=\\"foo {{@bar}} baz\\"></button>"
+<button class=\\"foo {{@bar}} baz\\" />"
 `;
 
 exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 5`] = `
@@ -4041,6 +4053,10 @@ Template {
                   ],
                   "this": false,
                 },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
               },
               TextNode {
                 "chars": " bar ",
@@ -4058,6 +4074,10 @@ Template {
                     "baz",
                   ],
                   "this": false,
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
                 },
               },
             ],
@@ -4078,7 +4098,7 @@ Template {
 exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 6`] = `
 "<button class=\\"{{@foo}}   bar   {{@baz}}\\"/>
 ---
-<button class=\\"{{@foo}} bar {{@baz}}\\"></button>"
+<button class=\\"{{@foo}} bar {{@baz}}\\" />"
 `;
 
 exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 7`] = `
@@ -4105,6 +4125,10 @@ Template {
                   ],
                   "this": false,
                 },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
               },
             ],
           },
@@ -4124,7 +4148,7 @@ Template {
 exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 8`] = `
 "<button class=\\"   {{@foo}}   \\"/>
 ---
-<button class=\\"{{@foo}}\\"></button>"
+<button class=\\"{{@foo}}\\" />"
 `;
 
 exports[`HBS Minifier plugin collapses whitespace in regular \`class\` attributes 1`] = `
@@ -4162,7 +4186,7 @@ exports[`HBS Minifier plugin collapses whitespace in regular \`class\` attribute
         />
       
 ---
-<button class=\\"btn btn--primary btn--blue\\"></button>"
+<button class=\\"btn btn--primary btn--blue\\" />"
 `;
 
 exports[`HBS Minifier plugin collapses whitespace into single space character 1`] = `
@@ -4183,6 +4207,10 @@ Template {
         ],
         "this": false,
       },
+      "strip": Object {
+        "close": false,
+        "open": false,
+      },
     },
     TextNode {
       "chars": " ",
@@ -4200,6 +4228,10 @@ Template {
           "bar",
         ],
         "this": false,
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
       },
     },
   ],
@@ -4456,10 +4488,22 @@ Template {
   "blockParams": Array [],
   "body": Array [
     BlockStatement {
+      "closeStrip": Object {
+        "close": false,
+        "open": false,
+      },
       "hash": Hash {
         "pairs": Array [],
       },
       "inverse": null,
+      "inverseStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "openStrip": Object {
+        "close": false,
+        "open": false,
+      },
       "params": Array [],
       "path": PathExpression {
         "data": false,
@@ -4495,6 +4539,7 @@ Template {
 ",
           },
         ],
+        "chained": false,
       },
     },
   ],
@@ -4631,6 +4676,10 @@ Template {
             ],
             "this": false,
           },
+          "strip": Object {
+            "close": false,
+            "open": false,
+          },
         },
         TextNode {
           "chars": "        ",
@@ -4672,6 +4721,10 @@ Template {
         ],
         "this": false,
       },
+      "strip": Object {
+        "close": false,
+        "open": false,
+      },
     },
     TextNode {
       "chars": "        ",
@@ -4710,6 +4763,10 @@ Template {
               "foo",
             ],
             "this": false,
+          },
+          "strip": Object {
+            "close": false,
+            "open": false,
           },
         },
         TextNode {
@@ -4756,6 +4813,10 @@ Template {
             ],
             "this": false,
           },
+          "strip": Object {
+            "close": false,
+            "open": false,
+          },
         },
         TextNode {
           "chars": " y ",
@@ -4796,6 +4857,10 @@ Template {
           "foo",
         ],
         "this": false,
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
       },
     },
     TextNode {
@@ -4868,10 +4933,22 @@ Template {
   "blockParams": Array [],
   "body": Array [
     BlockStatement {
+      "closeStrip": Object {
+        "close": false,
+        "open": false,
+      },
       "hash": Hash {
         "pairs": Array [],
       },
       "inverse": null,
+      "inverseStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "openStrip": Object {
+        "close": false,
+        "open": false,
+      },
       "params": Array [],
       "path": PathExpression {
         "data": false,
@@ -4898,6 +4975,7 @@ Template {
             "tag": "span",
           },
         ],
+        "chained": false,
       },
     },
   ],
@@ -5029,6 +5107,10 @@ Template {
                   ],
                   "this": false,
                 },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
               },
               TextNode {
                 "chars": "  ",
@@ -5051,7 +5133,7 @@ Template {
 exports[`HBS Minifier plugin skips whitespace in concatenated attributes 2`] = `
 "<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\" />
 ---
-<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\"></div>"
+<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\" />"
 `;
 
 exports[`HBS Minifier plugin skips whitespace in regular attributes 1`] = `
@@ -5081,7 +5163,7 @@ Template {
 exports[`HBS Minifier plugin skips whitespace in regular attributes 2`] = `
 "<div title=\\"    foo    \\" />
 ---
-<div title=\\"    foo    \\"></div>"
+<div title=\\"    foo    \\" />"
 `;
 
 exports[`HBS Minifier plugin strips leading and trailing whitespace from ElementNode nodes 1`] = `
@@ -5105,6 +5187,10 @@ Template {
               "foo",
             ],
             "this": false,
+          },
+          "strip": Object {
+            "close": false,
+            "open": false,
           },
         },
       ],
@@ -5140,6 +5226,10 @@ Template {
           "foo",
         ],
         "this": false,
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
       },
     },
   ],
