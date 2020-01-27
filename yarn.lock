@@ -915,27 +915,27 @@
     ember-cli-htmlbars-inline-precompile "^2.1.0"
     ember-test-waiters "^1.1.1"
 
-"@glimmer/interfaces@^0.46.0":
-  version "0.46.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.46.0.tgz#977a16a8396ea7124f4f5f14391136baa22f50a9"
-  integrity sha512-jcf5Xlgvdp9yurkLCoN5wwTOcyYEpe+eakpf2lP8PQ9DHJX33uAE3vjIm+aP0fY95eCnvDWGTU63FKZTsJMZ1A==
+"@glimmer/interfaces@^0.47.1":
+  version "0.47.1"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.47.1.tgz#19056a44f7fb6e6130685bc68b806ab8fb48dd75"
+  integrity sha512-ONU/RZYAeNrhh0pXC+0rXUA7AkRqCvitWXjbaVHHF/CVvpi+m2aVsFADF4RROSoDlHKfxkULM33eEJzNnRfWSw==
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
-"@glimmer/syntax@^0.46.0":
-  version "0.46.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.46.0.tgz#e80224219f7c42d878b94c9a2c1eb3a687e49ec7"
-  integrity sha512-gYGTJa7rYYq3+c91J4wAtOSt4G23EJD4D8Wo/GbAba4Hf8AD+C9U52RRHXVWVOFSaH6fsc3UCAh55aKjaN32VA==
+"@glimmer/syntax@^0.47.1":
+  version "0.47.1"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.47.1.tgz#e23513413b12e9b1e8adf1fea5f012c15f05e126"
+  integrity sha512-6LdBY/g2n5BETgGkneH9jpszAYlOKTqLTeoOsZXp2o+OmEzG0o2h1c6OGckJRuqma4/eodevwAVcB66057fVjQ==
   dependencies:
-    "@glimmer/interfaces" "^0.46.0"
-    "@glimmer/util" "^0.46.0"
+    "@glimmer/interfaces" "^0.47.1"
+    "@glimmer/util" "^0.47.1"
     handlebars "^4.5.1"
     simple-html-tokenizer "^0.5.8"
 
-"@glimmer/util@^0.46.0":
-  version "0.46.0"
-  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.46.0.tgz#7157f1c5d6f55b66873f5e2621e8c4854f7fdb91"
-  integrity sha512-MprttA+DxXmJK5Bdkz/NP2kFSv9+ljhQCey1xwby0m9QwoXOc5P7erDVt0P9QlV2kQJRcpGVzDGAywZotJlc3Q==
+"@glimmer/util@^0.47.1":
+  version "0.47.1"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.47.1.tgz#d356c85febc2c5bb33c448efe48cdccd46b2620f"
+  integrity sha512-VtsRyx8vTMzEaAimE4CW2n2lIrBn0qFLRs+bvSSTGsjQHkHiFbIltDqOhQ7H9fBZM6Y3vV4niSkMlc8Q9yIc6g==
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
