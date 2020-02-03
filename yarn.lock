@@ -915,27 +915,27 @@
     ember-cli-htmlbars-inline-precompile "^2.1.0"
     ember-test-waiters "^1.1.1"
 
-"@glimmer/interfaces@^0.47.1":
-  version "0.47.1"
-  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.47.1.tgz#19056a44f7fb6e6130685bc68b806ab8fb48dd75"
-  integrity sha512-ONU/RZYAeNrhh0pXC+0rXUA7AkRqCvitWXjbaVHHF/CVvpi+m2aVsFADF4RROSoDlHKfxkULM33eEJzNnRfWSw==
+"@glimmer/interfaces@^0.47.4":
+  version "0.47.4"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.47.4.tgz#17772fae66571b606f9fa26d733d7211960a2560"
+  integrity sha512-Wbv6954fIOy1aWHh2IdneBmIGrGysyu+ZWrmAiuMQC92uf57a9AXFJW0DFY+X6gd8Biaw/Nx8EHE0bNeMYCp9Q==
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
 "@glimmer/syntax@^0.47.1":
-  version "0.47.1"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.47.1.tgz#e23513413b12e9b1e8adf1fea5f012c15f05e126"
-  integrity sha512-6LdBY/g2n5BETgGkneH9jpszAYlOKTqLTeoOsZXp2o+OmEzG0o2h1c6OGckJRuqma4/eodevwAVcB66057fVjQ==
+  version "0.47.4"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.47.4.tgz#827f63a9c5f14a8329ff26c1e1f6ad211683690d"
+  integrity sha512-GCqoKyU11+cD9jL1J6AlSgKn1/rFUt/Wc3pgf/AE7uxza00OOYDEbqfpzOdv9sF727aqKdy9qp3a9O54IcevuA==
   dependencies:
-    "@glimmer/interfaces" "^0.47.1"
-    "@glimmer/util" "^0.47.1"
+    "@glimmer/interfaces" "^0.47.4"
+    "@glimmer/util" "^0.47.4"
     handlebars "^4.5.1"
-    simple-html-tokenizer "^0.5.8"
+    simple-html-tokenizer "^0.5.9"
 
-"@glimmer/util@^0.47.1":
-  version "0.47.1"
-  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.47.1.tgz#d356c85febc2c5bb33c448efe48cdccd46b2620f"
-  integrity sha512-VtsRyx8vTMzEaAimE4CW2n2lIrBn0qFLRs+bvSSTGsjQHkHiFbIltDqOhQ7H9fBZM6Y3vV4niSkMlc8Q9yIc6g==
+"@glimmer/util@^0.47.4":
+  version "0.47.4"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.47.4.tgz#de6061d30f03ca09950208f6de7b529efc8fb539"
+  integrity sha512-uGcUjDtcy/CTSKMYuIpmvZfv4busDcPbx6X+AnWkaTIonvp0z8HKpZ5QYrulR9Gcbbtb+noCTmMr2qa7AEyA4Q==
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
@@ -8789,10 +8789,10 @@ silent-error@^1.0.0, silent-error@^1.0.1, silent-error@^1.1.0, silent-error@^1.1
   dependencies:
     debug "^2.2.0"
 
-simple-html-tokenizer@^0.5.8:
-  version "0.5.8"
-  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.5.8.tgz#3417382f75954ee34515cc4fd32d9918e693f173"
-  integrity sha512-0Sq4FvLlQEQODVA6PH2MIrc7tzYO0KT2HzzwvaVLYClWgIsuvaNUOrhrAvTi1pZHrcq7GDB4WiI3ukjqBMxcGQ==
+simple-html-tokenizer@^0.5.9:
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.5.9.tgz#1a83fe97f5a3e39b335fddf71cfe9b0263b581c2"
+  integrity sha512-w/3FEDN94r4JQ9WoYrIr8RqDIPZdyNkdpbK9glFady1CAEyD97XWCv8HFetQO21w81e7h7Nh59iYTyG1mUJftg==
 
 sisteransi@^1.0.0:
   version "1.0.0"
