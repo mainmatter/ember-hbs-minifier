@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.5.0 (2020-02-17)
+
+#### :boom: Breaking Change
+* [#221](https://github.com/simplabs/ember-hbs-minifier/pull/221) Drop support for Node 8 ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#195](https://github.com/simplabs/ember-hbs-minifier/pull/195) testem: Increase `browser_start_timeout` ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.4.1 (2019-11-23)
 
 #### :rocket: Enhancement
