@@ -59,7 +59,7 @@
     "multidep": "github:Turbo87/node-multidep#mkdirp"
   },
   "engines": {
-    "node": "8.* || >= 10.*"
+    "node": "10.* || >= 12.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
