@@ -1266,30 +1266,30 @@
   resolved "https://registry.yarnpkg.com/@glimmer/env/-/env-0.1.7.tgz#fd2d2b55a9029c6b37a6c935e8c8871ae70dfa07"
   integrity sha1-/S0rVakCnGs3psk16MiHGucN+gc=
 
-"@glimmer/interfaces@^0.54.2":
-  version "0.54.2"
-  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.54.2.tgz#d7735869050ca7e1731424aa64ae37b1cb853091"
-  integrity sha512-Gqvr6Eh4Xy7lF14GZi6RbnVeA7gDj2pXMJtdh68TFL2u/VqfhTXy4+IFRvUh4bpJj+1YayNFupuJSn0oVrEDGQ==
+"@glimmer/interfaces@^0.55.3":
+  version "0.55.3"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.55.3.tgz#89f22729141fef4d3ed7441e38095dd84c0bec22"
+  integrity sha512-EbnLv4CDKVBdW4+uv4OG50UTSoyuDYeXQ6hQ8HJrlkmgy5qpY6m/lIrvbMbR1tBcJsULQD37qdmSoDb9zOQycg==
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
-"@glimmer/syntax@^0.54.2":
-  version "0.54.2"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.54.2.tgz#60d08458002c106791d4c5b648227ec0f29a1b2a"
-  integrity sha512-EpQGbbzfvBmeztc15SsriyAgD0aKgsxMOARVtW5buvCPw3dGYYNdSeyUJ3vInbrFGxkZLV390ht8VCbsDbqtlA==
+"@glimmer/syntax@^0.55.3":
+  version "0.55.3"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.55.3.tgz#74054fef17e2d56b363d747e29e1a46cd940ebd2"
+  integrity sha512-D2GnLNG10TSh1dujojPUWnt3bAXgiHT90xZMcd/TX9pt3Mf31cXhGOv0FYzbsF/R5XTQKNmR1am8Gy870bsjng==
   dependencies:
-    "@glimmer/interfaces" "^0.54.2"
-    "@glimmer/util" "^0.54.2"
+    "@glimmer/interfaces" "^0.55.3"
+    "@glimmer/util" "^0.55.3"
     handlebars "^4.7.4"
     simple-html-tokenizer "^0.5.9"
 
-"@glimmer/util@^0.54.2":
-  version "0.54.2"
-  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.54.2.tgz#211b027982006b6bcd393312cf474c7ee17922a0"
-  integrity sha512-ggJY3qayAxjiMuoToxxtwai+AI2KXrJSbOEvbvBV9K+IMykmdjhWGRWWEONnd9xJzQDlus5D9ROMypOEvsbS9w==
+"@glimmer/util@^0.55.3":
+  version "0.55.3"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.55.3.tgz#10b8d19fc3547d1818cc0fa7bc8cb5301ce9ec22"
+  integrity sha512-K9oy5YHilHWFO9NHlUeBPV3jwMlF5n/FulAbyfrylwORyxR0F0Obue8Rdf8BElsG6/mKoFqfhbp53kFOjLhydA==
   dependencies:
     "@glimmer/env" "0.1.7"
-    "@glimmer/interfaces" "^0.54.2"
+    "@glimmer/interfaces" "^0.55.3"
     "@simple-dom/interface" "^1.4.0"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
