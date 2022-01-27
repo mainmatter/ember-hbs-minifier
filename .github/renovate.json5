@@ -1,5 +1,13 @@
 {
   "extends": [
-    "config:base"
-  ]
+    "github>Turbo87/renovate-config",
+    "github>Turbo87/renovate-config:automergeCaretConstraint",
+    ":automergeLinters",
+    ":automergeTesters",
+    ":pinOnlyDevDependencies",
+  ],
+  
+  "npm": {
+    "postUpdateOptions": ["yarnDedupeFewer"],
+  },
 }
