@@ -15,7 +15,7 @@ specifiers:
   ember-cli-inject-live-reload: 2.1.0
   ember-disable-prototype-extensions: 1.1.3
   ember-load-initializers: 2.1.2
-  ember-maybe-import-regenerator: 0.1.6
+  ember-maybe-import-regenerator: 1.0.0
   ember-mocha: 0.16.2
   ember-resolver: 8.0.3
   ember-source: 3.27.5
@@ -45,7 +45,7 @@ devDependencies:
   ember-cli-inject-live-reload: 2.1.0
   ember-disable-prototype-extensions: 1.1.3
   ember-load-initializers: 2.1.2
-  ember-maybe-import-regenerator: 0.1.6
+  ember-maybe-import-regenerator: 1.0.0
   ember-mocha: 0.16.2
   ember-resolver: 8.0.3
   ember-source: 3.27.5
@@ -3636,19 +3636,6 @@ packages:
       mkdirp: 0.5.5
     dev: true
 
-  /broccoli-merge-trees/1.2.4:
-    resolution: {integrity: sha1-oAFRm7UGfwZYnZGvopQkRaLQ/bU=}
-    dependencies:
-      broccoli-plugin: 1.3.1
-      can-symlink: 1.0.0
-      fast-ordered-set: 1.0.3
-      fs-tree-diff: 0.5.9
-      heimdalljs: 0.2.6
-      heimdalljs-logger: 0.1.10
-      rimraf: 2.7.1
-      symlink-or-copy: 1.3.1
-    dev: true
-
   /broccoli-merge-trees/2.0.0:
     resolution: {integrity: sha1-EK6kbdXOvMi499WlTwqEpPC7kLk=}
     dependencies:
@@ -5240,16 +5227,16 @@ packages:
       - supports-color
     dev: true
 
-  /ember-maybe-import-regenerator/0.1.6:
-    resolution: {integrity: sha1-NdQYKK+m1qWbwNo85H80xXPXdso=}
-    engines: {node: '>= 0.10.0'}
+  /ember-maybe-import-regenerator/1.0.0:
+    resolution: {integrity: sha512-wtjgjEV0Hk4fgiAwFjOfPrGWfmFrbRW3zgNZO4oA3H5FlbMssMvWuR8blQ3QSWYHODVK9r+ThsRAs8lG4kbxqA==}
+    engines: {node: '>= 12.*'}
     dependencies:
-      broccoli-funnel: 1.2.0
-      broccoli-merge-trees: 1.2.4
-      ember-cli-babel: 6.18.0
-      regenerator-runtime: 0.9.6
+      broccoli-funnel: 2.0.2
+      broccoli-merge-trees: 3.0.2
+      ember-cli-babel: 7.26.11
+      regenerator-runtime: 0.13.5
     transitivePeerDependencies:
-      - '@babel/core'
+      - supports-color
     dev: true
 
   /ember-mocha/0.16.2:
@@ -9928,10 +9915,6 @@ packages:
 
   /regenerator-runtime/0.13.5:
     resolution: {integrity: sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==}
-    dev: true
-
-  /regenerator-runtime/0.9.6:
-    resolution: {integrity: sha1-0z65XQ0gAaS+OWWXB8UbDLcc4Ck=}
     dev: true
 
   /regenerator-transform/0.10.1:
