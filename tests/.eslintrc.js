@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
-  extends: 'simplabs/configs/ember-mocha',
+  extends: 'simplabs/configs/ember-qunit',
   parserOptions: {
     ecmaVersion: 2017
   },
