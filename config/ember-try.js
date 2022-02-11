@@ -2,7 +2,7 @@
 module.exports = {
   command: 'yarn run ember test',
   useVersionCompatibility: true,
-  useYarn: true,
+  usePnpm: true,
   scenarios: [{
     name: 'ember-release',
     allowedToFail: true,

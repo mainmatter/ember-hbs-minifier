@@ -13,4 +13,5 @@
 .travis.yml
 bower.json
 ember-cli-build.js
+pnpm-lock.yaml
 testem.js

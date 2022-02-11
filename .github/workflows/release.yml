@@ -5,6 +5,9 @@ on:
     tags:
       - '*'
 
+env:
+  PNPM_VERSION: 5.18.1
+
 jobs:
   release:
     name: Release
@@ -12,10 +15,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
-          registry-url: 'https://registry.npmjs.org'
+          cache: pnpm
 
       - run: npm publish
         env:
