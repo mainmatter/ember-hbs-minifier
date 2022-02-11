@@ -6,8 +6,13 @@
     ":automergeTesters",
     ":pinOnlyDevDependencies",
   ],
-  
+
   "npm": {
     "postUpdateOptions": ["yarnDedupeFewer"],
   },
+
+  packageRules: [{
+    matchPackagePrefixes: ["@glimmer/syntax-"],
+    enabled: false,
+  }],
 }
