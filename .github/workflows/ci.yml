@@ -64,9 +64,6 @@ jobs:
       - name: install dependencies
         run: yarn install
 
-      - name: install multidep dependencies
-        run: yarn multidep multidep.json
-
       - name: node tests
         run: yarn test --coverage
 
