@@ -3,13 +3,9 @@
 /* eslint-env jest */
 /* eslint-disable no-inner-declarations */
 
-const multidepRequire = require('multidep')('multidep.json');
-
-const DEFAULT = 'default';
-const versions = [DEFAULT];
-multidepRequire.forEachVersion('@glimmer/syntax', function(version) {
-  versions.push(version);
-});
+const DEP_PREFIX = '@glimmer/syntax';
+const DEPS = Object.keys(require('./package.json').devDependencies)
+  .filter(it => it.startsWith(DEP_PREFIX));
 
 // Remove the unnecessary `loc` properties from the AST snapshots and replace
 // the `Object` prefix with the node `type`
@@ -26,16 +22,14 @@ expect.addSnapshotSerializer({
   },
 });
 
-for (let version of versions) {
+for (let dep of DEPS) {
   let moduleName = 'HBS Minifier plugin';
-  if (version !== DEFAULT) {
-    moduleName += ` (with @glimmer/syntax v${version})`;
+  if (dep !== DEP_PREFIX) {
+    moduleName += ` (with @glimmer/syntax v${dep.slice(DEP_PREFIX.length + 1)})`;
   }
 
   describe(moduleName, () => {
-    const glimmer = version === DEFAULT ?
-      require('@glimmer/syntax') :
-      multidepRequire('@glimmer/syntax', version);
+    const glimmer = require(dep);
 
     it('collapses whitespace into single space character', () => {
       assert(`{{foo}}  \n\n   \n{{bar}}`);

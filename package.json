@@ -26,17 +26,15 @@
     "test": "jest",
     "test:ember": "ember test"
   },
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "<rootDir>/multidep_modules"
-    ]
-  },
   "dependencies": {
     "hash-obj": "^3.0.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@glimmer/syntax": "^0.62.0",
+    "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
+    "@glimmer/syntax-0.37.1": "npm:@glimmer/syntax@0.37.1",
+    "@glimmer/syntax-0.40.1": "npm:@glimmer/syntax@0.40.1",
     "ember-cli": "~3.26.1",
     "ember-cli-babel": "^7.7.3",
     "ember-cli-chai": "^0.5.0",
@@ -55,8 +53,7 @@
     "eslint-config-simplabs": "0.4.0",
     "jest": "^26.0.1",
     "lerna-changelog": "^1.0.0",
-    "loader.js": "^4.2.3",
-    "multidep": "github:Turbo87/node-multidep#mkdirp"
+    "loader.js": "^4.2.3"
   },
   "engines": {
     "node": "10.* || >= 12.*"
