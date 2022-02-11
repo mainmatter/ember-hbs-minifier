@@ -18,7 +18,7 @@ specifiers:
   ember-maybe-import-regenerator: 1.0.0
   ember-mocha: 0.16.2
   ember-resolver: 8.0.3
-  ember-source: 3.27.5
+  ember-source: 3.28.8
   ember-try: 2.0.0
   eslint: 7.32.0
   eslint-config-simplabs: 0.4.0
@@ -48,7 +48,7 @@ devDependencies:
   ember-maybe-import-regenerator: 1.0.0
   ember-mocha: 0.16.2
   ember-resolver: 8.0.3
-  ember-source: 3.27.5
+  ember-source: 3.28.8
   ember-try: 2.0.0
   eslint: 7.32.0
   eslint-config-simplabs: 0.4.0_eslint@7.32.0
@@ -334,12 +334,6 @@ packages:
   /@babel/helper-member-expression-to-functions/7.16.7:
     resolution: {integrity: sha512-VtJ/65tYiU/6AbMTDwyoXGPKHgTsfRarivm+YbB5uAzKUyuPjgZSgAFeG87FCigc7KNHu2Pegh1XIT3lXjvz3Q==}
     engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.17.0
-    dev: true
-
-  /@babel/helper-module-imports/7.13.12:
-    resolution: {integrity: sha512-4cVvR2/1B693IuOvSI20xqqa/+bl7lqAMR59R4iu39R9aOX8/JoYY1sFaNvUMyMBGnHdwvJgUrzNLoUZxXypxA==}
     dependencies:
       '@babel/types': 7.17.0
     dev: true
@@ -1006,8 +1000,9 @@ packages:
       '@babel/helper-plugin-utils': 7.16.7
     dev: true
 
-  /@babel/plugin-transform-block-scoping/7.12.1:
-    resolution: {integrity: sha512-zJyAC9sZdE60r1nVQHblcfCj29Dh2Y0DOvlMkcqSo0ckqjiCwNiUezUKw+RjOCwGfpLRwnAeQ2XlLpsnGkvv9w==}
+  /@babel/plugin-transform-block-scoping/7.16.7:
+    resolution: {integrity: sha512-ObZev2nxVAYA4bhyusELdo9hb3H+A56bxH3FZMbEImZFiEDYVHXQSJ1hQKFlDnlt8G9bBrCZ5ZpURZUrV4G5qQ==}
+    engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -1715,8 +1710,8 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
-  /@glimmer/vm-babel-plugins/0.78.2:
-    resolution: {integrity: sha512-GSEf16h6OCtKx7PsSvD21cLXZuVc6swW2rSOAvfLeZco1DEWMRgYTwkCkColydKZcQ3gvwbPBeYwTC2K6tlnjg==}
+  /@glimmer/vm-babel-plugins/0.80.3:
+    resolution: {integrity: sha512-9ej6xlm5MzHBJ5am2l0dbbn8Z0wJoYoMpM8FcrGMlUP6SPMLWxvxpMsApgQo8u6dvZRCjR3/bw3fdf7GOy0AFw==}
     dependencies:
       babel-plugin-debug-macros: 0.3.4
     transitivePeerDependencies:
@@ -5295,15 +5290,15 @@ packages:
       - encoding
     dev: true
 
-  /ember-source/3.27.5:
-    resolution: {integrity: sha512-oSGM9mD6BuOcGilYqU+F2MtCferQhKWO3REX1P9qgN1Wzfa5kXjbjBBdPNWfBtg7bZLGM27H8JgiV6+t3uGegA==}
+  /ember-source/3.28.8:
+    resolution: {integrity: sha512-hA15oYzbRdi9983HIemeVzzX2iLcMmSPp6akUiMQhFZYWPrKksbPyLrO6YpZ4hNM8yBjQSDXEkZ1V3yxBRKjUA==}
     engines: {node: 10.* || >= 12.*}
     dependencies:
-      '@babel/helper-module-imports': 7.13.12
-      '@babel/plugin-transform-block-scoping': 7.12.1
+      '@babel/helper-module-imports': 7.16.7
+      '@babel/plugin-transform-block-scoping': 7.16.7
       '@babel/plugin-transform-object-assign': 7.8.3
       '@ember/edition-utils': 1.2.0
-      '@glimmer/vm-babel-plugins': 0.78.2
+      '@glimmer/vm-babel-plugins': 0.80.3
       babel-plugin-debug-macros: 0.3.4
       babel-plugin-filter-imports: 4.0.0
       broccoli-concat: 4.2.5
@@ -5320,7 +5315,7 @@ packages:
       ember-cli-string-utils: 1.1.0
       ember-cli-version-checker: 5.1.2
       ember-router-generator: 2.0.0
-      inflection: 1.12.0
+      inflection: 1.13.2
       jquery: 3.6.0
       resolve: 1.20.0
       semver: 7.3.4
@@ -7023,11 +7018,6 @@ packages:
 
   /infer-owner/1.0.4:
     resolution: {integrity: sha512-IClj+Xz94+d7irH5qRyfJonOdfTzuDaifE6ZPWfx0N0+/ATZCbuTPq2prFl526urkQd90WyUKIh1DfBQ2hMz9A==}
-    dev: true
-
-  /inflection/1.12.0:
-    resolution: {integrity: sha1-ogCTVlbW9fa8TcdQLhrstwMihBY=}
-    engines: {'0': node >= 0.4.0}
     dev: true
 
   /inflection/1.13.2:
