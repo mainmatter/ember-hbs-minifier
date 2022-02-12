@@ -6,6 +6,15 @@
     ":automergeTesters",
     ":pinOnlyDevDependencies",
   ],
+  
+  "regexManagers": [
+    {
+      "fileMatch": ["^.github/workflows/[^\\.]+\\.ya?ml$"],
+      "matchStrings": ["PNPM_VERSION:\\s*(?<currentValue>.*?)\n"],
+      "depNameTemplate": "pnpm",
+      "datasourceTemplate": "npm",
+    },
+  ],
 
   "npm": {
     "postUpdateOptions": ["yarnDedupeFewer"],
