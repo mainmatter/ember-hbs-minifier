@@ -32,7 +32,7 @@
   "devDependencies": {
     "@ember/optional-features": "2.0.0",
     "@ember/test-helpers": "2.6.0",
-    "@glimmer/syntax": "0.62.5",
+    "@glimmer/syntax": "0.84.0",
     "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
     "@glimmer/syntax-0.37.1": "npm:@glimmer/syntax@0.37.1",
     "@glimmer/syntax-0.40.1": "npm:@glimmer/syntax@0.40.1",

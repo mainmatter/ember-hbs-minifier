@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.6.0
-  '@glimmer/syntax': 0.62.5
+  '@glimmer/syntax': 0.84.0
   '@glimmer/syntax-0.35.11': npm:@glimmer/syntax@0.35.11
   '@glimmer/syntax-0.37.1': npm:@glimmer/syntax@0.37.1
   '@glimmer/syntax-0.40.1': npm:@glimmer/syntax@0.40.1
@@ -36,7 +36,7 @@ dependencies:
 devDependencies:
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.6.0
-  '@glimmer/syntax': 0.62.5
+  '@glimmer/syntax': 0.84.0
   '@glimmer/syntax-0.35.11': /@glimmer/syntax/0.35.11
   '@glimmer/syntax-0.37.1': /@glimmer/syntax/0.37.1
   '@glimmer/syntax-0.40.1': /@glimmer/syntax/0.40.1
@@ -1481,6 +1481,12 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
+  /@glimmer/interfaces/0.84.0:
+    resolution: {integrity: sha512-+2clm2821gP+LiA4w1GOQtjgLDoqFOYVw3uwTvmzKGislR5lzC9s0la3W7NCqYwApv2aeZry4CJ6um6/Q46mYw==}
+    dependencies:
+      '@simple-dom/interface': 1.4.0
+    dev: true
+
   /@glimmer/syntax/0.35.11:
     resolution: {integrity: sha512-Hk27mqz14ccyFVtmEO5mfAB+1S8Hi+mzQp5vrTWXPOAV0IIiR0LnThVWzbRvprCP9GAgZbeNxWCuLT8KBoQrfw==}
     dependencies:
@@ -1517,6 +1523,15 @@ packages:
       simple-html-tokenizer: 0.5.11
     dev: true
 
+  /@glimmer/syntax/0.84.0:
+    resolution: {integrity: sha512-TAo1vaO5SPWtstU3XOAeiG5izhlw2v2ASns7f5dwe0hzGPRHPGuatmsVCtw/CS6FH86weboLrOGz0KQwjMaKfQ==}
+    dependencies:
+      '@glimmer/interfaces': 0.84.0
+      '@glimmer/util': 0.84.0
+      '@handlebars/parser': 2.0.0
+      simple-html-tokenizer: 0.5.11
+    dev: true
+
   /@glimmer/util/0.35.11:
     resolution: {integrity: sha512-Jb/QWnHgy9WMLQuh4eOEe9dPEPDCFTaUXqFTi0RA3/gre1XSSsCz7d492MI4trng0hH3mNHmacT9ppkBUjx9MQ==}
     dev: true
@@ -1534,6 +1549,14 @@ packages:
     dependencies:
       '@glimmer/env': 0.1.7
       '@glimmer/interfaces': 0.62.5
+      '@simple-dom/interface': 1.4.0
+    dev: true
+
+  /@glimmer/util/0.84.0:
+    resolution: {integrity: sha512-H5OjZXaroV821TLVHXox4t2GICwUA8HdijyAf+wouSfINmm+y4GbbEwoZM9ns8YSZGX7/gG0Z4Znwti0oFbHPw==}
+    dependencies:
+      '@glimmer/env': 0.1.7
+      '@glimmer/interfaces': 0.84.0
       '@simple-dom/interface': 1.4.0
     dev: true
 
@@ -1559,6 +1582,10 @@ packages:
 
   /@handlebars/parser/1.1.0:
     resolution: {integrity: sha512-rR7tJoSwJ2eooOpYGxGGW95sLq6GXUaS1UtWvN7pei6n2/okYvCGld9vsUTvkl2migxbkszsycwtMf/GEc1k1A==}
+    dev: true
+
+  /@handlebars/parser/2.0.0:
+    resolution: {integrity: sha512-EP9uEDZv/L5Qh9IWuMUGJRfwhXJ4h1dqKTT4/3+tY0eu7sPis7xh23j61SYUnNF4vqCQvvUXpDo9Bh/+q1zASA==}
     dev: true
 
   /@humanwhocodes/config-array/0.9.3:
