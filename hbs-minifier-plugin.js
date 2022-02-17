@@ -117,21 +117,8 @@ function createGlimmerPlugin(config) {
 }
 
 function createRegistryPlugin(config) {
-  return class HBSMinifierPlugin {
-    transform(ast) {
-      let startLoc = ast.loc ? ast.loc.start : {};
-      /*
-        Checking for line and column to avoid registering the plugin for ProgramNode inside a BlockStatement since transform is called for all ProgramNodes in Ember 2.15.X. Removing this would result in minifying all the TextNodes.
-      */
-      if (startLoc.line !== 1 || startLoc.column !== 0) {
-        return ast;
-      }
-
-      let plugin = createGlimmerPlugin(config);
-      this.syntax.traverse(ast, plugin.visitor);
-      return ast;
-    }
-  };
+  let plugin = createGlimmerPlugin(config);
+  return () => plugin;
 }
 
 function isWhitespaceTextNode(node) {
