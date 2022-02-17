@@ -5262,6 +5262,7 @@ Template {
                 },
                 "params": Array [
                   PathExpression {
+                    "_head": undefined,
                     "data": false,
                     "original": "this.isPrimary",
                     "parts": Array [
@@ -5275,6 +5276,7 @@ Template {
                   },
                 ],
                 "path": PathExpression {
+                  "_head": undefined,
                   "data": false,
                   "original": "if",
                   "parts": Array [
@@ -5286,6 +5288,7 @@ Template {
                   "close": false,
                   "open": false,
                 },
+                "trusting": false,
               },
               TextNode {
                 "chars": " ",
@@ -5297,6 +5300,7 @@ Template {
                 },
                 "params": Array [
                   PathExpression {
+                    "_head": undefined,
                     "data": true,
                     "original": "@stretch",
                     "parts": Array [
@@ -5310,6 +5314,7 @@ Template {
                   },
                 ],
                 "path": PathExpression {
+                  "_head": undefined,
                   "data": false,
                   "original": "if",
                   "parts": Array [
@@ -5321,6 +5326,7 @@ Template {
                   "close": false,
                   "open": false,
                 },
+                "trusting": false,
               },
             ],
           },
@@ -5371,6 +5377,7 @@ Template {
                 },
                 "params": Array [],
                 "path": PathExpression {
+                  "_head": undefined,
                   "data": true,
                   "original": "@bar",
                   "parts": Array [
@@ -5382,6 +5389,7 @@ Template {
                   "close": false,
                   "open": false,
                 },
+                "trusting": false,
               },
               TextNode {
                 "chars": " baz",
@@ -5424,6 +5432,7 @@ Template {
                 },
                 "params": Array [],
                 "path": PathExpression {
+                  "_head": undefined,
                   "data": true,
                   "original": "@foo",
                   "parts": Array [
@@ -5435,6 +5444,7 @@ Template {
                   "close": false,
                   "open": false,
                 },
+                "trusting": false,
               },
               TextNode {
                 "chars": " bar ",
@@ -5446,6 +5456,7 @@ Template {
                 },
                 "params": Array [],
                 "path": PathExpression {
+                  "_head": undefined,
                   "data": true,
                   "original": "@baz",
                   "parts": Array [
@@ -5457,6 +5468,7 @@ Template {
                   "close": false,
                   "open": false,
                 },
+                "trusting": false,
               },
             ],
           },
@@ -5496,6 +5508,7 @@ Template {
                 },
                 "params": Array [],
                 "path": PathExpression {
+                  "_head": undefined,
                   "data": true,
                   "original": "@foo",
                   "parts": Array [
@@ -5507,6 +5520,7 @@ Template {
                   "close": false,
                   "open": false,
                 },
+                "trusting": false,
               },
             ],
           },
@@ -5578,6 +5592,7 @@ Template {
       },
       "params": Array [],
       "path": PathExpression {
+        "_head": undefined,
         "data": false,
         "original": "foo",
         "parts": Array [
@@ -5589,6 +5604,7 @@ Template {
         "close": false,
         "open": false,
       },
+      "trusting": false,
     },
     TextNode {
       "chars": " ",
@@ -5600,6 +5616,7 @@ Template {
       },
       "params": Array [],
       "path": PathExpression {
+        "_head": undefined,
         "data": false,
         "original": "bar",
         "parts": Array [
@@ -5611,6 +5628,7 @@ Template {
         "close": false,
         "open": false,
       },
+      "trusting": false,
     },
   ],
 }
@@ -5884,6 +5902,7 @@ Template {
       },
       "params": Array [],
       "path": PathExpression {
+        "_head": undefined,
         "data": false,
         "original": "foo-bar",
         "parts": Array [
@@ -6047,6 +6066,7 @@ Template {
           },
           "params": Array [],
           "path": PathExpression {
+            "_head": undefined,
             "data": false,
             "original": "foo",
             "parts": Array [
@@ -6058,6 +6078,7 @@ Template {
             "close": false,
             "open": false,
           },
+          "trusting": false,
         },
         TextNode {
           "chars": "        ",
@@ -6092,6 +6113,7 @@ Template {
       },
       "params": Array [],
       "path": PathExpression {
+        "_head": undefined,
         "data": false,
         "original": "foo",
         "parts": Array [
@@ -6103,6 +6125,7 @@ Template {
         "close": false,
         "open": false,
       },
+      "trusting": false,
     },
     TextNode {
       "chars": "        ",
@@ -6135,6 +6158,7 @@ Template {
           },
           "params": Array [],
           "path": PathExpression {
+            "_head": undefined,
             "data": false,
             "original": "foo",
             "parts": Array [
@@ -6146,6 +6170,7 @@ Template {
             "close": false,
             "open": false,
           },
+          "trusting": false,
         },
         TextNode {
           "chars": "        ",
@@ -6184,6 +6209,7 @@ Template {
           },
           "params": Array [],
           "path": PathExpression {
+            "_head": undefined,
             "data": false,
             "original": "foo",
             "parts": Array [
@@ -6195,6 +6221,7 @@ Template {
             "close": false,
             "open": false,
           },
+          "trusting": false,
         },
         TextNode {
           "chars": " y ",
@@ -6229,6 +6256,7 @@ Template {
       },
       "params": Array [],
       "path": PathExpression {
+        "_head": undefined,
         "data": false,
         "original": "foo",
         "parts": Array [
@@ -6240,6 +6268,7 @@ Template {
         "close": false,
         "open": false,
       },
+      "trusting": false,
     },
     TextNode {
       "chars": " y ",
@@ -6329,6 +6358,7 @@ Template {
       },
       "params": Array [],
       "path": PathExpression {
+        "_head": undefined,
         "data": false,
         "original": "my-component",
         "parts": Array [
@@ -6465,6 +6495,7 @@ Template {
                 },
                 "params": Array [
                   PathExpression {
+                    "_head": undefined,
                     "data": false,
                     "original": "this.bar",
                     "parts": Array [
@@ -6478,6 +6509,7 @@ Template {
                   },
                 ],
                 "path": PathExpression {
+                  "_head": undefined,
                   "data": false,
                   "original": "if",
                   "parts": Array [
@@ -6489,6 +6521,7 @@ Template {
                   "close": false,
                   "open": false,
                 },
+                "trusting": false,
               },
               TextNode {
                 "chars": "  ",
@@ -6559,6 +6592,7 @@ Template {
           },
           "params": Array [],
           "path": PathExpression {
+            "_head": undefined,
             "data": false,
             "original": "foo",
             "parts": Array [
@@ -6570,6 +6604,7 @@ Template {
             "close": false,
             "open": false,
           },
+          "trusting": false,
         },
       ],
       "comments": Array [],
@@ -6598,6 +6633,7 @@ Template {
       },
       "params": Array [],
       "path": PathExpression {
+        "_head": undefined,
         "data": false,
         "original": "foo",
         "parts": Array [
@@ -6609,6 +6645,7 @@ Template {
         "close": false,
         "open": false,
       },
+      "trusting": false,
     },
   ],
 }
