@@ -37,6 +37,7 @@
     "@glimmer/syntax-0.37.1": "npm:@glimmer/syntax@0.37.1",
     "@glimmer/syntax-0.40.1": "npm:@glimmer/syntax@0.40.1",
     "@glimmer/syntax-0.62.5": "npm:@glimmer/syntax@0.62.5",
+    "ember-auto-import": "2.4.0",
     "ember-cli": "4.1.1",
     "ember-cli-babel": "7.26.11",
     "ember-cli-chai": "0.5.0",
@@ -55,7 +56,8 @@
     "jest": "27.5.1",
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
-    "qunit": "2.18.0"
+    "qunit": "2.18.0",
+    "webpack": "5.69.0"
   },
   "engines": {
     "node": "10.* || >= 12.*"
