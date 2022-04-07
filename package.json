@@ -57,7 +57,7 @@
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
     "qunit": "2.18.1",
-    "webpack": "5.71.0"
+    "webpack": "5.72.0"
   },
   "engines": {
     "node": "10.* || >= 12.*"
