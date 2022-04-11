@@ -1,6 +1,6 @@
 {
   "name": "ember-hbs-minifier",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Stripping whitespace out of your Handlebars templates",
   "keywords": [
     "ember-addon"

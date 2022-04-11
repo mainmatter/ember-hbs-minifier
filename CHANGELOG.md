@@ -1,5 +1,30 @@
 # Changelog
 
+## v1.0.0 (2022-04-11)
+
+#### :boom: Breaking Change
+* [#496](https://github.com/simplabs/ember-hbs-minifier/pull/496) Update peer requirements ([@Turbo87](https://github.com/Turbo87))
+* [#235](https://github.com/simplabs/ember-hbs-minifier/pull/235) Adjust Ember.js support matrix to `~3.4.0 || ~3.8.0 || ~3.12.0 || >= 3.16.0` ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#495](https://github.com/simplabs/ember-hbs-minifier/pull/495) tests: Add `this.` prefix to templates ([@Turbo87](https://github.com/Turbo87))
+* [#460](https://github.com/simplabs/ember-hbs-minifier/pull/460) Replace deprecated class-based AST transform plugin ([@Turbo87](https://github.com/Turbo87))
+* [#459](https://github.com/simplabs/ember-hbs-minifier/pull/459) Enable Ember Octane features ([@Turbo87](https://github.com/Turbo87))
+* [#458](https://github.com/simplabs/ember-hbs-minifier/pull/458) Add `ember-auto-import` dev dependency ([@Turbo87](https://github.com/Turbo87))
+* [#457](https://github.com/simplabs/ember-hbs-minifier/pull/457) Remove unused `ember-cli-htmlbars-inline-precompile` dependency ([@Turbo87](https://github.com/Turbo87))
+* [#451](https://github.com/simplabs/ember-hbs-minifier/pull/451) renovate: Update `pnpm` version automatically ([@Turbo87](https://github.com/Turbo87))
+* [#447](https://github.com/simplabs/ember-hbs-minifier/pull/447) Replace Mocha with QUnit ([@Turbo87](https://github.com/Turbo87))
+* [#446](https://github.com/simplabs/ember-hbs-minifier/pull/446) renovate: Disable for `@glimmer/syntax-*` dependencies ([@Turbo87](https://github.com/Turbo87))
+* [#424](https://github.com/simplabs/ember-hbs-minifier/pull/424) Use `pnpm` package manager ([@Turbo87](https://github.com/Turbo87))
+* [#425](https://github.com/simplabs/ember-hbs-minifier/pull/425) Update `ember-try` to v2 ([@Turbo87](https://github.com/Turbo87))
+* [#423](https://github.com/simplabs/ember-hbs-minifier/pull/423) Remove unmaintained `multidep` dependency ([@Turbo87](https://github.com/Turbo87))
+* [#418](https://github.com/simplabs/ember-hbs-minifier/pull/418) CI: Remove schedule trigger ([@Turbo87](https://github.com/Turbo87))
+* [#419](https://github.com/simplabs/ember-hbs-minifier/pull/419) ember-try: Disable Ember.js 4.x scenarios ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.5.0 (2020-02-17)
 
 #### :boom: Breaking Change
