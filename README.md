@@ -9,9 +9,9 @@ use this for production yet unless you understand the consequences!
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.4 or above
-* Ember CLI v3.4 or above
-* Node.js 8 or above
+* Ember.js v3.20 or above
+* Ember CLI v3.20 or above
+* Node.js 12 or above
 
 
 Installation
