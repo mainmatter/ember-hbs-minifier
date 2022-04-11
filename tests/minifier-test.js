@@ -11,7 +11,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('collapses whitespace into single space character', async function(assert) {
-    await render(hbs`{{foo}}  \n\n   \n{{bar}}`);
+    await render(hbs`{{this.foo}}  \n\n   \n{{this.bar}}`);
 
     let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 3);
@@ -20,7 +20,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('strips leading and trailing whitespace from Program nodes', async function(assert) {
-    await render(hbs`        {{foo}}        `);
+    await render(hbs`        {{this.foo}}        `);
 
     let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 1);
@@ -29,7 +29,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('Collapse leading/trailing text from Program nodes into a single whitespace', async function(assert) {
-    await render(hbs`x        {{foo}}     y   `);
+    await render(hbs`x        {{this.foo}}     y   `);
 
     let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 3);
@@ -42,7 +42,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('strips leading and trailing whitespace from ElementNode nodes', async function(assert) {
-    await render(hbs`<div>        {{foo}}        </div>`);
+    await render(hbs`<div>        {{this.foo}}        </div>`);
 
     let childNodes = this.element.querySelector('div').childNodes;
     assert.strictEqual(childNodes.length, 1);
@@ -51,7 +51,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('Collapse leading/trailing text from ElementNode nodes', async function(assert) {
-    await render(hbs`<div>x        {{foo}}     y   {{bar}}    z</div>`);
+    await render(hbs`<div>x        {{this.foo}}     y   {{this.bar}}    z</div>`);
 
     let childNodes = this.element.querySelector('div').childNodes;
     assert.strictEqual(childNodes.length, 5);
@@ -66,7 +66,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('does not strip inside of <pre> tags', async function(assert) {
-    await render(hbs`<pre>        {{foo}}        </pre>`);
+    await render(hbs`<pre>        {{this.foo}}        </pre>`);
 
     let childNodes = this.element.querySelector('pre').childNodes;
     assert.strictEqual(childNodes.length, 3);
@@ -88,7 +88,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('does not strip inside of {{#no-minify}} tags', async function(assert) {
-    await render(hbs`{{#no-minify}}        {{foo}}        {{/no-minify}}`);
+    await render(hbs`{{#no-minify}}        {{this.foo}}        {{/no-minify}}`);
 
     let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 3);
@@ -101,7 +101,7 @@ module('HBS Minifier plugin', function(hooks) {
   });
 
   test('does not strip inside of {{#no-minify}} tags in other tags', async function(assert) {
-    await render(hbs`<div>{{#no-minify}}        {{foo}}        {{/no-minify}}</div>`);
+    await render(hbs`<div>{{#no-minify}}        {{this.foo}}        {{/no-minify}}</div>`);
 
     let childNodes = this.element.querySelector('div').childNodes;
     assert.strictEqual(childNodes.length, 3);
