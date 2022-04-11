@@ -60,7 +60,7 @@
     "webpack": "5.72.0"
   },
   "engines": {
-    "node": "10.* || >= 12.*"
+    "node": "12.* || 14.* || >= 16.*"
   },
   "ember": {
     "edition": "octane"
@@ -68,7 +68,7 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "versionCompatibility": {
-      "ember": "~3.4.0 || ~3.8.0 || ~3.12.0 || >= 3.16.0 < 4"
+      "ember": "~3.20.0 || ~3.24.0 || ~3.28.0 || >= 4"
     }
   },
   "changelog": {
