@@ -66,6 +66,10 @@
     "edition": "octane"
   },
   "ember-addon": {
+    "before": [
+      "ember-cli-htmlbars",
+      "ember-cli-htmlbars-inline-precompile"
+    ],
     "configPath": "tests/dummy/config",
     "versionCompatibility": {
       "ember": "~3.20.0 || ~3.24.0 || ~3.28.0 || >= 4"
