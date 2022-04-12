@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.0 (2022-04-12)
+
+#### :rocket: Enhancement
+* [#498](https://github.com/simplabs/ember-hbs-minifier/pull/498) Ensure plugin works for inline template compilation and co-located components ([@boris-petrov](https://github.com/boris-petrov))
+
+#### Committers: 1
+- Boris Petrov ([@boris-petrov](https://github.com/boris-petrov))
+
+
 ## v1.0.0 (2022-04-11)
 
 #### :boom: Breaking Change
