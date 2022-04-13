@@ -13,7 +13,11 @@ module.exports = function(defaults) {
         classes: ['description'],
         components: ['foo-bar', 'no-minify']
       }
-    }
+    },
+
+    'ember-cli-babel': {
+      throwUnlessParallelizable: true,
+    },
   });
 
   /*
