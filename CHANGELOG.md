@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.0 (2022-04-13)
+
+#### :rocket: Enhancement
+* [#501](https://github.com/simplabs/ember-hbs-minifier/pull/501) Enable parallel file processing for `ember-cli-babel` ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v1.1.0 (2022-04-12)
 
 #### :rocket: Enhancement
