@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.7.0
-  '@glimmer/syntax': 0.84.1
+  '@glimmer/syntax': 0.84.2
   '@glimmer/syntax-0.35.11': npm:@glimmer/syntax@0.35.11
   '@glimmer/syntax-0.37.1': npm:@glimmer/syntax@0.37.1
   '@glimmer/syntax-0.40.1': npm:@glimmer/syntax@0.40.1
@@ -37,7 +37,7 @@ dependencies:
 devDependencies:
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.7.0
-  '@glimmer/syntax': 0.84.1
+  '@glimmer/syntax': 0.84.2
   '@glimmer/syntax-0.35.11': /@glimmer/syntax/0.35.11
   '@glimmer/syntax-0.37.1': /@glimmer/syntax/0.37.1
   '@glimmer/syntax-0.40.1': /@glimmer/syntax/0.40.1
@@ -1484,8 +1484,8 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
-  /@glimmer/interfaces/0.84.1:
-    resolution: {integrity: sha512-157vdjSe7ts6LO3iltz2OckDIt7BbDnOP6PfxopJOrIQuqUEHUvwtDipgBjibm/2ejM+UP35i6YgrMj8O8V09Q==}
+  /@glimmer/interfaces/0.84.2:
+    resolution: {integrity: sha512-tMZxQpOddUVmHEOuripkNqVR7ba0K4doiYnFd4WyswqoHPlxqpBujbIamQ+bWCWEF0U4yxsXKa31ekS/JHkiBQ==}
     dependencies:
       '@simple-dom/interface': 1.4.0
     dev: true
@@ -1526,11 +1526,11 @@ packages:
       simple-html-tokenizer: 0.5.11
     dev: true
 
-  /@glimmer/syntax/0.84.1:
-    resolution: {integrity: sha512-Gbq5a2joOgQPSuiGgDhlymV3rhmgP8Z8stdmoSZHfGq2e5k7sv0if6/9+9/IQO3WPncL8i3aSKX6IBN3lOn/EA==}
+  /@glimmer/syntax/0.84.2:
+    resolution: {integrity: sha512-SPBd1tpIR9XeaXsXsMRCnKz63eLnIZ0d5G9QC4zIBFBC3pQdtG0F5kWeuRVCdfTIFuR+5WBMfk5jvg+3gbQhjg==}
     dependencies:
-      '@glimmer/interfaces': 0.84.1
-      '@glimmer/util': 0.84.1
+      '@glimmer/interfaces': 0.84.2
+      '@glimmer/util': 0.84.2
       '@handlebars/parser': 2.0.0
       simple-html-tokenizer: 0.5.11
     dev: true
@@ -1555,11 +1555,11 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
-  /@glimmer/util/0.84.1:
-    resolution: {integrity: sha512-6cEGBo/NienZAO3nZTQfj57LBtABtlYLDjRuivIhSws3SkIFJsmLp2GcHuQw4vpuZfClyWAz1/W04B5xFX3C8w==}
+  /@glimmer/util/0.84.2:
+    resolution: {integrity: sha512-VbhzE2s4rmU+qJF3gGBTL1IDjq+/G2Th51XErS8MQVMCmE4CU2pdwSzec8PyOowqCGUOrVIWuMzEI6VoPM4L4w==}
     dependencies:
       '@glimmer/env': 0.1.7
-      '@glimmer/interfaces': 0.84.1
+      '@glimmer/interfaces': 0.84.2
       '@simple-dom/interface': 1.4.0
     dev: true
 
