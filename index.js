@@ -11,13 +11,15 @@ module.exports = {
     let options = app.options || {};
     let config = options['ember-hbs-minifier'] || {};
 
-    let HbsMinifierPlugin = require('./hbs-minifier-plugin').createRegistryPlugin(config);
-    registry.add('htmlbars-ast-plugin', {
-      name: 'hbs-minifier-plugin',
-      plugin: HbsMinifierPlugin,
-      baseDir() { return __dirname; },
-      cacheKey() { return cacheKeyForConfig(config); }
-    });
+    let pluginObj = this._buildPlugin(config);
+
+    pluginObj.parallelBabel = {
+      requireFile: __filename,
+      buildUsing: '_buildPlugin',
+      params: config,
+    };
+
+    registry.add('htmlbars-ast-plugin', pluginObj);
   },
 
   included(app) {
@@ -27,7 +29,18 @@ module.exports = {
       Refer PR: https://github.com/ember-cli/ember-cli/pull/7059
     */
     this._setupPreprocessorRegistry(app);
-  }
+  },
+
+  _buildPlugin(config) {
+    let HbsMinifierPlugin = require('./hbs-minifier-plugin').createRegistryPlugin(config);
+
+    return {
+      name: 'hbs-minifier-plugin',
+      plugin: HbsMinifierPlugin,
+      baseDir() { return __dirname; },
+      cacheKey() { return cacheKeyForConfig(config); }
+    };
+  },
 };
 
 function cacheKeyForConfig(config) {
