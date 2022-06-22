@@ -8,7 +8,7 @@ on:
   pull_request: {}
 
 env:
-  PNPM_VERSION: 6.32.23
+  PNPM_VERSION: 6.32.24
 
 jobs:
   lint:
