@@ -22,7 +22,7 @@ specifiers:
   ember-resolver: 8.0.3
   ember-source: 4.7.0
   ember-try: 2.0.0
-  eslint: 8.23.1
+  eslint: 8.24.0
   eslint-config-simplabs: 0.4.0
   hash-obj: ^3.0.0
   jest: 28.1.3
@@ -56,8 +56,8 @@ devDependencies:
   ember-resolver: 8.0.3
   ember-source: 4.7.0_webpack@5.74.0
   ember-try: 2.0.0
-  eslint: 8.23.1
-  eslint-config-simplabs: 0.4.0_eslint@8.23.1
+  eslint: 8.24.0
+  eslint-config-simplabs: 0.4.0_eslint@8.24.0
   jest: 28.1.3
   lerna-changelog: 2.2.0
   loader.js: 4.7.0
@@ -2555,8 +2555,8 @@ packages:
     resolution: {integrity: sha512-EP9uEDZv/L5Qh9IWuMUGJRfwhXJ4h1dqKTT4/3+tY0eu7sPis7xh23j61SYUnNF4vqCQvvUXpDo9Bh/+q1zASA==}
     dev: true
 
-  /@humanwhocodes/config-array/0.10.4:
-    resolution: {integrity: sha512-mXAIHxZT3Vcpg83opl1wGlVZ9xydbfZO3r5YfRSH6Gpp2J/PfdBP0wbDa2sO6/qRbcalpoevVyW6A/fI6LfeMw==}
+  /@humanwhocodes/config-array/0.10.5:
+    resolution: {integrity: sha512-XVVDtp+dVvRxMoxSiSfasYaG02VEe1qH5cKgMQJWhol6HwzbcqoCMJi8dAGoYAO57jhUyhI6cWuRiTcRaDaYug==}
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
@@ -7391,13 +7391,13 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-simplabs/0.4.0_eslint@8.23.1:
+  /eslint-config-simplabs/0.4.0_eslint@8.24.0:
     resolution: {integrity: sha1-GZkTv800gGIddtxGcJPG544lAx8=}
     peerDependencies:
       eslint: '>= 3'
     dependencies:
       ember-cli-version-checker: 1.3.1
-      eslint: 8.23.1
+      eslint: 8.24.0
       execa: 0.6.3
       fs-extra: 2.1.2
       pify: 2.3.0
@@ -7428,13 +7428,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.23.1:
+  /eslint-utils/3.0.0_eslint@8.24.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.23.1
+      eslint: 8.24.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -7448,13 +7448,13 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.23.1:
-    resolution: {integrity: sha512-w7C1IXCc6fNqjpuYd0yPlcTKKmHlHHktRkzmBPZ+7cvNBQuiNjx0xaMTjAJGCafJhQkrFJooREv0CtrVzmHwqg==}
+  /eslint/8.24.0:
+    resolution: {integrity: sha512-dWFaPhGhTAiPcCgm3f6LI2MBWbogMnTJzFBbhXVRQDJPkr9pGZvVjlVfXd+vyDcWPA2Ic9L2AXPIQM0+vk/cSQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
       '@eslint/eslintrc': 1.3.2
-      '@humanwhocodes/config-array': 0.10.4
+      '@humanwhocodes/config-array': 0.10.5
       '@humanwhocodes/gitignore-to-minimatch': 1.0.2
       '@humanwhocodes/module-importer': 1.0.1
       ajv: 6.12.6
@@ -7464,7 +7464,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.23.1
+      eslint-utils: 3.0.0_eslint@8.24.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
       esquery: 1.4.0
