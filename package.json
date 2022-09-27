@@ -5,10 +5,10 @@
   "keywords": [
     "ember-addon"
   ],
-  "homepage": "https://github.com/simplabs/ember-hbs-minifier",
-  "repository": "github:simplabs/ember-hbs-minifier",
+  "homepage": "https://github.com/Mainmatter/ember-hbs-minifier",
+  "repository": "github:Mainmatter/ember-hbs-minifier",
   "license": "MIT",
-  "author": "simplabs GmbH <info@simplabs.com>",
+  "author": "Mainmatter GmbH <info@mainmatter.com>",
   "files": [
     "hbs-minifier-plugin.js",
     "index.js",
@@ -76,6 +76,6 @@
     }
   },
   "changelog": {
-    "repo": "simplabs/ember-hbs-minifier"
+    "repo": "Mainmatter/ember-hbs-minifier"
   }
 }
