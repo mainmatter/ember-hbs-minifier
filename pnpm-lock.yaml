@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   hash-obj:
     specifier: ^3.0.0
@@ -61,8 +65,8 @@ devDependencies:
     specifier: 6.0.0
     version: 6.0.0(@ember/test-helpers@2.9.3)(qunit@2.19.4)(webpack@5.82.1)
   ember-resolver:
-    specifier: 8.1.0
-    version: 8.1.0(@babel/core@7.21.8)
+    specifier: 10.1.1
+    version: 10.1.1(@ember/string@3.1.1)(ember-source@4.12.0)
   ember-source:
     specifier: 4.12.0
     version: 4.12.0(@babel/core@7.21.8)(@glimmer/component@1.1.2)(webpack@5.82.1)
@@ -1403,6 +1407,15 @@ packages:
       inquirer: 7.3.3
       mkdirp: 1.0.4
       silent-error: 1.1.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@ember/string@3.1.1:
+    resolution: {integrity: sha512-UbXJ+k3QOrYN4SRPHgXCqYIJ+yWWUg1+vr0H4DhdQPTy8LJfyqwZ2tc5uqpSSnEXE+/1KopHBE5J8GDagAg5cg==}
+    engines: {node: 12.* || 14.* || >= 16}
+    dependencies:
+      ember-cli-babel: 7.26.11
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5674,18 +5687,20 @@ packages:
       - webpack
     dev: true
 
-  /ember-resolver@8.1.0(@babel/core@7.21.8):
-    resolution: {integrity: sha512-MGD7X2ztZVswGqs1mLgzhZJRhG7XiF6Mg4DgC7xJFWRYQQUHyGJpGdNWY9nXyrYnRIsCrQoL1do41zpxbrB/cg==}
-    engines: {node: '>= 10.*'}
+  /ember-resolver@10.1.1(@ember/string@3.1.1)(ember-source@4.12.0):
+    resolution: {integrity: sha512-y1zzn6C4YGJui+tJzcCKlsf1oSOSVAkRrvmg8OwqVIKnALKKb9ihx2qLCslHg8x0wJvJgMtDMXgrczvQrZW0Lw==}
+    engines: {node: 14.* || 16.* || >= 18}
+    peerDependencies:
+      '@ember/string': ^3.0.1
+      ember-source: ^4.8.3 || >= 5.0.0
+    peerDependenciesMeta:
+      ember-source:
+        optional: true
     dependencies:
-      babel-plugin-debug-macros: 0.3.4(@babel/core@7.21.8)
-      broccoli-funnel: 3.0.8
-      broccoli-merge-trees: 4.2.0
+      '@ember/string': 3.1.1
       ember-cli-babel: 7.26.11
-      ember-cli-version-checker: 5.1.2
-      resolve: 1.22.2
+      ember-source: 4.12.0(@babel/core@7.21.8)(@glimmer/component@1.1.2)(webpack@5.82.1)
     transitivePeerDependencies:
-      - '@babel/core'
       - supports-color
     dev: true
 
