@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   hash-obj:
     specifier: ^3.0.0
@@ -10,8 +14,8 @@ devDependencies:
     specifier: 2.0.0
     version: 2.0.0
   '@ember/test-helpers':
-    specifier: 2.9.3
-    version: 2.9.3(@babel/core@7.21.8)(ember-source@4.12.0)
+    specifier: 2.9.4
+    version: 2.9.4(@babel/core@7.21.8)(ember-source@4.12.0)
   '@glimmer/syntax':
     specifier: 0.84.3
     version: 0.84.3
@@ -59,7 +63,7 @@ devDependencies:
     version: 1.0.0
   ember-qunit:
     specifier: 6.0.0
-    version: 6.0.0(@ember/test-helpers@2.9.3)(qunit@2.19.4)(webpack@5.82.1)
+    version: 6.0.0(@ember/test-helpers@2.9.4)(qunit@2.19.4)(webpack@5.82.1)
   ember-resolver:
     specifier: 8.1.0
     version: 8.1.0(@babel/core@7.21.8)
@@ -1407,8 +1411,8 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers@2.9.3(@babel/core@7.21.8)(ember-source@4.12.0):
-    resolution: {integrity: sha512-ejVg4Dj+G/6zyLvQsYOvmGiOLU6AS94tY4ClaO1E2oVvjjtVJIRmVLFN61I+DuyBg9hS3cFoPjQRTZB9MRIbxQ==}
+  /@ember/test-helpers@2.9.4(@babel/core@7.21.8)(ember-source@4.12.0):
+    resolution: {integrity: sha512-z+Qs1NYWyIVDmrY6WdmOS5mdG1lJ5CFfzh6dRhLfs9lq45deDaDrVNcaCYhnNeJZTvUBK2XR2SvPcZm0RloXdA==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
     peerDependencies:
       ember-source: '>=3.8.0'
@@ -5651,14 +5655,14 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@6.0.0(@ember/test-helpers@2.9.3)(qunit@2.19.4)(webpack@5.82.1):
+  /ember-qunit@6.0.0(@ember/test-helpers@2.9.4)(qunit@2.19.4)(webpack@5.82.1):
     resolution: {integrity: sha512-idNWh9Ap2HN9e3Xozh5Jrciu5tDhn0okM/bgwDjdks3dwuMhEox45iiRTx469FWQ9+ixjZ40AsXsRTDkfCmvmw==}
     engines: {node: 14.* || 16.* || >= 17}
     peerDependencies:
       '@ember/test-helpers': ^2.4.0
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.9.3(@babel/core@7.21.8)(ember-source@4.12.0)
+      '@ember/test-helpers': 2.9.4(@babel/core@7.21.8)(ember-source@4.12.0)
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
@@ -7426,6 +7430,7 @@ packages:
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       safer-buffer: 2.1.2
     dev: true
