@@ -30,7 +30,7 @@
     "hash-obj": "^3.0.0"
   },
   "devDependencies": {
-    "@ember/optional-features": "2.0.0",
+    "@ember/optional-features": "2.1.0",
     "@ember/test-helpers": "2.9.3",
     "@glimmer/syntax": "0.84.3",
     "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
