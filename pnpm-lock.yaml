@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   hash-obj:
     specifier: ^3.0.0
@@ -22,8 +26,8 @@ devDependencies:
     specifier: npm:@glimmer/syntax@0.37.1
     version: /@glimmer/syntax@0.37.1
   '@glimmer/syntax-0.40.1':
-    specifier: npm:@glimmer/syntax@0.40.1
-    version: /@glimmer/syntax@0.40.1
+    specifier: npm:@glimmer/syntax@0.40.2
+    version: /@glimmer/syntax@0.40.2
   '@glimmer/syntax-0.62.5':
     specifier: npm:@glimmer/syntax@0.62.5
     version: /@glimmer/syntax@0.62.5
@@ -1607,8 +1611,8 @@ packages:
       simple-html-tokenizer: 0.5.11
     dev: true
 
-  /@glimmer/syntax@0.40.1:
-    resolution: {integrity: sha512-lZ0xv9wNBVt1tteWszQy+PZbVi8v1vmlYjCTU9s/q2H1khrnVe6VYvicVapGATqlMQ84reRqJkQKdgfpy+ig6A==}
+  /@glimmer/syntax@0.40.2:
+    resolution: {integrity: sha512-ryT9dPKfvn5NE+CSWQBdsPnx85Tdx9efbfOfSh+JOW2LrUAB0Tn8x/M2aOMQQrKxgQX5tFYwKhKV8Oun5PgJpg==}
     dependencies:
       '@glimmer/interfaces': 0.40.2
       '@glimmer/util': 0.40.2
@@ -7426,6 +7430,7 @@ packages:
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       safer-buffer: 2.1.2
     dev: true
