@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   hash-obj:
     specifier: ^3.0.0
@@ -59,7 +63,7 @@ devDependencies:
     version: 1.0.0
   ember-qunit:
     specifier: 6.0.0
-    version: 6.0.0(@ember/test-helpers@2.9.3)(qunit@2.19.4)(webpack@5.82.1)
+    version: 6.0.0(@ember/test-helpers@2.9.3)(qunit@2.22.0)(webpack@5.82.1)
   ember-resolver:
     specifier: 8.1.0
     version: 8.1.0(@babel/core@7.21.8)
@@ -85,8 +89,8 @@ devDependencies:
     specifier: 4.7.0
     version: 4.7.0
   qunit:
-    specifier: 2.19.4
-    version: 2.19.4
+    specifier: 2.22.0
+    version: 2.22.0
   webpack:
     specifier: 5.82.1
     version: 5.82.1
@@ -5651,7 +5655,7 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@6.0.0(@ember/test-helpers@2.9.3)(qunit@2.19.4)(webpack@5.82.1):
+  /ember-qunit@6.0.0(@ember/test-helpers@2.9.3)(qunit@2.22.0)(webpack@5.82.1):
     resolution: {integrity: sha512-idNWh9Ap2HN9e3Xozh5Jrciu5tDhn0okM/bgwDjdks3dwuMhEox45iiRTx469FWQ9+ixjZ40AsXsRTDkfCmvmw==}
     engines: {node: 14.* || 16.* || >= 17}
     peerDependencies:
@@ -5665,7 +5669,7 @@ packages:
       ember-auto-import: 2.6.3(webpack@5.82.1)
       ember-cli-babel: 7.26.11
       ember-cli-test-loader: 3.0.0
-      qunit: 2.19.4
+      qunit: 2.22.0
       resolve-package-path: 4.0.3
       silent-error: 1.1.1
       validate-peer-dependencies: 2.2.0
@@ -7426,6 +7430,7 @@ packages:
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       safer-buffer: 2.1.2
     dev: true
@@ -10112,8 +10117,8 @@ packages:
       underscore.string: 3.3.6
     dev: true
 
-  /qunit@2.19.4:
-    resolution: {integrity: sha512-aqUzzUeCqlleWYKlpgfdHHw9C6KxkB9H3wNfiBg5yHqQMzy0xw/pbCRHYFkjl8MsP/t8qkTQE+JTYL71azgiew==}
+  /qunit@2.22.0:
+    resolution: {integrity: sha512-wPYvAvpjTL3zlUeyCX75T8gfZfdVXZa8y1EVkGe/XZNORIsCH/WI2X8R2KlemT921X9EKSZUL6CLGSPC7Ks08g==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
