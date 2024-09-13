@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   hash-obj:
     specifier: ^3.0.0
@@ -25,8 +29,8 @@ devDependencies:
     specifier: npm:@glimmer/syntax@0.40.1
     version: /@glimmer/syntax@0.40.1
   '@glimmer/syntax-0.62.5':
-    specifier: npm:@glimmer/syntax@0.62.5
-    version: /@glimmer/syntax@0.62.5
+    specifier: npm:@glimmer/syntax@0.92.3
+    version: /@glimmer/syntax@0.92.3
   ember-auto-import:
     specifier: 2.6.3
     version: 2.6.3(webpack@5.82.1)
@@ -1577,14 +1581,14 @@ packages:
     resolution: {integrity: sha512-KAbNjEyb2UiNqHRil7C4L73UVINdVc72x2XIw+BXLTu3SY2FA85fWEL6CQZWXXaMv6JCjoyqfg4xNPIlBDyMKQ==}
     dev: true
 
-  /@glimmer/interfaces@0.62.5:
-    resolution: {integrity: sha512-DLCLY/S228ftSHlH+tXYBJhRr2J5TLzgyTKIIFKUJ7dKYdOT/6uVJX+Bk9/nldrwy5bVk2h5pkBoKyvw8xC93w==}
+  /@glimmer/interfaces@0.84.3:
+    resolution: {integrity: sha512-dk32ykoNojt0mvEaIW6Vli5MGTbQo58uy3Epj7ahCgTHmWOKuw/0G83f2UmFprRwFx689YTXG38I/vbpltEjzg==}
     dependencies:
       '@simple-dom/interface': 1.4.0
     dev: true
 
-  /@glimmer/interfaces@0.84.3:
-    resolution: {integrity: sha512-dk32ykoNojt0mvEaIW6Vli5MGTbQo58uy3Epj7ahCgTHmWOKuw/0G83f2UmFprRwFx689YTXG38I/vbpltEjzg==}
+  /@glimmer/interfaces@0.92.3:
+    resolution: {integrity: sha512-QwQeA01N+0h+TAi/J7iUnZtRuJy+093hNyagxDQBA6b1wCBw+q+al9+O6gmbWlkWE7EifzmNE1nnrgcecJBlJQ==}
     dependencies:
       '@simple-dom/interface': 1.4.0
     dev: true
@@ -1616,20 +1620,21 @@ packages:
       simple-html-tokenizer: 0.5.11
     dev: true
 
-  /@glimmer/syntax@0.62.5:
-    resolution: {integrity: sha512-4e1KP3bAkTQIHcwjSjRsRvuzw6t1AMOU6zT1zo4g4QtwivKFG1pYmMTXmuLo/F25hRK4McdwST251AC/gc6w7Q==}
-    dependencies:
-      '@glimmer/interfaces': 0.62.5
-      '@glimmer/util': 0.62.5
-      '@handlebars/parser': 1.1.0
-      simple-html-tokenizer: 0.5.11
-    dev: true
-
   /@glimmer/syntax@0.84.3:
     resolution: {integrity: sha512-ioVbTic6ZisLxqTgRBL2PCjYZTFIwobifCustrozRU2xGDiYvVIL0vt25h2c1ioDsX59UgVlDkIK4YTAQQSd2A==}
     dependencies:
       '@glimmer/interfaces': 0.84.3
       '@glimmer/util': 0.84.3
+      '@handlebars/parser': 2.0.0
+      simple-html-tokenizer: 0.5.11
+    dev: true
+
+  /@glimmer/syntax@0.92.3:
+    resolution: {integrity: sha512-7wPKQmULyXCYf0KvbPmfrs/skPISH2QGR9atCnmDWnHyLv5SSZVLm1P0Ctrpta6+Ci3uGQb7hGk0IjsLEavcYQ==}
+    dependencies:
+      '@glimmer/interfaces': 0.92.3
+      '@glimmer/util': 0.92.3
+      '@glimmer/wire-format': 0.92.3
       '@handlebars/parser': 2.0.0
       simple-html-tokenizer: 0.5.11
     dev: true
@@ -1650,20 +1655,19 @@ packages:
     resolution: {integrity: sha512-duAsm30uVK9jSysElCbLyU6QQYO2X9iLDLBIBUcCqck9qN1o3tK2qWiHbGK5d6g8E2AJ4H88UrfElkyaJlGrwg==}
     dev: true
 
-  /@glimmer/util@0.62.5:
-    resolution: {integrity: sha512-V3OJYmM3jdmds4rxTfNx4g/xAD6hbVHrBJNaqNFbHUs8SPS5e1JVsN+x3YbDRbojRrH8gN67JFUfFoDqi7ppRg==}
-    dependencies:
-      '@glimmer/env': 0.1.7
-      '@glimmer/interfaces': 0.62.5
-      '@simple-dom/interface': 1.4.0
-    dev: true
-
   /@glimmer/util@0.84.3:
     resolution: {integrity: sha512-qFkh6s16ZSRuu2rfz3T4Wp0fylFj3HBsONGXQcrAdZjdUaIS6v3pNj6mecJ71qRgcym9Hbaq/7/fefIwECUiKw==}
     dependencies:
       '@glimmer/env': 0.1.7
       '@glimmer/interfaces': 0.84.3
       '@simple-dom/interface': 1.4.0
+    dev: true
+
+  /@glimmer/util@0.92.3:
+    resolution: {integrity: sha512-K1oH93gGU36slycxJ9CcFpUTsdOc4XQ6RuZFu5oRsxFYtEF5PSu7ik11h58fyeoaWOr1ebfkyAMawbeI2AJ5GA==}
+    dependencies:
+      '@glimmer/env': 0.1.7
+      '@glimmer/interfaces': 0.92.3
     dev: true
 
   /@glimmer/vm-babel-plugins@0.84.2(@babel/core@7.21.8):
@@ -1686,8 +1690,11 @@ packages:
       '@glimmer/util': 0.37.1
     dev: true
 
-  /@handlebars/parser@1.1.0:
-    resolution: {integrity: sha512-rR7tJoSwJ2eooOpYGxGGW95sLq6GXUaS1UtWvN7pei6n2/okYvCGld9vsUTvkl2migxbkszsycwtMf/GEc1k1A==}
+  /@glimmer/wire-format@0.92.3:
+    resolution: {integrity: sha512-gFz81Q9+V7Xs0X8mSq6y8qacHm0dPaGJo2/Bfcsdow1hLOKNgTCLr4XeDBhRML8f6I6Gk9ugH4QDxyIOXOpC4w==}
+    dependencies:
+      '@glimmer/interfaces': 0.92.3
+      '@glimmer/util': 0.92.3
     dev: true
 
   /@handlebars/parser@2.0.0:
@@ -7426,6 +7433,7 @@ packages:
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       safer-buffer: 2.1.2
     dev: true
