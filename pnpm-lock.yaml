@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   hash-obj:
     specifier: ^3.0.0
@@ -22,8 +26,8 @@ devDependencies:
     specifier: npm:@glimmer/syntax@0.37.1
     version: /@glimmer/syntax@0.37.1
   '@glimmer/syntax-0.40.1':
-    specifier: npm:@glimmer/syntax@0.40.1
-    version: /@glimmer/syntax@0.40.1
+    specifier: npm:@glimmer/syntax@0.92.3
+    version: /@glimmer/syntax@0.92.3
   '@glimmer/syntax-0.62.5':
     specifier: npm:@glimmer/syntax@0.62.5
     version: /@glimmer/syntax@0.62.5
@@ -1573,10 +1577,6 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
-  /@glimmer/interfaces@0.40.2:
-    resolution: {integrity: sha512-KAbNjEyb2UiNqHRil7C4L73UVINdVc72x2XIw+BXLTu3SY2FA85fWEL6CQZWXXaMv6JCjoyqfg4xNPIlBDyMKQ==}
-    dev: true
-
   /@glimmer/interfaces@0.62.5:
     resolution: {integrity: sha512-DLCLY/S228ftSHlH+tXYBJhRr2J5TLzgyTKIIFKUJ7dKYdOT/6uVJX+Bk9/nldrwy5bVk2h5pkBoKyvw8xC93w==}
     dependencies:
@@ -1585,6 +1585,12 @@ packages:
 
   /@glimmer/interfaces@0.84.3:
     resolution: {integrity: sha512-dk32ykoNojt0mvEaIW6Vli5MGTbQo58uy3Epj7ahCgTHmWOKuw/0G83f2UmFprRwFx689YTXG38I/vbpltEjzg==}
+    dependencies:
+      '@simple-dom/interface': 1.4.0
+    dev: true
+
+  /@glimmer/interfaces@0.92.3:
+    resolution: {integrity: sha512-QwQeA01N+0h+TAi/J7iUnZtRuJy+093hNyagxDQBA6b1wCBw+q+al9+O6gmbWlkWE7EifzmNE1nnrgcecJBlJQ==}
     dependencies:
       '@simple-dom/interface': 1.4.0
     dev: true
@@ -1607,15 +1613,6 @@ packages:
       simple-html-tokenizer: 0.5.11
     dev: true
 
-  /@glimmer/syntax@0.40.1:
-    resolution: {integrity: sha512-lZ0xv9wNBVt1tteWszQy+PZbVi8v1vmlYjCTU9s/q2H1khrnVe6VYvicVapGATqlMQ84reRqJkQKdgfpy+ig6A==}
-    dependencies:
-      '@glimmer/interfaces': 0.40.2
-      '@glimmer/util': 0.40.2
-      handlebars: 4.7.7
-      simple-html-tokenizer: 0.5.11
-    dev: true
-
   /@glimmer/syntax@0.62.5:
     resolution: {integrity: sha512-4e1KP3bAkTQIHcwjSjRsRvuzw6t1AMOU6zT1zo4g4QtwivKFG1pYmMTXmuLo/F25hRK4McdwST251AC/gc6w7Q==}
     dependencies:
@@ -1634,16 +1631,22 @@ packages:
       simple-html-tokenizer: 0.5.11
     dev: true
 
+  /@glimmer/syntax@0.92.3:
+    resolution: {integrity: sha512-7wPKQmULyXCYf0KvbPmfrs/skPISH2QGR9atCnmDWnHyLv5SSZVLm1P0Ctrpta6+Ci3uGQb7hGk0IjsLEavcYQ==}
+    dependencies:
+      '@glimmer/interfaces': 0.92.3
+      '@glimmer/util': 0.92.3
+      '@glimmer/wire-format': 0.92.3
+      '@handlebars/parser': 2.0.0
+      simple-html-tokenizer: 0.5.11
+    dev: true
+
   /@glimmer/util@0.35.11:
     resolution: {integrity: sha512-Jb/QWnHgy9WMLQuh4eOEe9dPEPDCFTaUXqFTi0RA3/gre1XSSsCz7d492MI4trng0hH3mNHmacT9ppkBUjx9MQ==}
     dev: true
 
   /@glimmer/util@0.37.1:
     resolution: {integrity: sha512-Of58Of07fsT8JOkok/tXJvewEdI6LzDxdlIIcdhv6iOJgYUsJUQKUYf6XY+5o/rtsrByPQ5da2WwHbLAcpq0aQ==}
-    dev: true
-
-  /@glimmer/util@0.40.2:
-    resolution: {integrity: sha512-RP7GHNTQH9nG4qf9JF68wVIfIEWNLIxnMWUZaN9jgxcUbMz9hPdn5trWCyQxsGNByDu42Dv9QcqiPpeoo729Dw==}
     dev: true
 
   /@glimmer/util@0.44.0:
@@ -1666,6 +1669,13 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
+  /@glimmer/util@0.92.3:
+    resolution: {integrity: sha512-K1oH93gGU36slycxJ9CcFpUTsdOc4XQ6RuZFu5oRsxFYtEF5PSu7ik11h58fyeoaWOr1ebfkyAMawbeI2AJ5GA==}
+    dependencies:
+      '@glimmer/env': 0.1.7
+      '@glimmer/interfaces': 0.92.3
+    dev: true
+
   /@glimmer/vm-babel-plugins@0.84.2(@babel/core@7.21.8):
     resolution: {integrity: sha512-HS2dEbJ3CgXn56wk/5QdudM7rE3vtNMvPIoG7Rrg+GhkGMNxBCIRxOeEF2g520j9rwlA2LAZFpc7MCDMFbTjNA==}
     dependencies:
@@ -1684,6 +1694,13 @@ packages:
     resolution: {integrity: sha512-iDj8D1eCVDmcsNUcz5epdOCN6Gt53W3cMsS2qAkf2H6REiXQ9kG7ySIGIdahNsLT/f21MT+JzqawylZR0hrw0w==}
     dependencies:
       '@glimmer/util': 0.37.1
+    dev: true
+
+  /@glimmer/wire-format@0.92.3:
+    resolution: {integrity: sha512-gFz81Q9+V7Xs0X8mSq6y8qacHm0dPaGJo2/Bfcsdow1hLOKNgTCLr4XeDBhRML8f6I6Gk9ugH4QDxyIOXOpC4w==}
+    dependencies:
+      '@glimmer/interfaces': 0.92.3
+      '@glimmer/util': 0.92.3
     dev: true
 
   /@handlebars/parser@1.1.0:
@@ -7426,6 +7443,7 @@ packages:
   /iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
     dependencies:
       safer-buffer: 2.1.2
     dev: true
