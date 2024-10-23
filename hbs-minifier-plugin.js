@@ -82,7 +82,7 @@ function createGlimmerPlugin(config) {
         },
       },
 
-      Program: {
+      Block: {
         enter(node) {
           if (!insideSkipBlock()) {
             removeSurroundingWhitespaceNodes(node.body);
