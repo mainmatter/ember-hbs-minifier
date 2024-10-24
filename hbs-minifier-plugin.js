@@ -9,6 +9,8 @@ const WHITESPACE = /^[ \t\r\n]+$/;
 function createGlimmerPlugin(config) {
   normalizeConfig(config);
 
+  let hasTemplateNode = config[INTERNAL_CONFIG].hasTemplateNode;
+
   // in this stack we track the nodes that cause us to skip the minification
   // e.g. `{{#no-minify}} ... {{/no-minify}}` blocks or `<pre></pre>` tags
   // depending on the configuration
@@ -18,10 +20,30 @@ function createGlimmerPlugin(config) {
     return skipStack.length !== 0;
   }
 
+  let blockTracker = {
+    enter(node) {
+      if (!insideSkipBlock()) {
+        removeSurroundingWhitespaceNodes(node.body);
+      }
+    },
+
+    exit(node) {
+      node.body = stripNoMinifyBlocks(node.body);
+    },
+  };
+
+  let wrapperVisitors = hasTemplateNode
+    ? {
+        Template: blockTracker,
+        Block: blockTracker,
+      }
+    : { Program: blockTracker };
+
   return {
     name: 'hbs-minifier-plugin',
 
     visitor: {
+      ...wrapperVisitors,
       TextNode(node) {
         if (!insideSkipBlock()) {
           // replace leading and trailing whitespace with a single whitespace character
@@ -54,8 +76,9 @@ function createGlimmerPlugin(config) {
                 }
               });
 
-              node.value.parts = node.value.parts
-                .filter(part => part.type !== 'TextNode' || part.chars !== '');
+              node.value.parts = node.value.parts.filter(
+                part => part.type !== 'TextNode' || part.chars !== '',
+              );
             }
           }
         },
@@ -81,18 +104,6 @@ function createGlimmerPlugin(config) {
         },
       },
 
-      Program: {
-        enter(node) {
-          if (!insideSkipBlock()) {
-            removeSurroundingWhitespaceNodes(node.body);
-          }
-        },
-
-        exit(node) {
-          node.body = stripNoMinifyBlocks(node.body);
-        },
-      },
-
       ElementNode: {
         enter(node) {
           if (shouldSkipElementNode(node, config) || shouldSkipClass(node, config)) {
@@ -110,15 +121,22 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        }
+        },
       },
-    }
+    },
   };
 }
 
 function createRegistryPlugin(config) {
-  let plugin = createGlimmerPlugin(config);
-  return () => plugin;
+  return env => {
+    let plugin = createGlimmerPlugin({
+      ...config,
+      [INTERNAL_CONFIG]: {
+        hasTemplateNode: 'template' in env.syntax.builders,
+      },
+    });
+    return plugin;
+  };
 }
 
 function isWhitespaceTextNode(node) {
@@ -126,12 +144,14 @@ function isWhitespaceTextNode(node) {
 }
 
 function stripNoMinifyBlocks(nodes) {
-  return nodes.map(node => {
-    if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
-      return node.program.body;
-    }
-    return node;
-  }).reduce((a, b) => a.concat(b), []);
+  return nodes
+    .map(node => {
+      if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
+        return node.program.body;
+      }
+      return node;
+    })
+    .reduce((a, b) => a.concat(b), []);
 }
 
 function removeSurroundingWhitespaceNodes(nodes) {
@@ -149,7 +169,7 @@ function removeSurroundingWhitespaceNodes(nodes) {
 function isClassIncluded(chars, classes) {
   chars = (chars || '').trim().split(' ');
 
-  return chars.some((char) => {
+  return chars.some(char => {
     return classes.indexOf(char) !== -1;
   });
 }
@@ -209,13 +229,12 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
   } else if (type === 'ConcatStatement') {
     let parts = value.parts;
 
-    return parts.every((part) => {
+    return parts.every(part => {
       return canTrimWhiteSpaceBasedOnClassNames(part, configClassNames);
     });
   }
   return true;
 }
-
 
 function shouldSkipBlockStatement(node, config) {
   let components = config.skip.components;
@@ -253,9 +272,13 @@ function normalizeConfig(config = {}) {
   config.skip.elements = config.skip.elements || ['pre'];
   config.skip.classes = config.skip.classes || [];
   config.skip.components = config.skip.components || ['no-minify'];
+  config[INTERNAL_CONFIG] = config[INTERNAL_CONFIG] || {};
 }
+
+const INTERNAL_CONFIG = Symbol.for('__ember-hbs-minifier__internal__');
 
 module.exports = {
   createGlimmerPlugin,
   createRegistryPlugin,
+  INTERNAL_CONFIG,
 };

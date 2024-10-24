@@ -29,6 +29,7 @@ jobs:
 
       - run: pnpm install
       - run: pnpm lint
+      - run: pnpm prettier --check .
 
   test:
     name: Node Tests
