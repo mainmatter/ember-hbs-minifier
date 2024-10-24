@@ -11,13 +11,13 @@ module.exports = function (defaults) {
       skip: {
         elements: ['pre', 'address'],
         classes: ['description'],
-        components: ['foo-bar', 'no-minify']
-      }
+        components: ['foo-bar', 'no-minify'],
+      },
     },
 
     'ember-cli-babel': {
-      throwUnlessParallelizable: true
-    }
+      throwUnlessParallelizable: true,
+    },
   });
 
   /*
