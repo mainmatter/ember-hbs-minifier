@@ -22,6 +22,7 @@
     "build": "ember build",
     "changelog": "lerna-changelog",
     "lint": "eslint . --cache",
+    "format": "prettier . --write",
     "start": "ember server",
     "test": "jest",
     "test:ember": "ember test"
@@ -60,6 +61,7 @@
     "jest": "28.1.3",
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
+    "prettier": "^3.3.3",
     "qunit": "2.19.4",
     "webpack": "5.82.1"
   },
