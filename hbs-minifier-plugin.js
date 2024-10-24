@@ -82,7 +82,18 @@ function createGlimmerPlugin(config) {
         },
       },
 
-      Program: {
+      Template: {
+        enter(node) {
+          if (!insideSkipBlock()) {
+            removeSurroundingWhitespaceNodes(node.body);
+          }
+        },
+
+        exit(node) {
+          node.body = stripNoMinifyBlocks(node.body);
+        },
+      },
+      Block: {
         enter(node) {
           if (!insideSkipBlock()) {
             removeSurroundingWhitespaceNodes(node.body);

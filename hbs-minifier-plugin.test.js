@@ -228,7 +228,7 @@ for (let dep of DEPS) {
     }
 
     function process(template, config) {
-      let plugin = () => {
+      let plugin = (/* env */) => {
         return require('./hbs-minifier-plugin').createGlimmerPlugin(config);
       };
       return glimmer.preprocess(template, {
