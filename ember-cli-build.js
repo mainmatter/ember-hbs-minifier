@@ -4,15 +4,15 @@
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
     'ember-hbs-minifier': {
       skip: {
         elements: ['pre', 'address'],
         classes: ['description'],
-        components: ['foo-bar', 'no-minify']
-      }
+        components: ['foo-bar', 'no-minify'],
+      },
     },
 
     'ember-cli-babel': {
