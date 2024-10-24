@@ -13,9 +13,7 @@ module('HBS Minifier plugin', function (hooks) {
   test('collapses whitespace into single space character', async function (assert) {
     await render(hbs`{{this.foo}}  \n\n   \n{{this.bar}}`);
 
-    let childNodes = [...this.element.childNodes].filter(
-      it => it.textContent !== '',
-    );
+    let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[1].nodeName, '#text');
     assert.strictEqual(childNodes[1].textContent, ' ');
@@ -24,9 +22,7 @@ module('HBS Minifier plugin', function (hooks) {
   test('strips leading and trailing whitespace from Program nodes', async function (assert) {
     await render(hbs`        {{this.foo}}        `);
 
-    let childNodes = [...this.element.childNodes].filter(
-      it => it.textContent !== '',
-    );
+    let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 1);
     assert.strictEqual(childNodes[0].nodeName, '#text');
     assert.strictEqual(childNodes[0].textContent, 'foo');
@@ -35,9 +31,7 @@ module('HBS Minifier plugin', function (hooks) {
   test('Collapse leading/trailing text from Program nodes into a single whitespace', async function (assert) {
     await render(hbs`x        {{this.foo}}     y   `);
 
-    let childNodes = [...this.element.childNodes].filter(
-      it => it.textContent !== '',
-    );
+    let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[0].nodeName, '#text');
     assert.strictEqual(childNodes[0].textContent, 'x ');
@@ -57,9 +51,7 @@ module('HBS Minifier plugin', function (hooks) {
   });
 
   test('Collapse leading/trailing text from ElementNode nodes', async function (assert) {
-    await render(
-      hbs`<div>x        {{this.foo}}     y   {{this.bar}}    z</div>`,
-    );
+    await render(hbs`<div>x        {{this.foo}}     y   {{this.bar}}    z</div>`);
 
     let childNodes = this.element.querySelector('div').childNodes;
     assert.strictEqual(childNodes.length, 5);
@@ -98,9 +90,7 @@ module('HBS Minifier plugin', function (hooks) {
   test('does not strip inside of {{#no-minify}} tags', async function (assert) {
     await render(hbs`{{#no-minify}}        {{this.foo}}        {{/no-minify}}`);
 
-    let childNodes = [...this.element.childNodes].filter(
-      it => it.textContent !== '',
-    );
+    let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[0].nodeName, '#text');
     assert.strictEqual(childNodes[0].textContent, '        ');
@@ -111,9 +101,7 @@ module('HBS Minifier plugin', function (hooks) {
   });
 
   test('does not strip inside of {{#no-minify}} tags in other tags', async function (assert) {
-    await render(
-      hbs`<div>{{#no-minify}}        {{this.foo}}        {{/no-minify}}</div>`,
-    );
+    await render(hbs`<div>{{#no-minify}}        {{this.foo}}        {{/no-minify}}</div>`);
 
     let childNodes = this.element.querySelector('div').childNodes;
     assert.strictEqual(childNodes.length, 3);
@@ -136,9 +124,7 @@ module('HBS Minifier plugin', function (hooks) {
 
   test('does not collapse multiple &nbsp; textNode into a single whitespace', async function (assert) {
     await render(hbs`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
-    let childNodes = [...this.element.childNodes].filter(
-      it => it.textContent !== '',
-    );
+    let childNodes = [...this.element.childNodes].filter(it => it.textContent !== '');
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[1].nodeName, '#text');
     // checking for the length of the textNode is 2.
@@ -259,17 +245,11 @@ module('HBS Minifier plugin', function (hooks) {
 
     let childNodes = this.element.querySelector('button').childNodes;
     // removing the textNodes with content as '' since htmlbars adds text node boundaries (at the begining and the end) of a template file.
-    assert.strictEqual(
-      [...childNodes].filter(node => node.textContent !== '').length,
-      2,
-    );
+    assert.strictEqual([...childNodes].filter(node => node.textContent !== '').length, 2);
     assert.strictEqual(childNodes[0].textContent, 'save ');
     assert.strictEqual(childNodes[1].nodeName, 'DIV');
     let yieldElementChildNodes = this.element.querySelector('div').childNodes;
     assert.strictEqual(yieldElementChildNodes.length, 1);
-    assert.strictEqual(
-      yieldElementChildNodes[0].textContent,
-      ' yield content ',
-    );
+    assert.strictEqual(yieldElementChildNodes[0].textContent, ' yield content ');
   });
 });

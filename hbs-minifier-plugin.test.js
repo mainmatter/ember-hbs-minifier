@@ -5,7 +5,7 @@
 
 const DEP_PREFIX = '@glimmer/syntax';
 const DEPS = Object.keys(require('./package.json').devDependencies).filter(it =>
-  it.startsWith(DEP_PREFIX),
+  it.startsWith(DEP_PREFIX)
 );
 
 // Remove the unnecessary `loc` properties from the AST snapshots and replace
@@ -20,7 +20,7 @@ expect.addSnapshotSerializer({
     delete clone.loc;
     delete clone.type;
     return serialize(clone).replace(/^Object {/, `${val.type} {`);
-  },
+  }
 });
 
 for (let dep of DEPS) {
@@ -85,7 +85,7 @@ for (let dep of DEPS) {
 
     it('does not minify `tagNames` specified in .hbs-minifyrc.js', function () {
       let config = {
-        skip: { elements: ['address'] },
+        skip: { elements: ['address'] }
       };
 
       assert(
@@ -97,13 +97,13 @@ for (let dep of DEPS) {
   <br>
   <u> USA </u>
 </address>`,
-        config,
+        config
       );
     });
 
     it('does not minify `classNames` specified in .hbs-minifyrc.js', function () {
       let config = {
-        skip: { classes: ['description'] },
+        skip: { classes: ['description'] }
       };
 
       assert(
@@ -113,13 +113,13 @@ for (let dep of DEPS) {
     2
   </span>
 </div>`,
-        config,
+        config
       );
     });
 
     it('does not minify `components` specified in .hbs-minifyrc.js', function () {
       let config = {
-        skip: { components: ['foo-bar'] },
+        skip: { components: ['foo-bar'] }
       };
 
       assert(
@@ -128,7 +128,7 @@ for (let dep of DEPS) {
     yield content
   </span>
 {{/foo-bar}}`,
-        config,
+        config
       );
     });
 
@@ -212,8 +212,8 @@ for (let dep of DEPS) {
       };
       return glimmer.preprocess(template, {
         plugins: {
-          ast: [plugin],
-        },
+          ast: [plugin]
+        }
       });
     }
   });

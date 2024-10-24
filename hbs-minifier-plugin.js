@@ -25,9 +25,7 @@ function createGlimmerPlugin(config) {
       TextNode(node) {
         if (!insideSkipBlock()) {
           // replace leading and trailing whitespace with a single whitespace character
-          node.chars = node.chars
-            .replace(leadingWhiteSpace, ' ')
-            .replace(trailingWhiteSpace, ' ');
+          node.chars = node.chars.replace(leadingWhiteSpace, ' ').replace(trailingWhiteSpace, ' ');
         }
       },
 
@@ -57,7 +55,7 @@ function createGlimmerPlugin(config) {
               });
 
               node.value.parts = node.value.parts.filter(
-                part => part.type !== 'TextNode' || part.chars !== '',
+                part => part.type !== 'TextNode' || part.chars !== ''
               );
             }
           }
@@ -67,7 +65,7 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        },
+        }
       },
 
       BlockStatement: {
@@ -81,7 +79,7 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        },
+        }
       },
 
       Program: {
@@ -93,15 +91,12 @@ function createGlimmerPlugin(config) {
 
         exit(node) {
           node.body = stripNoMinifyBlocks(node.body);
-        },
+        }
       },
 
       ElementNode: {
         enter(node) {
-          if (
-            shouldSkipElementNode(node, config) ||
-            shouldSkipClass(node, config)
-          ) {
+          if (shouldSkipElementNode(node, config) || shouldSkipClass(node, config)) {
             skipStack.push(node);
           }
 
@@ -116,9 +111,9 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        },
-      },
-    },
+        }
+      }
+    }
   };
 }
 
@@ -134,10 +129,7 @@ function isWhitespaceTextNode(node) {
 function stripNoMinifyBlocks(nodes) {
   return nodes
     .map(node => {
-      if (
-        node.type === 'BlockStatement' &&
-        node.path.original === 'no-minify'
-      ) {
+      if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
         return node.program.body;
       }
       return node;
@@ -210,10 +202,7 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
     if (['if', 'unless'].indexOf(value.path.original) !== -1) {
       let params = value.params;
       for (let i = 1; i < params.length; i++) {
-        canTrim = canTrimWhiteSpaceBasedOnClassNames(
-          params[i],
-          configClassNames,
-        );
+        canTrim = canTrimWhiteSpaceBasedOnClassNames(params[i], configClassNames);
         if (!canTrim) {
           break;
         }
@@ -258,10 +247,7 @@ function shouldSkipClass(node, config) {
     return false;
   }
 
-  return !canTrimWhiteSpaceBasedOnClassNames(
-    classAttrNode.value,
-    config.skip.classes,
-  );
+  return !canTrimWhiteSpaceBasedOnClassNames(classAttrNode.value, config.skip.classes);
 }
 
 function normalizeConfig(config = {}) {
@@ -273,5 +259,5 @@ function normalizeConfig(config = {}) {
 
 module.exports = {
   createGlimmerPlugin,
-  createRegistryPlugin,
+  createRegistryPlugin
 };
