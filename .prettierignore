@@ -1,4 +1,5 @@
 *.md
 *.yml
 *.yaml
+*.html
 *.json5
