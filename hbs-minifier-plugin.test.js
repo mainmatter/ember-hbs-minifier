@@ -23,6 +23,25 @@ expect.addSnapshotSerializer({
   },
 });
 
+const originalWarn = console.warn;
+let loggedDeprecations = [];
+function expectNoDeprecations() {
+  beforeEach(() => {
+    loggedDeprecations = [];
+
+    // See @glimmer/util's deprecation() implementation
+    console.warn = (...args) => {
+      if (args[0]?.includes('DEPRECATION')) {
+        loggedDeprecations.push(args[0]);
+      }
+    };
+  });
+  afterEach(() => {
+    expect(loggedDeprecations).toHaveLength(0);
+    console.warn = originalWarn;
+  });
+}
+
 for (let dep of DEPS) {
   let moduleName = 'HBS Minifier plugin';
   if (dep !== DEP_PREFIX) {
@@ -31,6 +50,8 @@ for (let dep of DEPS) {
 
   describe(moduleName, () => {
     const glimmer = require(dep);
+
+    expectNoDeprecations();
 
     it('collapses whitespace into single space character', () => {
       assert(`{{foo}}  \n\n   \n{{bar}}`);
