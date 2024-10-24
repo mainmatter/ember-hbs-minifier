@@ -57,7 +57,7 @@ function createGlimmerPlugin(config) {
               });
 
               node.value.parts = node.value.parts.filter(
-                (part) => part.type !== 'TextNode' || part.chars !== '',
+                part => part.type !== 'TextNode' || part.chars !== '',
               );
             }
           }
@@ -133,7 +133,7 @@ function isWhitespaceTextNode(node) {
 
 function stripNoMinifyBlocks(nodes) {
   return nodes
-    .map((node) => {
+    .map(node => {
       if (
         node.type === 'BlockStatement' &&
         node.path.original === 'no-minify'
@@ -160,7 +160,7 @@ function removeSurroundingWhitespaceNodes(nodes) {
 function isClassIncluded(chars, classes) {
   chars = (chars || '').trim().split(' ');
 
-  return chars.some((char) => {
+  return chars.some(char => {
     return classes.indexOf(char) !== -1;
   });
 }
@@ -223,7 +223,7 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
   } else if (type === 'ConcatStatement') {
     let parts = value.parts;
 
-    return parts.every((part) => {
+    return parts.every(part => {
       return canTrimWhiteSpaceBasedOnClassNames(part, configClassNames);
     });
   }
@@ -253,7 +253,7 @@ function shouldSkipElementNode(node, config) {
 }
 
 function shouldSkipClass(node, config) {
-  let classAttrNode = node.attributes.find((attr) => attr.name === 'class');
+  let classAttrNode = node.attributes.find(attr => attr.name === 'class');
   if (!classAttrNode) {
     return false;
   }
