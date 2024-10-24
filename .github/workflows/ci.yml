@@ -7,27 +7,20 @@ on:
       - 'v*'
   pull_request: {}
 
-env:
-  PNPM_VERSION: 6.35.1
-
 jobs:
   lint:
     name: Linting
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-
-      - uses: actions/setup-node@v3.6.0
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 12.x
           cache: pnpm
 
-      - run: pnpm install
+      - run: pnpm install --frozen-lockfile
       - run: pnpm lint
 
   test:
@@ -40,18 +33,14 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
 
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-
-      - uses: actions/setup-node@v3.6.0
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - run: pnpm install
+      - run: pnpm install --frozen-lockfile
       - run: pnpm test -- --coverage
 
   ember-try-scenarios:
@@ -60,16 +49,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-
-      - uses: actions/setup-node@v3.6.0
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 12.x
           cache: pnpm
 
-      - run: pnpm install
-      - run: node_modules/.bin/ember try:each
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm ember try:each
