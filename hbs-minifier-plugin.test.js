@@ -4,8 +4,8 @@
 /* eslint-disable no-inner-declarations */
 
 const DEP_PREFIX = '@glimmer/syntax';
-const DEPS = Object.keys(require('./package.json').devDependencies).filter(
-  (it) => it.startsWith(DEP_PREFIX),
+const DEPS = Object.keys(require('./package.json').devDependencies).filter(it =>
+  it.startsWith(DEP_PREFIX),
 );
 
 // Remove the unnecessary `loc` properties from the AST snapshots and replace

@@ -14,7 +14,7 @@ module('HBS Minifier plugin', function (hooks) {
     await render(hbs`{{this.foo}}  \n\n   \n{{this.bar}}`);
 
     let childNodes = [...this.element.childNodes].filter(
-      (it) => it.textContent !== '',
+      it => it.textContent !== '',
     );
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[1].nodeName, '#text');
@@ -25,7 +25,7 @@ module('HBS Minifier plugin', function (hooks) {
     await render(hbs`        {{this.foo}}        `);
 
     let childNodes = [...this.element.childNodes].filter(
-      (it) => it.textContent !== '',
+      it => it.textContent !== '',
     );
     assert.strictEqual(childNodes.length, 1);
     assert.strictEqual(childNodes[0].nodeName, '#text');
@@ -36,7 +36,7 @@ module('HBS Minifier plugin', function (hooks) {
     await render(hbs`x        {{this.foo}}     y   `);
 
     let childNodes = [...this.element.childNodes].filter(
-      (it) => it.textContent !== '',
+      it => it.textContent !== '',
     );
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[0].nodeName, '#text');
@@ -99,7 +99,7 @@ module('HBS Minifier plugin', function (hooks) {
     await render(hbs`{{#no-minify}}        {{this.foo}}        {{/no-minify}}`);
 
     let childNodes = [...this.element.childNodes].filter(
-      (it) => it.textContent !== '',
+      it => it.textContent !== '',
     );
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[0].nodeName, '#text');
@@ -137,7 +137,7 @@ module('HBS Minifier plugin', function (hooks) {
   test('does not collapse multiple &nbsp; textNode into a single whitespace', async function (assert) {
     await render(hbs`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
     let childNodes = [...this.element.childNodes].filter(
-      (it) => it.textContent !== '',
+      it => it.textContent !== '',
     );
     assert.strictEqual(childNodes.length, 3);
     assert.strictEqual(childNodes[1].nodeName, '#text');
@@ -260,7 +260,7 @@ module('HBS Minifier plugin', function (hooks) {
     let childNodes = this.element.querySelector('button').childNodes;
     // removing the textNodes with content as '' since htmlbars adds text node boundaries (at the begining and the end) of a template file.
     assert.strictEqual(
-      [...childNodes].filter((node) => node.textContent !== '').length,
+      [...childNodes].filter(node => node.textContent !== '').length,
       2,
     );
     assert.strictEqual(childNodes[0].textContent, 'save ');
