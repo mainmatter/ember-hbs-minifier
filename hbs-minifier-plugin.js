@@ -55,7 +55,7 @@ function createGlimmerPlugin(config) {
               });
 
               node.value.parts = node.value.parts.filter(
-                part => part.type !== 'TextNode' || part.chars !== ''
+                part => part.type !== 'TextNode' || part.chars !== '',
               );
             }
           }
@@ -65,7 +65,7 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        }
+        },
       },
 
       BlockStatement: {
@@ -79,7 +79,7 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        }
+        },
       },
 
       Program: {
@@ -91,7 +91,7 @@ function createGlimmerPlugin(config) {
 
         exit(node) {
           node.body = stripNoMinifyBlocks(node.body);
-        }
+        },
       },
 
       ElementNode: {
@@ -111,9 +111,9 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        }
-      }
-    }
+        },
+      },
+    },
   };
 }
 
@@ -259,5 +259,5 @@ function normalizeConfig(config = {}) {
 
 module.exports = {
   createGlimmerPlugin,
-  createRegistryPlugin
+  createRegistryPlugin,
 };
