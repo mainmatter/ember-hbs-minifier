@@ -16,7 +16,7 @@ module.exports = {
     pluginObj.parallelBabel = {
       requireFile: __filename,
       buildUsing: '_buildPlugin',
-      params: config,
+      params: config
     };
 
     registry.add('htmlbars-ast-plugin', pluginObj);
@@ -32,8 +32,7 @@ module.exports = {
   },
 
   _buildPlugin(config) {
-    let HbsMinifierPlugin =
-      require('./hbs-minifier-plugin').createRegistryPlugin(config);
+    let HbsMinifierPlugin = require('./hbs-minifier-plugin').createRegistryPlugin(config);
 
     return {
       name: 'hbs-minifier-plugin',
@@ -43,15 +42,15 @@ module.exports = {
       },
       cacheKey() {
         return cacheKeyForConfig(config);
-      },
+      }
     };
-  },
+  }
 };
 
 function cacheKeyForConfig(config) {
   let configHash = hashObj(config, {
     encoding: 'base64',
-    algorithm: 'md5',
+    algorithm: 'md5'
   });
 
   return `ember-hbs-minifier-${configHash}`;

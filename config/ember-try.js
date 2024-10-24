@@ -6,7 +6,7 @@ module.exports = {
   scenarios: [
     {
       name: 'ember-release',
-      allowedToFail: true,
-    },
-  ],
+      allowedToFail: true
+    }
+  ]
 };
