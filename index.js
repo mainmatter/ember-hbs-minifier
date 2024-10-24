@@ -32,13 +32,18 @@ module.exports = {
   },
 
   _buildPlugin(config) {
-    let HbsMinifierPlugin = require('./hbs-minifier-plugin').createRegistryPlugin(config);
+    let HbsMinifierPlugin =
+      require('./hbs-minifier-plugin').createRegistryPlugin(config);
 
     return {
       name: 'hbs-minifier-plugin',
       plugin: HbsMinifierPlugin,
-      baseDir() { return __dirname; },
-      cacheKey() { return cacheKeyForConfig(config); }
+      baseDir() {
+        return __dirname;
+      },
+      cacheKey() {
+        return cacheKeyForConfig(config);
+      },
     };
   },
 };

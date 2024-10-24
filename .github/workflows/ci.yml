@@ -22,6 +22,7 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
+      - run: pnpm prettier --check .
 
   test:
     name: Node Tests

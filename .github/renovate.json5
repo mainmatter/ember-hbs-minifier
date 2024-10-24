@@ -1,27 +1,29 @@
 {
-  "extends": [
-    "github>Turbo87/renovate-config",
-    "github>Turbo87/renovate-config:automergeCaretConstraint",
-    ":automergeLinters",
-    ":automergeTesters",
-    ":pinOnlyDevDependencies",
+  extends: [
+    'github>Turbo87/renovate-config',
+    'github>Turbo87/renovate-config:automergeCaretConstraint',
+    ':automergeLinters',
+    ':automergeTesters',
+    ':pinOnlyDevDependencies',
   ],
-  
-  "regexManagers": [
+
+  regexManagers: [
     {
-      "fileMatch": ["^.github/workflows/[^\\.]+\\.ya?ml$"],
-      "matchStrings": ["PNPM_VERSION:\\s*(?<currentValue>.*?)\n"],
-      "depNameTemplate": "pnpm",
-      "datasourceTemplate": "npm",
+      fileMatch: ['^.github/workflows/[^\\.]+\\.ya?ml$'],
+      matchStrings: ['PNPM_VERSION:\\s*(?<currentValue>.*?)\n'],
+      depNameTemplate: 'pnpm',
+      datasourceTemplate: 'npm',
     },
   ],
 
-  "npm": {
-    "postUpdateOptions": ["yarnDedupeFewer"],
+  npm: {
+    postUpdateOptions: ['yarnDedupeFewer'],
   },
 
-  packageRules: [{
-    matchPackagePrefixes: ["@glimmer/syntax-"],
-    enabled: false,
-  }],
+  packageRules: [
+    {
+      matchPackagePrefixes: ['@glimmer/syntax-'],
+      enabled: false,
+    },
+  ],
 }
