@@ -9,6 +9,8 @@ const WHITESPACE = /^[ \t\r\n]+$/;
 function createGlimmerPlugin(config) {
   normalizeConfig(config);
 
+  let hasTemplateNode = config[INTERNAL_CONFIG].hasTemplateNode;
+
   // in this stack we track the nodes that cause us to skip the minification
   // e.g. `{{#no-minify}} ... {{/no-minify}}` blocks or `<pre></pre>` tags
   // depending on the configuration
@@ -18,10 +20,30 @@ function createGlimmerPlugin(config) {
     return skipStack.length !== 0;
   }
 
+  let blockTracker = {
+    enter(node) {
+      if (!insideSkipBlock()) {
+        removeSurroundingWhitespaceNodes(node.body);
+      }
+    },
+
+    exit(node) {
+      node.body = stripNoMinifyBlocks(node.body);
+    },
+  };
+
+  let wrapperVisitors = hasTemplateNode
+    ? {
+        Template: blockTracker,
+        Block: blockTracker,
+      }
+    : { Program: blockTracker };
+
   return {
     name: 'hbs-minifier-plugin',
 
     visitor: {
+      ...wrapperVisitors,
       TextNode(node) {
         if (!insideSkipBlock()) {
           // replace leading and trailing whitespace with a single whitespace character
@@ -82,29 +104,6 @@ function createGlimmerPlugin(config) {
         },
       },
 
-      Template: {
-        enter(node) {
-          if (!insideSkipBlock()) {
-            removeSurroundingWhitespaceNodes(node.body);
-          }
-        },
-
-        exit(node) {
-          node.body = stripNoMinifyBlocks(node.body);
-        },
-      },
-      Block: {
-        enter(node) {
-          if (!insideSkipBlock()) {
-            removeSurroundingWhitespaceNodes(node.body);
-          }
-        },
-
-        exit(node) {
-          node.body = stripNoMinifyBlocks(node.body);
-        },
-      },
-
       ElementNode: {
         enter(node) {
           if (shouldSkipElementNode(node, config) || shouldSkipClass(node, config)) {
@@ -129,8 +128,15 @@ function createGlimmerPlugin(config) {
 }
 
 function createRegistryPlugin(config) {
-  let plugin = createGlimmerPlugin(config);
-  return () => plugin;
+  return env => {
+    let plugin = createGlimmerPlugin({
+      ...config,
+      [INTERNAL_CONFIG]: {
+        hasTemplateNode: 'template' in env.syntax.builders,
+      },
+    });
+    return plugin;
+  };
 }
 
 function isWhitespaceTextNode(node) {
@@ -266,9 +272,13 @@ function normalizeConfig(config = {}) {
   config.skip.elements = config.skip.elements || ['pre'];
   config.skip.classes = config.skip.classes || [];
   config.skip.components = config.skip.components || ['no-minify'];
+  config[INTERNAL_CONFIG] = config[INTERNAL_CONFIG] || {};
 }
+
+const INTERNAL_CONFIG = Symbol.for('__ember-hbs-minifier__internal__');
 
 module.exports = {
   createGlimmerPlugin,
   createRegistryPlugin,
+  INTERNAL_CONFIG,
 };
