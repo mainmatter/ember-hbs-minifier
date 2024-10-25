@@ -36,54 +36,54 @@ for (let dep of DEPS) {
       assert(`{{foo}}  \n\n   \n{{bar}}`);
     });
 
-    it('strips leading and trailing whitespace from Program nodes', function () {
+    it('strips leading and trailing whitespace from Program nodes', function() {
       assert(`        {{foo}}        `);
     });
 
-    it('does not strip leading/trailing text from Program nodes', function () {
+    it('does not strip leading/trailing text from Program nodes', function() {
       assert(`x        {{foo}}     y   `);
     });
 
-    it('strips leading and trailing whitespace from ElementNode nodes', function () {
+    it('strips leading and trailing whitespace from ElementNode nodes', function() {
       assert(`<div>        {{foo}}        </div>`);
     });
 
-    it('does not strip leading/trailing text from ElementNode nodes', function () {
+    it('does not strip leading/trailing text from ElementNode nodes', function() {
       assert(`<div>x        {{foo}}     y   </div>`);
     });
 
-    it('does not strip inside of <pre> tags', function () {
+    it('does not strip inside of <pre> tags', function() {
       assert(`<pre>        {{foo}}        </pre>`);
     });
 
-    it('does not collapse whitespace inside of <pre> tags', function () {
+    it('does not collapse whitespace inside of <pre> tags', function() {
       assert(`<pre>  \n\n   \n</pre>`);
     });
 
-    it('does not strip inside of {{#no-minify}} tags', function () {
+    it('does not strip inside of {{#no-minify}} tags', function() {
       assert(`{{#no-minify}}        {{foo}}        {{/no-minify}}`);
     });
 
-    it('does not strip inside of {{#no-minify}} tags in other tags', function () {
+    it('does not strip inside of {{#no-minify}} tags in other tags', function() {
       assert(`<div>{{#no-minify}}        {{foo}}        {{/no-minify}}</div>`);
     });
 
-    it('does not collapse whitespace inside of {{#no-minify}} tags in other tags', function () {
+    it('does not collapse whitespace inside of {{#no-minify}} tags in other tags', function() {
       assert(`<div>{{#no-minify}}  \n\n   \n{{/no-minify}}</div>`);
     });
 
-    it('does not collapse multiple &nbsp; textNode into a single whitespace', function () {
+    it('does not collapse multiple &nbsp; textNode into a single whitespace', function() {
       assert(`<span>1</span>&nbsp;&nbsp;<span>2</span>`);
     });
 
-    it('does not collapse &nbsp; surrounding a text content into a single whitespace', function () {
+    it('does not collapse &nbsp; surrounding a text content into a single whitespace', function() {
       assert(`<div>
   <span>    &nbsp;1&nbsp;   </span>
   <span> 2   </span>
 </div>`);
     });
 
-    it('does not minify `tagNames` specified in .hbs-minifyrc.js', function () {
+    it('does not minify `tagNames` specified in .hbs-minifyrc.js', function() {
       let config = {
         skip: { elements: ['address'] },
       };
@@ -101,7 +101,7 @@ for (let dep of DEPS) {
       );
     });
 
-    it('does not minify `classNames` specified in .hbs-minifyrc.js', function () {
+    it('does not minify `classNames` specified in .hbs-minifyrc.js', function() {
       let config = {
         skip: { classes: ['description'] },
       };
@@ -117,7 +117,7 @@ for (let dep of DEPS) {
       );
     });
 
-    it('does not minify `components` specified in .hbs-minifyrc.js', function () {
+    it('does not minify `components` specified in .hbs-minifyrc.js', function() {
       let config = {
         skip: { components: ['foo-bar'] },
       };
@@ -132,7 +132,7 @@ for (let dep of DEPS) {
       );
     });
 
-    it('minifies `tagNames` that are not specified in .hbs-minifyrc.js', function () {
+    it('minifies `tagNames` that are not specified in .hbs-minifyrc.js', function() {
       assert(`<section>
   Box 564,
   <b>
@@ -143,7 +143,7 @@ for (let dep of DEPS) {
 </section>`);
     });
 
-    it('minifies `classNames` that are not specified in .hbs-minifyrc.js', function () {
+    it('minifies `classNames` that are not specified in .hbs-minifyrc.js', function() {
       assert(`<div class="contact-details">
   John Smith
   <i>
@@ -152,7 +152,7 @@ for (let dep of DEPS) {
 </div>`);
     });
 
-    it('minifies `components` that are not specified in .hbs-minifyrc.js', function () {
+    it('minifies `components` that are not specified in .hbs-minifyrc.js', function() {
       assert(`{{#my-component}}
   <span>
     yield content
@@ -160,15 +160,15 @@ for (let dep of DEPS) {
 {{/my-component}}`);
     });
 
-    it('skips whitespace in regular attributes', function () {
+    it('skips whitespace in regular attributes', function() {
       assert(`<div title="    foo    " />`);
     });
 
-    it('skips whitespace in concatenated attributes', function () {
+    it('skips whitespace in concatenated attributes', function() {
       assert(`<div title="    foo  {{if this.bar "BAR"}}  " />`);
     });
 
-    it('collapses whitespace in regular `class` attributes', function () {
+    it('collapses whitespace in regular `class` attributes', function() {
       assert(`
         <button
           class="
@@ -180,7 +180,7 @@ for (let dep of DEPS) {
       `);
     });
 
-    it('collapses whitespace in concatenated `class` attributes', function () {
+    it('collapses whitespace in concatenated `class` attributes', function() {
       assert(`
         <button
           class="

@@ -1,7 +1,7 @@
 /* eslint-env node */
 const getChannelURL = require('ember-source-channel-url');
 
-module.exports = async function () {
+module.exports = async function() {
   return {
     usePnpm: true,
     scenarios: [
