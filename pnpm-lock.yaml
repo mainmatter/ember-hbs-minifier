@@ -12,7 +12,7 @@ specifiers:
   '@glimmer/syntax-0.37.1': npm:@glimmer/syntax@0.37.1
   '@glimmer/syntax-0.40.1': npm:@glimmer/syntax@0.40.1
   '@glimmer/syntax-0.62.5': npm:@glimmer/syntax@0.62.5
-  ember-auto-import: 2.6.3
+  ember-auto-import: ^2.8.1
   ember-cli: 4.10.0
   ember-cli-babel: 7.26.11
   ember-cli-chai: 0.5.0
@@ -50,7 +50,7 @@ devDependencies:
   '@glimmer/syntax-0.37.1': /@glimmer/syntax/0.37.1
   '@glimmer/syntax-0.40.1': /@glimmer/syntax/0.40.1
   '@glimmer/syntax-0.62.5': /@glimmer/syntax/0.62.5
-  ember-auto-import: 2.6.3_webpack@5.82.1
+  ember-auto-import: 2.8.1_webpack@5.82.1
   ember-cli: 4.10.0
   ember-cli-babel: 7.26.11
   ember-cli-chai: 0.5.0
@@ -756,6 +756,19 @@ packages:
 
   /@babel/plugin-transform-class-static-block/7.25.9_@babel+core@7.26.0:
     resolution: {integrity: sha512-UIf+72C7YJ+PJ685/PpATbCz00XqiFEzHX5iysRwfvNT0Ko+FaXSvRgLytFSp8xUItrG9pFM/KoBBZDrY/cYyg==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.12.0
+    dependencies:
+      '@babel/core': 7.26.0
+      '@babel/helper-create-class-features-plugin': 7.25.9_@babel+core@7.26.0
+      '@babel/helper-plugin-utils': 7.25.9
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@babel/plugin-transform-class-static-block/7.26.0_@babel+core@7.26.0:
+    resolution: {integrity: sha512-6J2APTs7BDDm+UMqP1useWqhcRAXo0WIoVj26N7kPFB6S73Lgvyka4KTZYIxtgYXiN5HTyRObA72N2iu628iTQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.12.0
@@ -5339,13 +5352,15 @@ packages:
     resolution: {integrity: sha512-vOzZS6uZwhhbkZbcRyiy99Wg+pYFV5hk+5YaECvx0+Z31NR3Tt5zS6dze2OepT6PCTzVzT0dIJItti+uAW5zmw==}
     dev: true
 
-  /ember-auto-import/2.6.3_webpack@5.82.1:
-    resolution: {integrity: sha512-uLhrRDJYWCRvQ4JQ1e64XlSrqAKSd6PXaJ9ZsZI6Tlms9T4DtQFxNXasqji2ZRJBVrxEoLCRYX3RTldsQ0vNGQ==}
+  /ember-auto-import/2.8.1_webpack@5.82.1:
+    resolution: {integrity: sha512-R5RpJmhycU6YKryzsIL/wP42r0e2PPfLRsFECoGvb1st2eEnU1Q7XyLVC1txd/XvURfu7x3Z7hKtZtYUxy61oQ==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.26.0
       '@babel/plugin-proposal-decorators': 7.25.9_@babel+core@7.26.0
+      '@babel/plugin-proposal-private-methods': 7.18.6_@babel+core@7.26.0
+      '@babel/plugin-transform-class-static-block': 7.26.0_@babel+core@7.26.0
       '@babel/preset-env': 7.25.9_@babel+core@7.26.0
       '@embroider/macros': 1.16.9
       '@embroider/shared-internals': 2.8.1
@@ -5364,10 +5379,13 @@ packages:
       fs-extra: 10.1.0
       fs-tree-diff: 2.0.1
       handlebars: 4.7.8
+      is-subdir: 1.2.0
       js-string-escape: 1.0.1
       lodash: 4.17.21
       mini-css-extract-plugin: 2.9.1_webpack@5.82.1
+      minimatch: 3.1.2
       parse5: 6.0.1
+      pkg-entry-points: 1.1.1
       resolve: 1.22.8
       resolve-package-path: 4.0.3
       semver: 7.6.3
@@ -5853,7 +5871,7 @@ packages:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
-      ember-auto-import: 2.6.3_webpack@5.82.1
+      ember-auto-import: 2.8.1_webpack@5.82.1
       ember-cli-babel: 7.26.11
       ember-cli-test-loader: 3.1.0
       qunit: 2.19.4
@@ -5925,7 +5943,7 @@ packages:
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 4.2.0
       chalk: 4.1.2
-      ember-auto-import: 2.6.3_webpack@5.82.1
+      ember-auto-import: 2.8.1_webpack@5.82.1
       ember-cli-babel: 7.26.11
       ember-cli-get-component-path-option: 1.0.0
       ember-cli-is-package-missing: 1.0.0
