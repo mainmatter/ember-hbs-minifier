@@ -38,6 +38,7 @@
     "@ember/test-helpers": "2.9.3",
     "@glimmer/component": "^1.1.2",
     "@glimmer/syntax": "0.84.3",
+    "@glimmer/syntax-0.92.3": "npm:@glimmer/syntax@0.92.3",
     "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
     "@glimmer/syntax-0.37.1": "npm:@glimmer/syntax@0.37.1",
     "@glimmer/syntax-0.40.1": "npm:@glimmer/syntax@0.40.1",
