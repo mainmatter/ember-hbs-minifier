@@ -5,6 +5,7 @@
 const leadingWhiteSpace = /^[ \t\r\n]+/;
 const trailingWhiteSpace = /[ \t\r\n]+$/;
 const WHITESPACE = /^[ \t\r\n]+$/;
+const INTERNAL_CONFIG = Symbol.for('__ember-hbs-minifier__internal__');
 
 function createGlimmerPlugin(config) {
   normalizeConfig(config);
@@ -274,8 +275,6 @@ function normalizeConfig(config = {}) {
   config.skip.components = config.skip.components || ['no-minify'];
   config[INTERNAL_CONFIG] = config[INTERNAL_CONFIG] || {};
 }
-
-const INTERNAL_CONFIG = Symbol.for('__ember-hbs-minifier__internal__');
 
 module.exports = {
   createGlimmerPlugin,
