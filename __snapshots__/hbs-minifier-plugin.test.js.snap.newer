@@ -5242,6 +5242,2232 @@ exports[`HBS Minifier plugin (with @glimmer/syntax v0.62.5) strips leading and t
 {{foo}}"
 `;
 
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "btn ",
+              },
+              MustacheStatement {
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "head": ThisHead {
+                      "original": "this",
+                    },
+                    "original": "this.isPrimary",
+                    "tail": Array [
+                      "isPrimary",
+                    ],
+                  },
+                  StringLiteral {
+                    "value": "btn--primary",
+                  },
+                ],
+                "path": PathExpression {
+                  "head": VarHead {
+                    "name": "if",
+                    "original": "if",
+                  },
+                  "original": "if",
+                  "tail": Array [],
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
+                "trusting": false,
+              },
+              TextNode {
+                "chars": " ",
+              },
+              MustacheStatement {
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "head": AtHead {
+                      "name": "@stretch",
+                      "original": "@stretch",
+                    },
+                    "original": "@stretch",
+                    "tail": Array [],
+                  },
+                  StringLiteral {
+                    "value": "btn--stretch",
+                  },
+                ],
+                "path": PathExpression {
+                  "head": VarHead {
+                    "name": "if",
+                    "original": "if",
+                  },
+                  "original": "if",
+                  "tail": Array [],
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
+                "trusting": false,
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "closeTag": null,
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 10,
+          "line": 8,
+        },
+        "start": Object {
+          "column": 8,
+          "line": 2,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "button",
+          "original": "button",
+        },
+        "original": "button",
+        "tail": Array [],
+      },
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            {{if this.isPrimary \\"btn--primary\\"}}
+            {{if @stretch \\"btn--stretch\\"}}
+          \\"
+        />
+      
+---
+<button class=\\"btn {{if this.isPrimary \\"btn--primary\\"}} {{if @stretch \\"btn--stretch\\"}}\\" />"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 3`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "foo ",
+              },
+              MustacheStatement {
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "head": AtHead {
+                    "name": "@bar",
+                    "original": "@bar",
+                  },
+                  "original": "@bar",
+                  "tail": Array [],
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
+                "trusting": false,
+              },
+              TextNode {
+                "chars": " baz",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "closeTag": null,
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 42,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "button",
+          "original": "button",
+        },
+        "original": "button",
+        "tail": Array [],
+      },
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 4`] = `
+"<button class=\\"   foo   {{@bar}}  baz  \\"/>
+---
+<button class=\\"foo {{@bar}} baz\\" />"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 5`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "head": AtHead {
+                    "name": "@foo",
+                    "original": "@foo",
+                  },
+                  "original": "@foo",
+                  "tail": Array [],
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
+                "trusting": false,
+              },
+              TextNode {
+                "chars": " bar ",
+              },
+              MustacheStatement {
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "head": AtHead {
+                    "name": "@baz",
+                    "original": "@baz",
+                  },
+                  "original": "@baz",
+                  "tail": Array [],
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
+                "trusting": false,
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "closeTag": null,
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 43,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "button",
+          "original": "button",
+        },
+        "original": "button",
+        "tail": Array [],
+      },
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 6`] = `
+"<button class=\\"{{@foo}}   bar   {{@baz}}\\"/>
+---
+<button class=\\"{{@foo}} bar {{@baz}}\\" />"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 7`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": ConcatStatement {
+            "parts": Array [
+              MustacheStatement {
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [],
+                "path": PathExpression {
+                  "head": AtHead {
+                    "name": "@foo",
+                    "original": "@foo",
+                  },
+                  "original": "@foo",
+                  "tail": Array [],
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
+                "trusting": false,
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "closeTag": null,
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 32,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "button",
+          "original": "button",
+        },
+        "original": "button",
+        "tail": Array [],
+      },
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in concatenated \`class\` attributes 8`] = `
+"<button class=\\"   {{@foo}}   \\"/>
+---
+<button class=\\"{{@foo}}\\" />"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in regular \`class\` attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": TextNode {
+            "chars": "btn btn--primary btn--blue",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "closeTag": null,
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 10,
+          "line": 8,
+        },
+        "start": Object {
+          "column": 8,
+          "line": 2,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "button",
+          "original": "button",
+        },
+        "original": "button",
+        "tail": Array [],
+      },
+      "selfClosing": true,
+      "tag": "button",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace in regular \`class\` attributes 2`] = `
+"
+        <button
+          class=\\"
+            btn
+            btn--primary
+            btn--blue
+          \\"
+        />
+      
+---
+<button class=\\"btn btn--primary btn--blue\\" />"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace into single space character 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    MustacheStatement {
+      "hash": Hash {
+        "pairs": Array [],
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "foo",
+          "original": "foo",
+        },
+        "original": "foo",
+        "tail": Array [],
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
+      },
+      "trusting": false,
+    },
+    TextNode {
+      "chars": " ",
+    },
+    MustacheStatement {
+      "hash": Hash {
+        "pairs": Array [],
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "bar",
+          "original": "bar",
+        },
+        "original": "bar",
+        "tail": Array [],
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
+      },
+      "trusting": false,
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) collapses whitespace into single space character 2`] = `
+"{{foo}}  
+
+   
+{{bar}}
+---
+{{foo}} {{bar}}"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse &nbsp; surrounding a text content into a single whitespace 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": "  1  ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 35,
+              "line": 2,
+            },
+            "start": Object {
+              "column": 28,
+              "line": 2,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 8,
+              "line": 2,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 2,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "span",
+              "original": "span",
+            },
+            "original": "span",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "span",
+        },
+        TextNode {
+          "chars": " ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": " 2 ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 20,
+              "line": 3,
+            },
+            "start": Object {
+              "column": 13,
+              "line": 3,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 8,
+              "line": 3,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 3,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "span",
+              "original": "span",
+            },
+            "original": "span",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "span",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 6,
+          "line": 4,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 4,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse &nbsp; surrounding a text content into a single whitespace 2`] = `
+"<div>
+  <span>    &nbsp;1&nbsp;   </span>
+  <span> 2   </span>
+</div>
+---
+<div><span> &nbsp;1&nbsp; </span> <span> 2 </span></div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse multiple &nbsp; textNode into a single whitespace 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "1",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 14,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 7,
+          "line": 1,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 6,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "span",
+          "original": "span",
+        },
+        "original": "span",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "span",
+    },
+    TextNode {
+      "chars": "  ",
+    },
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "2",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 40,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 33,
+          "line": 1,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 32,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 26,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "span",
+          "original": "span",
+        },
+        "original": "span",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "span",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse multiple &nbsp; textNode into a single whitespace 2`] = `
+"<span>1</span>&nbsp;&nbsp;<span>2</span>
+---
+<span>1</span>&nbsp;&nbsp;<span>2</span>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse whitespace inside of <pre> tags 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "  
+
+   
+",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 6,
+          "line": 4,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 4,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "pre",
+          "original": "pre",
+        },
+        "original": "pre",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "pre",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse whitespace inside of <pre> tags 2`] = `
+"<pre>  
+
+   
+</pre>
+---
+<pre>  
+
+   
+</pre>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse whitespace inside of {{#no-minify}} tags in other tags 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "  
+
+   
+",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 20,
+          "line": 4,
+        },
+        "start": Object {
+          "column": 14,
+          "line": 4,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not collapse whitespace inside of {{#no-minify}} tags in other tags 2`] = `
+"<div>{{#no-minify}}  
+
+   
+{{/no-minify}}</div>
+---
+<div>  
+
+   
+</div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not minify \`classNames\` specified in .hbs-minifyrc.js 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": TextNode {
+            "chars": "description",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "
+  1
+  ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": "
+    2
+  ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 9,
+              "line": 5,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 8,
+              "line": 3,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 3,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "span",
+              "original": "span",
+            },
+            "original": "span",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "span",
+        },
+        TextNode {
+          "chars": "
+",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 6,
+          "line": 6,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 6,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 25,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not minify \`classNames\` specified in .hbs-minifyrc.js 2`] = `
+"<div class=\\"description\\">
+  1
+  <span>
+    2
+  </span>
+</div>
+---
+<div class=\\"description\\">
+  1
+  <span>
+    2
+  </span>
+</div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not minify \`components\` specified in .hbs-minifyrc.js 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    BlockStatement {
+      "closeStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "hash": Hash {
+        "pairs": Array [],
+      },
+      "inverse": null,
+      "inverseStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "openStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "foo-bar",
+          "original": "foo-bar",
+        },
+        "original": "foo-bar",
+        "tail": Array [],
+      },
+      "program": Block {
+        "blockParams": Array [],
+        "body": Array [
+          TextNode {
+            "chars": "  ",
+          },
+          ElementNode {
+            "attributes": Array [],
+            "blockParams": Array [],
+            "children": Array [
+              TextNode {
+                "chars": "
+    yield content
+  ",
+              },
+            ],
+            "closeTag": Object {
+              "end": Object {
+                "column": 9,
+                "line": 4,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 4,
+              },
+            },
+            "comments": Array [],
+            "modifiers": Array [],
+            "openTag": Object {
+              "end": Object {
+                "column": 8,
+                "line": 2,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 2,
+              },
+            },
+            "params": Array [],
+            "path": PathExpression {
+              "head": VarHead {
+                "name": "span",
+                "original": "span",
+              },
+              "original": "span",
+              "tail": Array [],
+            },
+            "selfClosing": false,
+            "tag": "span",
+          },
+          TextNode {
+            "chars": "
+",
+          },
+        ],
+        "chained": false,
+        "params": Array [],
+      },
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not minify \`components\` specified in .hbs-minifyrc.js 2`] = `
+"{{#foo-bar}}
+  <span>
+    yield content
+  </span>
+{{/foo-bar}}
+---
+{{#foo-bar}}  <span>
+    yield content
+  </span>
+{{/foo-bar}}"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not minify \`tagNames\` specified in .hbs-minifyrc.js 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "
+  Box 564,
+  ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": "
+    Disneyland
+  ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 6,
+              "line": 5,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 5,
+              "line": 3,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 3,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "b",
+              "original": "b",
+            },
+            "original": "b",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "b",
+        },
+        TextNode {
+          "chars": "
+  ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [],
+          "closeTag": null,
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 6,
+              "line": 6,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 6,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "br",
+              "original": "br",
+            },
+            "original": "br",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "br",
+        },
+        TextNode {
+          "chars": "
+  ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": " USA ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 14,
+              "line": 7,
+            },
+            "start": Object {
+              "column": 10,
+              "line": 7,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 5,
+              "line": 7,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 7,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "u",
+              "original": "u",
+            },
+            "original": "u",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "u",
+        },
+        TextNode {
+          "chars": "
+",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 10,
+          "line": 8,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 8,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 9,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "address",
+          "original": "address",
+        },
+        "original": "address",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "address",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not minify \`tagNames\` specified in .hbs-minifyrc.js 2`] = `
+"<address>
+  Box 564,
+  <b>
+    Disneyland
+  </b>
+  <br>
+  <u> USA </u>
+</address>
+---
+<address>
+  Box 564,
+  <b>
+    Disneyland
+  </b>
+  <br>
+  <u> USA </u>
+</address>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip inside of <pre> tags 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "        ",
+        },
+        MustacheStatement {
+          "hash": Hash {
+            "pairs": Array [],
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "foo",
+              "original": "foo",
+            },
+            "original": "foo",
+            "tail": Array [],
+          },
+          "strip": Object {
+            "close": false,
+            "open": false,
+          },
+          "trusting": false,
+        },
+        TextNode {
+          "chars": "        ",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 34,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 28,
+          "line": 1,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "pre",
+          "original": "pre",
+        },
+        "original": "pre",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "pre",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip inside of <pre> tags 2`] = `
+"<pre>        {{foo}}        </pre>
+---
+<pre>        {{foo}}        </pre>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip inside of {{#no-minify}} tags 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    TextNode {
+      "chars": "        ",
+    },
+    MustacheStatement {
+      "hash": Hash {
+        "pairs": Array [],
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "foo",
+          "original": "foo",
+        },
+        "original": "foo",
+        "tail": Array [],
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
+      },
+      "trusting": false,
+    },
+    TextNode {
+      "chars": "        ",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip inside of {{#no-minify}} tags 2`] = `
+"{{#no-minify}}        {{foo}}        {{/no-minify}}
+---
+        {{foo}}        "
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip inside of {{#no-minify}} tags in other tags 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "        ",
+        },
+        MustacheStatement {
+          "hash": Hash {
+            "pairs": Array [],
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "foo",
+              "original": "foo",
+            },
+            "original": "foo",
+            "tail": Array [],
+          },
+          "strip": Object {
+            "close": false,
+            "open": false,
+          },
+          "trusting": false,
+        },
+        TextNode {
+          "chars": "        ",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 62,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 56,
+          "line": 1,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip inside of {{#no-minify}} tags in other tags 2`] = `
+"<div>{{#no-minify}}        {{foo}}        {{/no-minify}}</div>
+---
+<div>        {{foo}}        </div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip leading/trailing text from ElementNode nodes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": "x ",
+        },
+        MustacheStatement {
+          "hash": Hash {
+            "pairs": Array [],
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "foo",
+              "original": "foo",
+            },
+            "original": "foo",
+            "tail": Array [],
+          },
+          "strip": Object {
+            "close": false,
+            "open": false,
+          },
+          "trusting": false,
+        },
+        TextNode {
+          "chars": " y ",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 36,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 30,
+          "line": 1,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip leading/trailing text from ElementNode nodes 2`] = `
+"<div>x        {{foo}}     y   </div>
+---
+<div>x {{foo}} y </div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip leading/trailing text from Program nodes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    TextNode {
+      "chars": "x ",
+    },
+    MustacheStatement {
+      "hash": Hash {
+        "pairs": Array [],
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "foo",
+          "original": "foo",
+        },
+        "original": "foo",
+        "tail": Array [],
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
+      },
+      "trusting": false,
+    },
+    TextNode {
+      "chars": " y ",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) does not strip leading/trailing text from Program nodes 2`] = `
+"x        {{foo}}     y   
+---
+x {{foo}} y "
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "class",
+          "value": TextNode {
+            "chars": "contact-details",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": " John Smith ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": " (Entrepreneur) ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 6,
+              "line": 5,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 5,
+              "line": 3,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 3,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "i",
+              "original": "i",
+            },
+            "original": "i",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "i",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 6,
+          "line": 6,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 6,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 29,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) minifies \`classNames\` that are not specified in .hbs-minifyrc.js 2`] = `
+"<div class=\\"contact-details\\">
+  John Smith
+  <i>
+    (Entrepreneur)
+  </i>
+</div>
+---
+<div class=\\"contact-details\\"> John Smith <i> (Entrepreneur) </i></div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) minifies \`components\` that are not specified in .hbs-minifyrc.js 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    BlockStatement {
+      "closeStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "hash": Hash {
+        "pairs": Array [],
+      },
+      "inverse": null,
+      "inverseStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "openStrip": Object {
+        "close": false,
+        "open": false,
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "my-component",
+          "original": "my-component",
+        },
+        "original": "my-component",
+        "tail": Array [],
+      },
+      "program": Block {
+        "blockParams": Array [],
+        "body": Array [
+          ElementNode {
+            "attributes": Array [],
+            "blockParams": Array [],
+            "children": Array [
+              TextNode {
+                "chars": " yield content ",
+              },
+            ],
+            "closeTag": Object {
+              "end": Object {
+                "column": 9,
+                "line": 4,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 4,
+              },
+            },
+            "comments": Array [],
+            "modifiers": Array [],
+            "openTag": Object {
+              "end": Object {
+                "column": 8,
+                "line": 2,
+              },
+              "start": Object {
+                "column": 2,
+                "line": 2,
+              },
+            },
+            "params": Array [],
+            "path": PathExpression {
+              "head": VarHead {
+                "name": "span",
+                "original": "span",
+              },
+              "original": "span",
+              "tail": Array [],
+            },
+            "selfClosing": false,
+            "tag": "span",
+          },
+        ],
+        "chained": false,
+        "params": Array [],
+      },
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) minifies \`components\` that are not specified in .hbs-minifyrc.js 2`] = `
+"{{#my-component}}
+  <span>
+    yield content
+  </span>
+{{/my-component}}
+---
+{{#my-component}}<span> yield content </span>{{/my-component}}"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        TextNode {
+          "chars": " Box 564, ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": " Disneyland ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 6,
+              "line": 5,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 5,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 5,
+              "line": 3,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 3,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "b",
+              "original": "b",
+            },
+            "original": "b",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "b",
+        },
+        TextNode {
+          "chars": " ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [],
+          "closeTag": null,
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 6,
+              "line": 6,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 6,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "br",
+              "original": "br",
+            },
+            "original": "br",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "br",
+        },
+        TextNode {
+          "chars": " ",
+        },
+        ElementNode {
+          "attributes": Array [],
+          "blockParams": Array [],
+          "children": Array [
+            TextNode {
+              "chars": " USA ",
+            },
+          ],
+          "closeTag": Object {
+            "end": Object {
+              "column": 14,
+              "line": 7,
+            },
+            "start": Object {
+              "column": 10,
+              "line": 7,
+            },
+          },
+          "comments": Array [],
+          "modifiers": Array [],
+          "openTag": Object {
+            "end": Object {
+              "column": 5,
+              "line": 7,
+            },
+            "start": Object {
+              "column": 2,
+              "line": 7,
+            },
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "u",
+              "original": "u",
+            },
+            "original": "u",
+            "tail": Array [],
+          },
+          "selfClosing": false,
+          "tag": "u",
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 10,
+          "line": 8,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 8,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 9,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "section",
+          "original": "section",
+        },
+        "original": "section",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "section",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) minifies \`tagNames\` that are not specified in .hbs-minifyrc.js 2`] = `
+"<section>
+  Box 564,
+  <b>
+    Disneyland
+  </b>
+  <br>
+  <u> USA </u>
+</section>
+---
+<section> Box 564, <b> Disneyland </b> <br> <u> USA </u></section>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) skips whitespace in concatenated attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": ConcatStatement {
+            "parts": Array [
+              TextNode {
+                "chars": "    foo  ",
+              },
+              MustacheStatement {
+                "hash": Hash {
+                  "pairs": Array [],
+                },
+                "params": Array [
+                  PathExpression {
+                    "head": ThisHead {
+                      "original": "this",
+                    },
+                    "original": "this.bar",
+                    "tail": Array [
+                      "bar",
+                    ],
+                  },
+                  StringLiteral {
+                    "value": "BAR",
+                  },
+                ],
+                "path": PathExpression {
+                  "head": VarHead {
+                    "name": "if",
+                    "original": "if",
+                  },
+                  "original": "if",
+                  "tail": Array [],
+                },
+                "strip": Object {
+                  "close": false,
+                  "open": false,
+                },
+                "trusting": false,
+              },
+              TextNode {
+                "chars": "  ",
+              },
+            ],
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "closeTag": null,
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 48,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) skips whitespace in concatenated attributes 2`] = `
+"<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\" />
+---
+<div title=\\"    foo  {{if this.bar \\"BAR\\"}}  \\" />"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) skips whitespace in regular attributes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [
+        AttrNode {
+          "name": "title",
+          "value": TextNode {
+            "chars": "    foo    ",
+          },
+        },
+      ],
+      "blockParams": Array [],
+      "children": Array [],
+      "closeTag": null,
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 27,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": true,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) skips whitespace in regular attributes 2`] = `
+"<div title=\\"    foo    \\" />
+---
+<div title=\\"    foo    \\" />"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) strips leading and trailing whitespace from ElementNode nodes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    ElementNode {
+      "attributes": Array [],
+      "blockParams": Array [],
+      "children": Array [
+        MustacheStatement {
+          "hash": Hash {
+            "pairs": Array [],
+          },
+          "params": Array [],
+          "path": PathExpression {
+            "head": VarHead {
+              "name": "foo",
+              "original": "foo",
+            },
+            "original": "foo",
+            "tail": Array [],
+          },
+          "strip": Object {
+            "close": false,
+            "open": false,
+          },
+          "trusting": false,
+        },
+      ],
+      "closeTag": Object {
+        "end": Object {
+          "column": 34,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 28,
+          "line": 1,
+        },
+      },
+      "comments": Array [],
+      "modifiers": Array [],
+      "openTag": Object {
+        "end": Object {
+          "column": 5,
+          "line": 1,
+        },
+        "start": Object {
+          "column": 0,
+          "line": 1,
+        },
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "div",
+          "original": "div",
+        },
+        "original": "div",
+        "tail": Array [],
+      },
+      "selfClosing": false,
+      "tag": "div",
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) strips leading and trailing whitespace from ElementNode nodes 2`] = `
+"<div>        {{foo}}        </div>
+---
+<div>{{foo}}</div>"
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) strips leading and trailing whitespace from Program nodes 1`] = `
+Template {
+  "blockParams": Array [],
+  "body": Array [
+    MustacheStatement {
+      "hash": Hash {
+        "pairs": Array [],
+      },
+      "params": Array [],
+      "path": PathExpression {
+        "head": VarHead {
+          "name": "foo",
+          "original": "foo",
+        },
+        "original": "foo",
+        "tail": Array [],
+      },
+      "strip": Object {
+        "close": false,
+        "open": false,
+      },
+      "trusting": false,
+    },
+  ],
+}
+`;
+
+exports[`HBS Minifier plugin (with @glimmer/syntax v0.92.3) strips leading and trailing whitespace from Program nodes 2`] = `
+"        {{foo}}        
+---
+{{foo}}"
+`;
+
 exports[`HBS Minifier plugin collapses whitespace in concatenated \`class\` attributes 1`] = `
 Template {
   "blockParams": Array [],
