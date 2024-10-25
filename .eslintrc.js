@@ -7,4 +7,13 @@ module.exports = {
     requireConfigFile: false,
   },
   extends: 'simplabs',
+  overrides: [
+    {
+      files: ['**/*.js'],
+      rules: {
+        // conflicts with prettier
+        'space-before-function-paren': 0,
+      },
+    },
+  ],
 };

@@ -54,8 +54,9 @@ function createGlimmerPlugin(config) {
                 }
               });
 
-              node.value.parts = node.value.parts
-                .filter(part => part.type !== 'TextNode' || part.chars !== '');
+              node.value.parts = node.value.parts.filter(
+                part => part.type !== 'TextNode' || part.chars !== ''
+              );
             }
           }
         },
@@ -110,9 +111,9 @@ function createGlimmerPlugin(config) {
           if (skipStack[skipStack.length - 1] === node) {
             skipStack.pop();
           }
-        }
+        },
       },
-    }
+    },
   };
 }
 
@@ -126,12 +127,14 @@ function isWhitespaceTextNode(node) {
 }
 
 function stripNoMinifyBlocks(nodes) {
-  return nodes.map(node => {
-    if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
-      return node.program.body;
-    }
-    return node;
-  }).reduce((a, b) => a.concat(b), []);
+  return nodes
+    .map(node => {
+      if (node.type === 'BlockStatement' && node.path.original === 'no-minify') {
+        return node.program.body;
+      }
+      return node;
+    })
+    .reduce((a, b) => a.concat(b), []);
 }
 
 function removeSurroundingWhitespaceNodes(nodes) {
@@ -149,7 +152,7 @@ function removeSurroundingWhitespaceNodes(nodes) {
 function isClassIncluded(chars, classes) {
   chars = (chars || '').trim().split(' ');
 
-  return chars.some((char) => {
+  return chars.some(char => {
     return classes.indexOf(char) !== -1;
   });
 }
@@ -209,13 +212,12 @@ function canTrimWhiteSpaceBasedOnClassNames(value, configClassNames) {
   } else if (type === 'ConcatStatement') {
     let parts = value.parts;
 
-    return parts.every((part) => {
+    return parts.every(part => {
       return canTrimWhiteSpaceBasedOnClassNames(part, configClassNames);
     });
   }
   return true;
 }
-
 
 function shouldSkipBlockStatement(node, config) {
   let components = config.skip.components;
