@@ -30,8 +30,12 @@
     "hash-obj": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.9",
     "@ember/optional-features": "2.0.0",
+    "@ember/string": "^4.0.0",
     "@ember/test-helpers": "2.9.3",
+    "@glimmer/component": "^1.1.2",
     "@glimmer/syntax": "0.84.3",
     "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
     "@glimmer/syntax-0.37.1": "npm:@glimmer/syntax@0.37.1",
@@ -72,7 +76,7 @@
     ],
     "configPath": "tests/dummy/config",
     "versionCompatibility": {
-      "ember": "~3.20.0 || ~3.24.0 || ~3.28.0 || >= 4"
+      "ember": "~3.20.0 || ~3.24.0 || ~3.28.0 || ~4.4.0 || ~4.8.0 || ~4.12.0 || ~5.4.0 || ~5.8.0 || ~5.12.0 || >= 6.0.0"
     }
   },
   "changelog": {
