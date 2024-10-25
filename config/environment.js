@@ -2,6 +2,6 @@
 
 /* eslint-env node */
 
-module.exports = function(/* environment, appConfig */) {
+module.exports = function (/* environment, appConfig */) {
   return {};
 };
