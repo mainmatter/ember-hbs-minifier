@@ -55,7 +55,7 @@ function createGlimmerPlugin(config) {
               });
 
               node.value.parts = node.value.parts.filter(
-                part => part.type !== 'TextNode' || part.chars !== '',
+                part => part.type !== 'TextNode' || part.chars !== ''
               );
             }
           }

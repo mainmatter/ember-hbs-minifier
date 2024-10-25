@@ -5,7 +5,7 @@
 
 const DEP_PREFIX = '@glimmer/syntax';
 const DEPS = Object.keys(require('./package.json').devDependencies).filter(it =>
-  it.startsWith(DEP_PREFIX),
+  it.startsWith(DEP_PREFIX)
 );
 
 // Remove the unnecessary `loc` properties from the AST snapshots and replace
@@ -97,7 +97,7 @@ for (let dep of DEPS) {
   <br>
   <u> USA </u>
 </address>`,
-        config,
+        config
       );
     });
 
@@ -113,7 +113,7 @@ for (let dep of DEPS) {
     2
   </span>
 </div>`,
-        config,
+        config
       );
     });
 
@@ -128,7 +128,7 @@ for (let dep of DEPS) {
     yield content
   </span>
 {{/foo-bar}}`,
-        config,
+        config
       );
     });
 
