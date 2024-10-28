@@ -13,6 +13,7 @@ module.exports = {
       rules: {
         // conflicts with prettier
         'space-before-function-paren': 0,
+        indent: 0,
       },
     },
   ],
