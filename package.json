@@ -9,20 +9,20 @@
   "repository": "github:Mainmatter/ember-hbs-minifier",
   "license": "MIT",
   "author": "Mainmatter GmbH <info@mainmatter.com>",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
   "files": [
     "hbs-minifier-plugin.js",
     "index.js",
     "utils"
   ],
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
   "scripts": {
     "build": "ember build",
     "changelog": "lerna-changelog",
-    "lint": "eslint . --cache",
     "format": "prettier . --write",
+    "lint": "eslint . --cache",
     "start": "ember server",
     "test": "jest",
     "test:ember": "ember test"
@@ -38,11 +38,11 @@
     "@ember/test-helpers": "2.9.3",
     "@glimmer/component": "^1.1.2",
     "@glimmer/syntax": "0.84.3",
-    "@glimmer/syntax-0.92.3": "npm:@glimmer/syntax@0.92.3",
     "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
     "@glimmer/syntax-0.37.1": "npm:@glimmer/syntax@0.37.1",
     "@glimmer/syntax-0.40.1": "npm:@glimmer/syntax@0.40.1",
     "@glimmer/syntax-0.62.5": "npm:@glimmer/syntax@0.62.5",
+    "@glimmer/syntax-0.92.3": "npm:@glimmer/syntax@0.92.3",
     "ember-auto-import": "^2.8.1",
     "ember-cli": "4.10.0",
     "ember-cli-babel": "7.26.11",
@@ -64,11 +64,15 @@
     "loader.js": "4.7.0",
     "prettier": "^2.0.0",
     "qunit": "2.19.4",
+    "release-plan": "^0.9.0",
     "webpack": "5.82.1"
   },
   "packageManager": "pnpm@6.35.1+sha512.3ede4912357625239102ac3f5ed8df178937e0f050169a95de450c1584a5cab589b22a391ebde5ab2da8264a69accad56cec8126cc577d90d03a5be6cad22b80",
   "engines": {
     "node": "12.* || 14.* || >= 16.*"
+  },
+  "changelog": {
+    "repo": "Mainmatter/ember-hbs-minifier"
   },
   "ember": {
     "edition": "octane"
@@ -82,8 +86,5 @@
     "versionCompatibility": {
       "ember": "~3.20.0 || ~3.24.0 || ~3.28.0 || ~4.4.0 || ~4.8.0 || ~4.12.0 || ~5.4.0 || ~5.8.0 || ~5.12.0 || >= 6.0.0"
     }
-  },
-  "changelog": {
-    "repo": "Mainmatter/ember-hbs-minifier"
   }
 }
