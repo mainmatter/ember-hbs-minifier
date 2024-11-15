@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "ember-hbs-minifier": {
+      "impact": "minor",
+      "oldVersion": "1.2.0",
+      "newVersion": "1.3.0",
+      "constraints": [
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2024-11-15)\n\nember-hbs-minifier 1.3.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-hbs-minifier`\n  * [#720](https://github.com/mainmatter/ember-hbs-minifier/pull/720) Fix DEPRECATION: The 'Program' visitor node is deprecated. Use 'Template' or 'Block' instead (node was 'Block') ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### :house: Internal\n* `ember-hbs-minifier`\n  * [#737](https://github.com/mainmatter/ember-hbs-minifier/pull/737) remove old release workflow file ([@mansona](https://github.com/mansona))\n  * [#735](https://github.com/mainmatter/ember-hbs-minifier/pull/735) start using release-plan ([@mansona](https://github.com/mansona))\n  * [#731](https://github.com/mainmatter/ember-hbs-minifier/pull/731) Split snapshot files between node12 and not-node-12, to support dependencies that have dropped node 12 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#730](https://github.com/mainmatter/ember-hbs-minifier/pull/730) Add another ignore for prettier support ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#723](https://github.com/mainmatter/ember-hbs-minifier/pull/723) Enforce some formatting ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n  * [#724](https://github.com/mainmatter/ember-hbs-minifier/pull/724) update github actions and use packageManager in package.json and fix CI ([@mansona](https://github.com/mansona))\n  * [#574](https://github.com/mainmatter/ember-hbs-minifier/pull/574) Rebrand simplabs to Mainmatter ([@BobrImperator](https://github.com/BobrImperator))\n\n#### Committers: 3\n- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))\n- Chris Manson ([@mansona](https://github.com/mansona))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+}
