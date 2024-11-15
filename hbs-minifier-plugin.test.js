@@ -1,12 +1,16 @@
 'use strict';
 
-/* eslint-env jest */
+/* eslint-env node,jest */
 /* eslint-disable no-inner-declarations */
 
 const DEP_PREFIX = '@glimmer/syntax';
-const DEPS = Object.keys(require('./package.json').devDependencies).filter(it =>
-  it.startsWith(DEP_PREFIX)
-);
+const hasOptionalChain = process.versions.node.split('.')[0] !== '12';
+const DEPS = Object.keys(require('./package.json').devDependencies).filter(it => {
+  if (!hasOptionalChain && it.indexOf('0.92.3') > 0) {
+    return false;
+  }
+  return it.startsWith(DEP_PREFIX);
+});
 
 // Remove the unnecessary `loc` properties from the AST snapshots and replace
 // the `Object` prefix with the node `type`
@@ -23,6 +27,28 @@ expect.addSnapshotSerializer({
   },
 });
 
+// eslint-disable-next-line no-console
+const originalWarn = console.warn;
+let loggedDeprecations = [];
+function expectNoDeprecations() {
+  beforeEach(() => {
+    loggedDeprecations = [];
+
+    // See @glimmer/util's deprecation() implementation
+    // eslint-disable-next-line no-console
+    console.warn = (...args) => {
+      if (args[0] && args[0].includes('DEPRECATION')) {
+        loggedDeprecations.push(args[0]);
+      }
+    };
+  });
+  afterEach(() => {
+    expect(loggedDeprecations).toHaveLength(0);
+    // eslint-disable-next-line no-console
+    console.warn = originalWarn;
+  });
+}
+
 for (let dep of DEPS) {
   let moduleName = 'HBS Minifier plugin';
   if (dep !== DEP_PREFIX) {
@@ -31,6 +57,8 @@ for (let dep of DEPS) {
 
   describe(moduleName, () => {
     const glimmer = require(dep);
+
+    expectNoDeprecations();
 
     it('collapses whitespace into single space character', () => {
       assert(`{{foo}}  \n\n   \n{{bar}}`);
@@ -207,8 +235,15 @@ for (let dep of DEPS) {
     }
 
     function process(template, config) {
-      let plugin = () => {
-        return require('./hbs-minifier-plugin').createGlimmerPlugin(config);
+      let plugin = env => {
+        const { INTERNAL_CONFIG, createGlimmerPlugin } = require('./hbs-minifier-plugin');
+
+        return createGlimmerPlugin({
+          ...config,
+          [INTERNAL_CONFIG]: {
+            hasTemplateNode: 'template' in env.syntax.builders,
+          },
+        });
       };
       return glimmer.preprocess(template, {
         plugins: {

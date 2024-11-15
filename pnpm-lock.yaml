@@ -12,6 +12,7 @@ specifiers:
   '@glimmer/syntax-0.37.1': npm:@glimmer/syntax@0.37.1
   '@glimmer/syntax-0.40.1': npm:@glimmer/syntax@0.40.1
   '@glimmer/syntax-0.62.5': npm:@glimmer/syntax@0.62.5
+  '@glimmer/syntax-0.92.3': npm:@glimmer/syntax@0.92.3
   ember-auto-import: ^2.8.1
   ember-cli: 4.10.0
   ember-cli-babel: 7.26.11
@@ -51,6 +52,7 @@ devDependencies:
   '@glimmer/syntax-0.37.1': /@glimmer/syntax/0.37.1
   '@glimmer/syntax-0.40.1': /@glimmer/syntax/0.40.1
   '@glimmer/syntax-0.62.5': /@glimmer/syntax/0.62.5
+  '@glimmer/syntax-0.92.3': /@glimmer/syntax/0.92.3
   ember-auto-import: 2.8.1_webpack@5.82.1
   ember-cli: 4.10.0
   ember-cli-babel: 7.26.11
@@ -1710,6 +1712,12 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
+  /@glimmer/interfaces/0.92.3:
+    resolution: {integrity: sha512-QwQeA01N+0h+TAi/J7iUnZtRuJy+093hNyagxDQBA6b1wCBw+q+al9+O6gmbWlkWE7EifzmNE1nnrgcecJBlJQ==}
+    dependencies:
+      '@simple-dom/interface': 1.4.0
+    dev: true
+
   /@glimmer/syntax/0.35.11:
     resolution: {integrity: sha512-Hk27mqz14ccyFVtmEO5mfAB+1S8Hi+mzQp5vrTWXPOAV0IIiR0LnThVWzbRvprCP9GAgZbeNxWCuLT8KBoQrfw==}
     dependencies:
@@ -1755,6 +1763,16 @@ packages:
       simple-html-tokenizer: 0.5.11
     dev: true
 
+  /@glimmer/syntax/0.92.3:
+    resolution: {integrity: sha512-7wPKQmULyXCYf0KvbPmfrs/skPISH2QGR9atCnmDWnHyLv5SSZVLm1P0Ctrpta6+Ci3uGQb7hGk0IjsLEavcYQ==}
+    dependencies:
+      '@glimmer/interfaces': 0.92.3
+      '@glimmer/util': 0.92.3
+      '@glimmer/wire-format': 0.92.3
+      '@handlebars/parser': 2.0.0
+      simple-html-tokenizer: 0.5.11
+    dev: true
+
   /@glimmer/util/0.35.11:
     resolution: {integrity: sha512-Jb/QWnHgy9WMLQuh4eOEe9dPEPDCFTaUXqFTi0RA3/gre1XSSsCz7d492MI4trng0hH3mNHmacT9ppkBUjx9MQ==}
     dev: true
@@ -1787,6 +1805,13 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
+  /@glimmer/util/0.92.3:
+    resolution: {integrity: sha512-K1oH93gGU36slycxJ9CcFpUTsdOc4XQ6RuZFu5oRsxFYtEF5PSu7ik11h58fyeoaWOr1ebfkyAMawbeI2AJ5GA==}
+    dependencies:
+      '@glimmer/env': 0.1.7
+      '@glimmer/interfaces': 0.92.3
+    dev: true
+
   /@glimmer/vm-babel-plugins/0.84.2_@babel+core@7.26.0:
     resolution: {integrity: sha512-HS2dEbJ3CgXn56wk/5QdudM7rE3vtNMvPIoG7Rrg+GhkGMNxBCIRxOeEF2g520j9rwlA2LAZFpc7MCDMFbTjNA==}
     dependencies:
@@ -1805,6 +1830,13 @@ packages:
     resolution: {integrity: sha512-iDj8D1eCVDmcsNUcz5epdOCN6Gt53W3cMsS2qAkf2H6REiXQ9kG7ySIGIdahNsLT/f21MT+JzqawylZR0hrw0w==}
     dependencies:
       '@glimmer/util': 0.37.1
+    dev: true
+
+  /@glimmer/wire-format/0.92.3:
+    resolution: {integrity: sha512-gFz81Q9+V7Xs0X8mSq6y8qacHm0dPaGJo2/Bfcsdow1hLOKNgTCLr4XeDBhRML8f6I6Gk9ugH4QDxyIOXOpC4w==}
+    dependencies:
+      '@glimmer/interfaces': 0.92.3
+      '@glimmer/util': 0.92.3
     dev: true
 
   /@handlebars/parser/1.1.0:
