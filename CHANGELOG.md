@@ -1,5 +1,28 @@
 # Changelog
 
+## Release (2024-11-15)
+
+ember-hbs-minifier 1.3.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-hbs-minifier`
+  * [#720](https://github.com/mainmatter/ember-hbs-minifier/pull/720) Fix DEPRECATION: The 'Program' visitor node is deprecated. Use 'Template' or 'Block' instead (node was 'Block') ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+
+#### :house: Internal
+* `ember-hbs-minifier`
+  * [#737](https://github.com/mainmatter/ember-hbs-minifier/pull/737) remove old release workflow file ([@mansona](https://github.com/mansona))
+  * [#735](https://github.com/mainmatter/ember-hbs-minifier/pull/735) start using release-plan ([@mansona](https://github.com/mansona))
+  * [#731](https://github.com/mainmatter/ember-hbs-minifier/pull/731) Split snapshot files between node12 and not-node-12, to support dependencies that have dropped node 12 ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#730](https://github.com/mainmatter/ember-hbs-minifier/pull/730) Add another ignore for prettier support ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#723](https://github.com/mainmatter/ember-hbs-minifier/pull/723) Enforce some formatting ([@NullVoxPopuli](https://github.com/NullVoxPopuli))
+  * [#724](https://github.com/mainmatter/ember-hbs-minifier/pull/724) update github actions and use packageManager in package.json and fix CI ([@mansona](https://github.com/mansona))
+  * [#574](https://github.com/mainmatter/ember-hbs-minifier/pull/574) Rebrand simplabs to Mainmatter ([@BobrImperator](https://github.com/BobrImperator))
+
+#### Committers: 3
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+- Chris Manson ([@mansona](https://github.com/mansona))
+- [@NullVoxPopuli](https://github.com/NullVoxPopuli)
+
 ## v1.2.0 (2022-04-13)
 
 #### :rocket: Enhancement
