@@ -35,7 +35,7 @@
     "@babel/eslint-parser": "^7.25.9",
     "@ember/optional-features": "2.0.0",
     "@ember/string": "^4.0.0",
-    "@ember/test-helpers": "2.9.3",
+    "@ember/test-helpers": "4.0.4",
     "@glimmer/component": "^1.1.2",
     "@glimmer/syntax": "0.84.3",
     "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
