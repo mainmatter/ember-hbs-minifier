@@ -41,7 +41,7 @@
     "@glimmer/syntax-0.35.11": "npm:@glimmer/syntax@0.35.11",
     "@glimmer/syntax-0.37.1": "npm:@glimmer/syntax@0.37.1",
     "@glimmer/syntax-0.40.1": "npm:@glimmer/syntax@0.40.1",
-    "@glimmer/syntax-0.62.5": "npm:@glimmer/syntax@0.62.5",
+    "@glimmer/syntax-0.62.5": "npm:@glimmer/syntax@0.93.1",
     "@glimmer/syntax-0.92.3": "npm:@glimmer/syntax@0.92.3",
     "ember-auto-import": "^2.8.1",
     "ember-cli": "4.10.0",
