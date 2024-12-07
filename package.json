@@ -67,7 +67,7 @@
     "release-plan": "^0.9.0",
     "webpack": "5.82.1"
   },
-  "packageManager": "pnpm@6.35.1+sha512.3ede4912357625239102ac3f5ed8df178937e0f050169a95de450c1584a5cab589b22a391ebde5ab2da8264a69accad56cec8126cc577d90d03a5be6cad22b80",
+  "packageManager": "pnpm@9.15.0+sha512.76e2379760a4328ec4415815bcd6628dee727af3779aaa4c914e3944156c4299921a89f976381ee107d41f12cfa4b66681ca9c718f0668fa0831ed4c6d8ba56c",
   "engines": {
     "node": "12.* || 14.* || >= 16.*"
   },
