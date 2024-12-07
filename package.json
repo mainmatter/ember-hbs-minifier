@@ -63,7 +63,7 @@
     "lerna-changelog": "2.2.0",
     "loader.js": "4.7.0",
     "prettier": "^2.0.0",
-    "qunit": "2.19.4",
+    "qunit": "2.23.1",
     "release-plan": "^0.9.0",
     "webpack": "5.82.1"
   },
